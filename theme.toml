@@ -1,0 +1,13 @@
+
+name = "Adobe Spectrum Hugo Theme"
+license = "MIT"
+licenselink = "https://github.com/adobe/hugo-spectrum/blob/master/LICENSE"
+description = "Hugo theme using Adobe Coral Spectrum styling"
+homepage = "https://github.com/adobe/hugo-spectrum"
+tags = ["documentation"]
+features = []
+min_version = "0.62.2"
+
+[author]
+  name = "Adobe"
+  homepage = "https://github.com/adobe"

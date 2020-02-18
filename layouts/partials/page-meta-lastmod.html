@@ -1,0 +1,4 @@
+<hr>
+<div class="u-coral-pullRight">
+  <coral-icon icon="GitHub" title="GitHub"></coral-icon> {{ T "post_last_mod"}} {{ .Lastmod.Format .Site.Params.time_format_default }}{{ with .GitInfo }}: <a class="coral-Link" href="{{ $.Site.Params.github_repo }}/commit/{{ .Hash }}">{{ .Subject }} ({{ .AbbreviatedHash }})</a>{{end }}
+</div>

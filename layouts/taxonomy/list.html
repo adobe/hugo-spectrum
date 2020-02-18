@@ -1,0 +1,11 @@
+{{ define "leftPanel" }}&nbsp;{{ end }}
+{{ define "rightPanel" }}&nbsp;{{ end }}{{ define "main" }}
+<div class="">
+  <h1 class="coral-Heading--1"><coral-icon icon="tag" size="S"></coral-icon> {{ .Title }}</h1>
+  <ul>
+    {{ range .Pages }}
+      <li><a class="coral-Link" href="{{ .Permalink }}" icon="edit">{{ .Parent.Title }} - {{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

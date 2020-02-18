@@ -1,0 +1,14 @@
+<div class="u-coral-margin">
+	{{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+</div>
+{{ define "breadcrumbnav" }}
+{{ if .p1.Parent }}
+{{ if not .p1.Parent.IsHome }}
+{{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
+{{ end }}
+{{ else if not .p1.IsHome }}
+{{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
+{{ end }}
+{{ $isActive :=  eq .p1 .p2  }}
+	<a class="coral-Link" href="{{ .p1.Permalink }}" title="{{ .p1.LinkTitle }}">{{ .p1.LinkTitle }}</a> /
+{{ end }}

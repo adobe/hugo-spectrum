@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang }}" class="no-js">
+<head>
+  {{ partial "head.html" . }}
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
+</head>
+<body class="coral--lightest">
+<coral-shell>
+  {{ partial "navbar.html" . }}
+  <coral-shell-content>
+    <div class="grid grid-columns">
+      <div class="width-2/12">
+        {{ block "leftPanel" . }}
+          {{ partial "sidebar.html" . }}
+        {{ end }}
+      </div>
+      <div class="width-8/12">
+        <main role="main">
+          {{ block "main" . }}
+            {{ if not .Site.Params.ui.breadcrumb_disable }}{{ partial "breadcrumb.html" . }}{{ end }}
+            {{ .Render "content" }}
+          {{ end }}
+        </main>
+        <div class="u-coral-margin"><br/></div>
+      </div>
+      <div class="width-2/12">
+        {{ block "rightPanel" . }}
+          {{ partial "toc.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  </coral-shell-content>
+</coral-shell>
+</body>
+</html>

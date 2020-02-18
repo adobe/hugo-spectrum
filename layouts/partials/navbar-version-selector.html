@@ -1,0 +1,6 @@
+<h4>{{ .Site.Params.version_menu }}</h4>
+<coral-select>
+  {{ range .Site.Params.versions }}
+    <coral-select-item value="{{ .url }}">{{ .version }}</coral-select-item>
+  {{ end }}
+</coral-select>

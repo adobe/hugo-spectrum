@@ -1,0 +1,27 @@
+<div class="">
+    {{ $pages := (where .Site.Pages "Section" .Section).ByWeight }}
+    {{ $parent := .Page }}
+    {{ if $parent.Params.no_list }}
+    {{/* If no_list is true we don't show a list of subpages */}}
+    {{ else if $parent.Params.simple_list }}
+    {{/* If simple_list is true we show a bulleted list of subpages */}}
+        <ul>
+            {{ range $pages }}
+                {{ if eq .Parent $parent }}
+                    <li><a href="{{ .RelPermalink }}">{{- .Title -}}</a></li>
+                {{ end }}
+            {{ end }}
+        </ul>
+    {{ else }}
+    {{/* Otherwise we show a nice formatted list of subpages with page descriptions */}}
+    <hr>
+        {{ range $pages }}
+            {{ if eq .Parent $parent }}
+                    <h3 class="coral-Heading coral-Heading--3">
+                        <a class="coral-Link" href="{{ .RelPermalink }}">{{- .Title -}}</a>
+                    </h3>
+                    <p>{{ .Description }}</p>
+            {{ end }}
+        {{ end }}
+    {{ end }}
+</div>

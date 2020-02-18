@@ -1,0 +1,7 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{ $color := .Get "color" | default "info" }}
+<coral-alert variant="{{ $color }}">
+  <coral-alert-header>Info</coral-alert-header>
+  <coral-alert-content>{{ .Inner }}</coral-alert-content>
+</coral-alert>
+

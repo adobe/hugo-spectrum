@@ -1,0 +1,11 @@
+{{ $langPage := cond (gt (len .Translations) 0) . .Site.Home }}
+<coral-select id="coral-language-selector">
+	<coral-select-item value="{{ .RelPermalink }}" selected="">
+		{{ $langPage.Language.LanguageName }}
+	</coral-select-item>
+	{{ range $langPage.Translations }}
+	<coral-select-item value="{{ .RelPermalink }}">
+		{{ .Language.LanguageName }}
+	</coral-select-item>
+	{{ end }}
+</coral-select>

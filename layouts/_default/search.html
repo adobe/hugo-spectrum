@@ -1,0 +1,25 @@
+{{ define "leftPanel" }}&nbsp;{{ end }}
+{{ define "rightPanel" }}&nbsp;{{ end }}
+{{ define "main" }}
+<section>
+	<div>
+		<h2 class="coral-Heading--2">{{ .Title }}</h2>
+		{{ with .Site.Params.fuseSearch }}
+		<div id="search-results">
+			<hr>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+		<script type="text/javascript" src="{{ $.Site.BaseURL }}/js/search.js"></script>
+		<script id="search-result-template" type="text/x-js-template">
+			<div id="summary-${key}">
+				<h3 class="coral-Heading--3"><a class="coral-Link" href="${link}">${ isset parent }${parent}/${ end }${title}</a></h3>
+				<p>${snippet}</p>
+				${ isset tags }<p><b>Tags:</b> ${tags}</p> ${ end }
+				${ isset categories }<p><b>Categories:</b> ${categories}</p>${ end }
+			</div>
+		</script>
+		{{ end }}
+	</div>
+</section>
+{{ end }}

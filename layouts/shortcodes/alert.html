@@ -1,0 +1,6 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{ $variant := .Get "variant" | default "info" }}
+<coral-alert variant="{{ $variant }}">
+    {{ with .Get "title" }}<coral-alert-header>{{ . | safeHTML }}</coral-alert-header>{{ end }}
+    <coral-alert-content>{{ .Inner | markdownify }}</coral-alert-content>
+</coral-alert>

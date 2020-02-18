@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="">
+  <h1 class="coral-Heading--1">{{ .Title }}</h1>
+  {{ with .Params.description }}<div class="">{{ . | markdownify }}</div>{{ end }}
+  {{ .Content }}
+  {{ partial "section-index.html" . }}
+  <div class="">{{ partial "page-meta-lastmod.html" . }}</div>
+</div>
+{{ end }}

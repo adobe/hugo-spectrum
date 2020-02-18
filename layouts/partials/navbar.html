@@ -1,0 +1,40 @@
+<coral-shell-header>
+	<coral-shell-header-home>
+		<a is="coral-shell-homeanchor" icon="AdobeLogo" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+	</coral-shell-header-home>
+	<coral-shell-header-content>
+		<coral-shell-workspaces>
+			{{ $p := . }}
+			{{ range .Site.Menus.main }}
+
+			{{ $active := or ($p.IsMenuCurrent "main" .) ($p.HasMenuCurrent "main" .) }}
+			{{ with .Page }}
+			{{ $active = or $active ( $.IsDescendant .)  }}
+			{{ end }}
+			{{ $url := urls.Parse .URL }}
+			{{ $baseurl := urls.Parse $.Site.Params.Baseurl }}
+			<a is="coral-shell-workspace"
+				 href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}"
+				 {{ if ne $url.Host $baseurl.Host }}target="_blank" {{ end }}
+				 {{if $active }}selected=""{{end}}>{{ .Name }}</a>
+			{{ end }}
+		</coral-shell-workspaces>
+	</coral-shell-header-content>
+	<coral-shell-header-actions>
+		<coral-shell-menubar>
+			<!--
+									{{ if  .Site.Params.versions }}
+									{{ partial "navbar-version-selector.html" . }}
+									{{ end }}
+			-->
+			{{ if  (gt (len .Site.Home.Translations) 0) }}
+			<coral-shell-menubar-item>
+				{{ partial "navbar-lang-selector.html" . }}
+			</coral-shell-menubar-item>
+			{{ end }}
+
+				{{ partial "search-input.html" . }}
+
+		</coral-shell-menubar>
+	</coral-shell-header-actions>
+</coral-shell-header>

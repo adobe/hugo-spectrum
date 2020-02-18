@@ -1,0 +1,12 @@
+{{ with .Params.tags}}
+<div class="u-coral-pullRight">
+  <coral-taglist readonly="">
+    {{ range . }}
+    {{ $tagName := . }}
+    {{ with $.Site.GetPage (printf "/%s/%s" "tags" ($tagName | urlize)) }}
+    <coral-tag><a class="coral-Link" href="{{ .Permalink }}">{{ $tagName }}</a></coral-tag>
+    {{ end }}
+    {{ end }}
+  </coral-taglist>
+</div>
+{{ end }}

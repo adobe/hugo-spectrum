@@ -1,0 +1,30 @@
+._coral-Body, body {
+    font-size: 16px;
+}
+
+._coral-SideNav--multiLevel ._coral-SideNav ._coral-SideNav ._coral-SideNav ._coral-SideNav-itemLink {
+    padding-left: 48px;
+}
+
+._coral-SideNav--multiLevel ._coral-SideNav ._coral-SideNav ._coral-SideNav ._coral-SideNav ._coral-SideNav-itemLink {
+    padding-left: 60px;
+}
+._coral-Alert {
+    display: block;
+}
+
+#TableOfContents ul {
+    padding-left: 0;
+    font-size: 14px;
+}
+#TableOfContents li {
+    list-style: none;
+    display: block;
+}
+#TableOfContents li li {
+    margin-left: 0.7rem;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}

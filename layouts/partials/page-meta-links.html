@@ -1,0 +1,11 @@
+{{ if .Path }}
+{{ $gh_repo := ($.Param "github_repo") }}
+{{ $gh_subdir := ($.Param "github_subdir") }}
+{{ $gh_project_repo := ($.Param "github_project_repo") }}
+{{ if $gh_repo }}
+<coral-anchorlist style="max-width:90%">
+{{ $editURL := printf "%s/edit/master/%s/content/%s" $gh_repo $gh_subdir .Path }}
+<a is="coral-anchorlist-item" href="{{ $editURL }}" icon="edit" target="_blank">{{ T "post_edit_this" }}</a>
+</coral-anchorlist>
+{{ end }}
+{{ end }}

@@ -1,0 +1,55 @@
+baseURL: "https://github.com/pages/adobe/hugo-spectrum"
+title: Adobe Spectrum Hugo Theme
+params:
+  ui:
+    sidebar_menu_compact: true
+  fuseSearch: true
+  github_repo: "https://github.com/pages/adobe/hugo-spectrum"
+  github_subdir: "content"
+outputs:
+  home:
+    - json
+    - html
+theme: "hugo-spectrum"
+uglyurls: true
+enableGitInfo: true
+canonifyURLs: true
+metaDataFormat: "yaml"
+publishDir: build
+contentDir: "content"
+disableKinds:
+ - "RSS"
+defaultContentLanguage: "en"
+defaultContentLanguageInSubdir: false
+
+languages:
+  en:
+    title: Adobe Spectrum Hugo Demo
+
+markup:
+  defaultMarkdownHandler: goldmark
+  goldmark:
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xHTML: false  
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    hl_Lines: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: "github"
+    tabWidth: 4
+  tableOfContents:
+    endLevel: 3
+    ordered: false
+    startLevel: 2
+module:
+  mounts:
+  - source: content
+    target: content
+  imports:
+    path: "https://git.corp.adobe.com/reef/hugo-spectrum"

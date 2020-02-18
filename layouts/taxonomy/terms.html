@@ -1,0 +1,19 @@
+{{ define "leftPanel" }}&nbsp;{{ end }}
+{{ define "rightPanel" }}&nbsp;{{ end }}
+{{ define "main" }}
+<div class="">
+  <h1 class="coral-Heading--1"><coral-icon icon="tags" size="S"></coral-icon> {{ .Title }}</h1>
+  {{ with .Params.description }}<div class="">{{ . | markdownify }}</div>{{ end }}
+  {{ .Content }}
+  {{ $parent := .Page }}
+  {{ $tags := (where .Site.Pages "Section" "tags").ByWeight }}
+    {{ range $tags }}
+      {{ if eq .Parent $parent }}
+        <h3 class="coral-Heading--3">
+          <a class="coral-Link" href="{{ .RelPermalink }}">{{ .Title }} ({{ len .Pages }})</a>
+        </h3>
+      {{ end }}
+    {{ end }}
+  <div class="">{{ partial "page-meta-lastmod.html" . }}</div>
+</div>
+{{ end }}

@@ -1,0 +1,11 @@
+<div>
+	{{ if not $.Params.hide_title }}
+	<h1 class="coral-Heading--1">{{ .Title }}</h1>
+	{{ end }}
+	{{ partial "page-meta-tags.html" . }}
+	{{ with .Params.description }}<div class="coral-Well">{{ . | markdownify }}</div>{{ end }}
+	{{ $content := replace .Content "<a href" "<a class='coral-Link' href" }}
+	{{ $content := replace $content "[](TOC)" "" }}
+	<div>{{ $content | safeHTML }}</div>
+	<div class="">{{ partial "page-meta-lastmod.html" . }}</div>
+</div>
