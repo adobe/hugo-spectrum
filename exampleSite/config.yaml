@@ -1,17 +1,16 @@
-baseURL: "https://github.com/pages/adobe/hugo-spectrum"
+baseURL: "https://git.corp.adobe.com/pages/reef/hugo-spectrum"
 title: Adobe Spectrum Hugo Theme
 params:
   ui:
     sidebar_menu_compact: true
   fuseSearch: true
-  github_repo: "https://github.com/pages/adobe/hugo-spectrum"
+  github_repo: "https://git.corp.adobe.com/pages/reef/hugo-spectrum"
   github_subdir: "content"
 outputs:
   home:
     - json
     - html
 theme: "hugo-spectrum"
-uglyurls: true
 enableGitInfo: true
 canonifyURLs: true
 metaDataFormat: "yaml"
@@ -46,7 +45,7 @@ markup:
   tableOfContents:
     endLevel: 3
     ordered: false
-    startLevel: 2
+    startLevel: 1
 module:
   mounts:
   - source: content
