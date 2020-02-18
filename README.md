@@ -4,7 +4,10 @@ Hugo theme using Adobe [coral-spectrum](https://opensource.adobe.com/coral-spect
 
 # Usage
 
-See [exampleSite](exampleSite/README.md) for a sample docs website.
+See [exampleSite](exampleSite/) for a sample docs website.
+
+A live demo is available at: https://git.corp.adobe.com/pages/reef/hugo-spectrum
+
 
 
 ### Maintainers Notice
@@ -12,46 +15,16 @@ See [exampleSite](exampleSite/README.md) for a sample docs website.
 When updating hugo theme in this repository make sure you:
 
 1. Update the `exampleSite` theme version:
-
-```sh
-cd exampleSite
-git submodule update --remote --merge
-git commit themes/hugo-spectrum -m "Updated theme in exampleSite"
-git push
-```
+    ```sh
+    cd exampleSite
+    git submodule update --remote --merge
+    git commit themes/hugo-spectrum -m "Updated theme in exampleSite"
+    git push
+    ```
 
 2. Generate and publish `exampleSite` in `gh-pages` branch
 
-## Releasing to gh-pages branch
-
-
-```bash
-#!/usr/bin/env sh
-#set -e
-
-# from root dir of this repo
-MESSAGE=$(git log --format=format:%s -1)
-
-git clone --single-branch --branch gh-pages git@git.corp.adobe.com:reef/hugo-spectrum.git site-pages
-
-docker run --rm \
--v "`pwd`":/src \
--v "`pwd`/site-pages":/target \
-klakegg/hugo:0.64.1-ext \
---source="/src" \
---destination="/target" --ignoreCache
-
-cd site-pages
-git add . -f --all
-
-if [ -z "$(git status --porcelain)" ]; then
-  echo "Working directory clean, nothing to commit"
-else
-  echo "Commit message will be $MESSAGE"
-  git commit -m "$MESSAGE"
-  git push origin gh-pages
-fi
-```
+    Run [publish-to-gh-pages.sh](publish-to-gh-pages.sh)
 
 ### Contributing
 
