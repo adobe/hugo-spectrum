@@ -7,8 +7,7 @@
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
-<link rel="alternate" type="application/json" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/index.json">
-<title>Adobe Spectrum Hugo Demo</title>
+<title>Search Results | Adobe Spectrum Hugo Demo</title>
 <link rel="stylesheet" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/css/coral.min.css">
 <link rel="stylesheet" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/css/grid.css">
 <link rel="stylesheet" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/css/codeblocks.css">
@@ -34,7 +33,7 @@
 
 <link rel="shortcut icon" type="image/x-icon" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/favicons/favicon.ico">
 
-  <title>Adobe Spectrum Hugo Demo</title>
+  <title>Search Results | Adobe Spectrum Hugo Demo</title>
 </head>
 <body class="coral--lightest">
 <coral-shell>
@@ -105,14 +104,27 @@
       <div class="width-8/12">
         <main role="main">
           
-  
-    <div style="text-align:center; font-size: 19px">
-<h1 class="coral-Heading--1">Adobe Coral Spectrum</h1>
-<h2 class="coral-Heading--2">Hugo Theme</h2>
-<p><a href="docs/developer-guide/page1">Sample Page</a></p>
-</div>
-
-  
+<section>
+	<div>
+		<h2 class="coral-Heading--2">Search Results</h2>
+		
+		<div id="search-results">
+			<hr>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+		<script type="text/javascript" src="https://git.corp.adobe.com/pages/reef/hugo-spectrum/js/search.js"></script>
+		<script id="search-result-template" type="text/x-js-template">
+			<div id="summary-${key}">
+				<h3 class="coral-Heading--3"><a class="coral-Link" href="${link}">${ isset parent }${parent}/${ end }${title}</a></h3>
+				<p>${snippet}</p>
+				${ isset tags }<p><b>Tags:</b> ${tags}</p> ${ end }
+				${ isset categories }<p><b>Categories:</b> ${categories}</p>${ end }
+			</div>
+		</script>
+		
+	</div>
+</section>
 
         </main>
         <div class="u-coral-margin"><br/></div>
