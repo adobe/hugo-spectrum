@@ -51,5 +51,3 @@ module:
   mounts:
   - source: content
     target: content
-  imports:
-    path: "https://git.corp.adobe.com/reef/hugo-spectrum"
