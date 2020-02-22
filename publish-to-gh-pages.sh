@@ -6,6 +6,9 @@ set -x
 MESSAGE=$(git log --format=format:%s -1)
 
 git clone --single-branch --branch gh-pages git@git.corp.adobe.com:reef/hugo-spectrum.git site-pages
+# Remove previous version - will be regenerated
+rm -rf site-pages/*
+
 
 docker run --rm \
 -v "`pwd`":/src \
