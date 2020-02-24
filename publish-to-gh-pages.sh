@@ -43,8 +43,8 @@ if [ -z "$(git status --porcelain)" ]; then
   echo "Working directory clean, nothing to commit"
 else
   echo "Commit message will be $MESSAGE"
-  #git commit -m "$MESSAGE"
-  #git push origin gh-pages
+  git commit -m "$MESSAGE"
+  git push origin gh-pages
 fi
 
-#rm -rf site-pages
+rm -rf site-pages

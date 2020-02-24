@@ -52,6 +52,23 @@ git commit
 ```
 See also https://opensource.adobe.com/coral-spectrum/dist/documentation/manual/manual.html#consuming for full details.
 
+## Update `mermaid` version
+This theme has support for [Mermaid](https://mermaid-js.github.io/mermaid/) diagrams. 
+To upgrade `mermaid` follow these steps:
+
+```sh
+set -e
+#get the package tarball url
+wget `npm view mermaid dist.tarball`
+tar xzvf mermaid-*.tgz
+cp package/dist/mermaid.min.js* static/js/
+rm -rf mermaid-*.tgz package
+
+# commit to git
+git add .
+git commit
+```
+
 ## Update `exampleSite` demo site
 When updating hugo theme in this repository make sure you:
 
