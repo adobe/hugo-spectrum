@@ -69,6 +69,20 @@ git add .
 git commit
 ```
 
+## Update `markdeep` version
+This theme has support for [Markdeep](https://casual-effects.com/markdeep/features.md.html#diagramexamples) diagrams. 
+To upgrade `markdeep` follow these steps:
+
+```sh
+set -e
+#get js
+wget https://casual-effects.com/markdeep/latest/markdeep.min.js -O static/js/markdeep.min.js
+
+# commit to git
+git add .
+git commit
+```
+
 ## Update `exampleSite` demo site
 When updating hugo theme in this repository make sure you:
 

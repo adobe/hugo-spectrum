@@ -1,0 +1,15 @@
+svg.diagram {
+  display: block;
+  font-family: Menlo,Consolas,monospace;
+  font-size: 85%;
+  text-align: center;
+  stroke-linecap: round;
+  page-break-inside: avoid;
+  stroke: #000;
+  fill: #000;
+}
+
+svg.diagram .opendot {
+  fill: #fff;
+}
+
