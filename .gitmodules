@@ -1,3 +1,4 @@
 [submodule "exampleSite/themes/hugo-spectrum"]
 	path = exampleSite/themes/hugo-spectrum
 	url = git@git.corp.adobe.com:Reef/hugo-spectrum.git
+	branch = master
