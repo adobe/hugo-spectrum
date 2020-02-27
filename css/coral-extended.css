@@ -21,6 +21,10 @@
     font-size: 16px;
 }
 
+._coral-Search {
+    margin: 8px;
+}
+
 ._coral-SideNav--multiLevel ._coral-SideNav ._coral-SideNav ._coral-SideNav ._coral-SideNav-itemLink {
     padding-left: 48px;
 }
@@ -36,14 +40,22 @@
     padding-left: 0;
     font-size: 14px;
 }
+
 #TableOfContents li {
     list-style: none;
     display: block;
 }
+
 #TableOfContents li li {
     margin-left: 0.7rem;
 }
+
 img {
     max-width: 100%;
     height: auto;
+}
+
+fixed-grid-columns {
+    --columns: 12;
+    grid-column-start: 1;
 }
