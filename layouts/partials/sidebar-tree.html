@@ -17,14 +17,12 @@ is strictly forbidden unless prior written permission is obtained
 from Adobe Systems Incorporated.
 
 */}}
-<div class="u-coral-padding-vertical">
-  {{ if not .Site.Params.ui.sidebar_search_disable }}
-    {{ partial "search-input.html" . }}
-  {{ end }}
-  <nav is="coral-sidenav" variant="multilevel" style="width:240px;">
-    {{ template "section-tree-nav-section" (dict "page" . "section" .FirstSection)  }}
-  </nav>
-</div>
+{{ if not .Site.Params.ui.sidebar_search_disable }}
+{{ partial "search-input.html" . }}
+{{ end }}
+<nav is="coral-sidenav" variant="multilevel" style="width:240px;">
+  {{ template "section-tree-nav-section" (dict "page" . "section" .FirstSection)  }}
+</nav>
 
 {{ define "section-tree-nav-section" }}
 {{ $s := .section }}

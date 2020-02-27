@@ -52,6 +52,23 @@ git commit
 ```
 See also https://opensource.adobe.com/coral-spectrum/dist/documentation/manual/manual.html#consuming for full details.
 
+## Update `spectrum-css-grid` version
+This theme is using [Spectrum CSS Grid](https://opensource.adobe.com/spectrum-css-grid/). 
+To upgrade `spectrum-css-grid` follow these steps:
+
+```sh
+set -e
+#get the package tarball url
+wget `npm view @adobe/spectrum-css-grid dist.tarball`
+tar xzvf spectrum-css-grid-*.tgz
+cp package/dist/spectrum-css-grid.css static/css/spectrum-css-grid.css
+rm -rf spectrum-css-grid-*.tgz package
+
+# commit to git
+git add .
+git commit
+```
+
 ## Update `mermaid` version
 This theme has support for [Mermaid](https://mermaid-js.github.io/mermaid/) diagrams. 
 To upgrade `mermaid` follow these steps:
@@ -97,6 +114,17 @@ When updating hugo theme in this repository make sure you:
 2. Generate and publish `exampleSite` in `gh-pages` branch
 
     Run [publish-to-gh-pages.sh](publish-to-gh-pages.sh)
+
+# Acknowledgments
+[Docsy](https://github.com/google/docsy) inspired layout for this theme.
+
+Theme built with:
+* [Spectrum CSS](https://opensource.adobe.com/spectrum-css/) open-source implementation of Spectrum, Adobe’s design system.
+* [Coral Spectrum](https://opensource.adobe.com/coral-spectrum/dist/documentation/) JavaScript library of Web Components following Spectrum design patterns.
+* [Markdeep diagrams](https://casual-effects.com/markdeep/features.md.html#diagramexamples)
+* [Mermaid](http://mermaid-js.github.io/mermaid/) a Javascript based diagramming and charting tool
+* [Fusejs](https://fusejs.io/) a lightweight fuzzy-search in JavaScript
+* [klakegg/hugo](https://github.com/klakegg/docker-hugo) minimal Docker images for Hugo with batteries included
 
 # Contributing
 

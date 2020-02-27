@@ -27,13 +27,13 @@ from Adobe Systems Incorporated.
 <coral-shell>
   {{ partial "navbar.html" . }}
   <coral-shell-content>
-    <div class="grid grid-columns">
-      <div class="width-2/12">
+    <div class="spectrum-grid fixed-grid-columns">
+      <div style="grid-column: 1/2;">
         {{ block "leftPanel" . }}
           {{ partial "sidebar.html" . }}
         {{ end }}
       </div>
-      <div class="width-8/12">
+      <div style="grid-column: 2/11;">
         <main role="main">
           {{ block "main" . }}
             {{ if not .Site.Params.ui.breadcrumb_disable }}{{ partial "breadcrumb.html" . }}{{ end }}
@@ -42,7 +42,7 @@ from Adobe Systems Incorporated.
         </main>
         <div class="u-coral-margin"><br/></div>
       </div>
-      <div class="width-2/12">
+      <div style="grid-column: 11/12;">
         {{ block "rightPanel" . }}
           {{ partial "toc.html" . }}
         {{ end }}
