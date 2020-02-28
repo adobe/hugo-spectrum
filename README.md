@@ -124,6 +124,7 @@ Theme built with:
 * [Markdeep diagrams](https://casual-effects.com/markdeep/features.md.html#diagramexamples)
 * [Mermaid](http://mermaid-js.github.io/mermaid/) a Javascript based diagramming and charting tool
 * [Fusejs](https://fusejs.io/) a lightweight fuzzy-search in JavaScript
+* [Swagger UI](https://swagger.io/tools/swagger-ui/) UI for visualizing APIs written in [OpenAPI Specification](http://spec.openapis.org/oas/v3.0.3)
 * [klakegg/hugo](https://github.com/klakegg/docker-hugo) minimal Docker images for Hugo with batteries included
 
 # Contributing

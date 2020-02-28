@@ -1,0 +1,48 @@
+{{/*
+
+ADOBE CONFIDENTIAL
+___________________
+
+Copyright 2020 Adobe Systems Incorporated
+All Rights Reserved.
+
+NOTICE:  All information contained herein is, and remains
+the property of Adobe Systems Incorporated and its suppliers,
+if any.  The intellectual and technical concepts contained
+herein are proprietary to Adobe Systems Incorporated and its
+suppliers and are protected by all applicable intellectual property
+laws, including trade secret and copyright laws.
+Dissemination of this information or reproduction of this material
+is strictly forbidden unless prior written permission is obtained
+from Adobe Systems Incorporated.
+
+
+Usage: `openapi apiFile="name of file here"`
+
+*/}}
+{{- $spec := index .Site.Data (.Get "apiFile") -}}
+<div id="swagger-ui"></div>
+<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/swagger-ui.css">
+<style>.information-container, .scheme-container { display: none !important; }</style>
+<script src="{{ .Site.BaseURL }}/js/swagger-ui-bundle.js"></script>
+<script>
+  window.onload = function() {
+    // Build a system
+    const ui = SwaggerUIBundle({
+      spec: {{ $spec }},
+    dom_id: '#swagger-ui',
+        deepLinking: true,
+        validatorUrl: null,
+        displayOperationId: true,
+        showCommonExtensions: true,
+        supportedSubmitMethods: [],
+        presets: [
+      SwaggerUIBundle.presets.apis
+    ],
+        plugins: [
+    ],
+        layout: "BaseLayout"
+  });
+    window.ui = ui
+  }
+</script>
