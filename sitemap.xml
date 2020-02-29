@@ -68,6 +68,11 @@
   </url>
   
   <url>
+    <loc>https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/openapi/</loc>
+    <lastmod>2020-02-28T17:12:44-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/architecture/demo/</loc>
     <lastmod>2020-02-18T15:42:41+02:00</lastmod>
   </url>
@@ -132,6 +137,11 @@
   </url>
   
   <url>
+    <loc>https://git.corp.adobe.com/pages/reef/hugo-spectrum/tags/openapi/</loc>
+    <lastmod>2020-02-28T17:12:44-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://git.corp.adobe.com/pages/reef/hugo-spectrum/tags/page1/</loc>
     <lastmod>2020-02-18T15:42:41+02:00</lastmod>
   </url>
@@ -142,13 +152,18 @@
   </url>
   
   <url>
+    <loc>https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/openapi/petstore/</loc>
+    <lastmod>2020-02-28T17:12:44-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://git.corp.adobe.com/pages/reef/hugo-spectrum/search/</loc>
     <lastmod>2020-02-18T15:42:41+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://git.corp.adobe.com/pages/reef/hugo-spectrum/tags/</loc>
-    <lastmod>2020-02-24T20:22:43-05:00</lastmod>
+    <lastmod>2020-02-28T17:12:44-05:00</lastmod>
   </url>
   
   <url>

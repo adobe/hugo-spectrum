@@ -1,0 +1,431 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.64.1" />
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+<title>Petstore APIs | Adobe Spectrum Hugo Demo</title>
+
+<link rel="stylesheet" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/css/coral.min.css">
+<link rel="stylesheet" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/css/spectrum-css-grid.css">
+<link rel="stylesheet" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/css/codeblocks.css">
+<link rel="stylesheet" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/css/coral-extended.css">
+<link rel="stylesheet" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/css/markdeep.css">
+
+
+
+<script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+<script src="https://git.corp.adobe.com/pages/reef/hugo-spectrum/js/main.min.0e9cd1011aec1c8e905aee317934c15ee7da911f3086a7cce9467fc8119d2783.js" integrity="sha256-DpzRARrsHI6QWu4xeTTBXufakR8whqfM6UZ/yBGdJ4M=" crossorigin="anonymous"></script>
+
+<script src="https://git.corp.adobe.com/pages/reef/hugo-spectrum/js/coral.min.js" data-coral-icons="https://git.corp.adobe.com/pages/reef/hugo-spectrum/resources/"></script>
+
+<script src="https://git.corp.adobe.com/pages/reef/hugo-spectrum/js/mermaid.min.js" ></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+
+<script>window.markdeepOptions = {mode: 'script'};</script>
+<script src="https://git.corp.adobe.com/pages/reef/hugo-spectrum/js/markdeep.min.js"></script>
+
+
+
+
+
+
+<link rel="shortcut icon" type="image/x-icon" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/favicons/favicon.ico">
+
+  <title>Petstore APIs | Adobe Spectrum Hugo Demo</title>
+</head>
+<body class="coral--lightest">
+<coral-shell>
+  
+<coral-shell-header>
+	<coral-shell-header-home>
+		<a is="coral-shell-homeanchor" icon="AdobeLogo" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/">Adobe Spectrum Hugo Demo</a>
+	</coral-shell-header-home>
+	<coral-shell-header-content>
+		<coral-shell-workspaces>
+			
+			
+
+			
+			
+			
+			
+			
+			
+			<a is="coral-shell-workspace"
+				 href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/"
+				 
+				 selected="">Documentation</a>
+			
+
+			
+			
+			
+			
+			
+			
+			<a is="coral-shell-workspace"
+				 href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/faq/"
+				 
+				 >FAQ</a>
+			
+
+			
+			
+			
+			
+			
+			
+			<a is="coral-shell-workspace"
+				 href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/tags/"
+				 
+				 >Tags</a>
+			
+		</coral-shell-workspaces>
+	</coral-shell-header-content>
+	<coral-shell-header-actions>
+		<coral-shell-menubar>
+			
+			
+
+				
+
+<coral-search></coral-search>
+
+
+
+		</coral-shell-menubar>
+	</coral-shell-header-actions>
+</coral-shell-header>
+
+  <coral-shell-content>
+    <div class="spectrum-grid fixed-grid-columns">
+      <div style="grid-column: 1/2;">
+        
+          
+
+
+
+
+<coral-search></coral-search>
+
+
+
+<nav is="coral-sidenav" variant="multilevel" style="width:240px;">
+  
+
+
+
+
+
+
+    
+    
+
+    
+      
+    
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+    
+      
+        <a is="coral-sidenav-item"><b> Developer Guide</b></a>
+        <coral-sidenav-level>
+      
+    
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/developer-guide/page1/">Sample Page</a>
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/developer-guide/page2/">Developer Guide Page 2</a>
+    
+    
+    
+      
+    </coral-sidenav-level>
+      
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+    
+      
+        <a is="coral-sidenav-item"><b> User Guide</b></a>
+        <coral-sidenav-level>
+      
+    
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/user-guide/page1/">User Guide Page 1</a>
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/user-guide/page2/">User Guide Page 2</a>
+    
+    
+    
+      
+    </coral-sidenav-level>
+      
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+    
+      
+        <a is="coral-sidenav-item"><b> Architecture</b></a>
+        <coral-sidenav-level>
+      
+    
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/architecture/demo/">Arch Page 1</a>
+    
+    
+    
+      
+    </coral-sidenav-level>
+      
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+    
+      
+        <a is="coral-sidenav-item"><b> Diagrams</b></a>
+        <coral-sidenav-level>
+      
+    
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/diagrams/markdeep/">Markdeep examples</a>
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/diagrams/mermaid/">Mermaid examples</a>
+    
+    
+    
+      
+    </coral-sidenav-level>
+      
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+    
+      
+        <a is="coral-sidenav-item"><b> Open API</b></a>
+        <coral-sidenav-level>
+      
+    
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  selected href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/openapi/petstore/">Petstore APIs</a>
+    
+    
+    
+      
+    </coral-sidenav-level>
+      
+    
+
+    
+    
+    
+      
+    
+
+</nav>
+
+
+
+
+        
+      </div>
+      <div style="grid-column: 2/11;">
+        <main role="main">
+          
+
+<div>
+	
+	<h1 class="coral-Heading--1">Petstore APIs</h1>
+	
+	
+
+<div class="u-coral-pullRight">
+  <coral-taglist readonly="">
+    
+    
+    
+    <coral-tag><a class="coral-Link" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/tags/openapi/">openapi</a></coral-tag>
+    
+    
+  </coral-taglist>
+</div>
+
+
+	
+	
+	
+	<div><p>Petstore API displayed using Swagger UI</p>
+<div id="swagger-ui"></div>
+<link rel="stylesheet" type="text/css" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/css/swagger-ui.css">
+<style>.information-container, .scheme-container { display: none !important; }</style>
+<script src="https://git.corp.adobe.com/pages/reef/hugo-spectrum/js/swagger-ui-bundle.js"></script>
+<script>
+  window.onload = function() {
+    
+    const ui = SwaggerUIBundle({
+      spec: {"components":{"schemas":{"Error":{"properties":{"code":{"format":"int32","type":"integer"},"message":{"type":"string"}},"required":["code","message"],"type":"object"},"NewPet":{"properties":{"name":{"type":"string"},"tag":{"type":"string"}},"required":["name"],"type":"object"},"Pet":{"allOf":[{"$ref":"#/components/schemas/NewPet"},{"properties":{"id":{"format":"int64","type":"integer"}},"required":["id"],"type":"object"}]}}},"info":{"contact":{"email":"apiteam@swagger.io","name":"Swagger API Team","url":"http://swagger.io"},"description":"A sample API that uses a petstore as an example to demonstrate features in the OpenAPI 3.0 specification","license":{"name":"Apache 2.0","url":"https://www.apache.org/licenses/LICENSE-2.0.html"},"termsOfService":"http://swagger.io/terms/","title":"Swagger Petstore","version":"1.0.0"},"openapi":"3.0.0","paths":{"/pets":{"get":{"description":"Returns all pets from the system that the user has access to\nNam sed condimentum est. Maecenas tempor sagittis sapien, nec rhoncus sem sagittis sit amet. Aenean at gravida augue, ac iaculis sem. Curabitur odio lorem, ornare eget elementum nec, cursus id lectus. Duis mi turpis, pulvinar ac eros ac, tincidunt varius justo. In hac habitasse platea dictumst. Integer at adipiscing ante, a sagittis ligula. Aenean pharetra tempor ante molestie imperdiet. Vivamus id aliquam diam. Cras quis velit non tortor eleifend sagittis. Praesent at enim pharetra urna volutpat venenatis eget eget mauris. In eleifend fermentum facilisis. Praesent enim enim, gravida ac sodales sed, placerat id erat. Suspendisse lacus dolor, consectetur non augue vel, vehicula interdum libero. Morbi euismod sagittis libero sed lacinia.\nSed tempus felis lobortis leo pulvinar rutrum. Nam mattis velit nisl, eu condimentum ligula luctus nec. Phasellus semper velit eget aliquet faucibus. In a mattis elit. Phasellus vel urna viverra, condimentum lorem id, rhoncus nibh. Ut pellentesque posuere elementum. Sed a varius odio. Morbi rhoncus ligula libero, vel eleifend nunc tristique vitae. Fusce et sem dui. Aenean nec scelerisque tortor. Fusce malesuada accumsan magna vel tempus. Quisque mollis felis eu dolor tristique, sit amet auctor felis gravida. Sed libero lorem, molestie sed nisl in, accumsan tempor nisi. Fusce sollicitudin massa ut lacinia mattis. Sed vel eleifend lorem. Pellentesque vitae felis pretium, pulvinar elit eu, euismod sapien.\n","operationId":"findPets","parameters":[{"description":"tags to filter by","in":"query","name":"tags","required":false,"schema":{"items":{"type":"string"},"type":"array"},"style":"form"},{"description":"maximum number of results to return","in":"query","name":"limit","required":false,"schema":{"format":"int32","type":"integer"}}],"responses":{"200":{"content":{"application/json":{"schema":{"items":{"$ref":"#/components/schemas/Pet"},"type":"array"}}},"description":"pet response"},"default":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"}}},"description":"unexpected error"}}},"post":{"description":"Creates a new pet in the store. Duplicates are allowed","operationId":"addPet","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/NewPet"}}},"description":"Pet to add to the store","required":true},"responses":{"200":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Pet"}}},"description":"pet response"},"default":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"}}},"description":"unexpected error"}}}},"/pets/{id}":{"delete":{"description":"deletes a single pet based on the ID supplied","operationId":"deletePet","parameters":[{"description":"ID of pet to delete","in":"path","name":"id","required":true,"schema":{"format":"int64","type":"integer"}}],"responses":{"204":{"description":"pet deleted"},"default":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"}}},"description":"unexpected error"}}},"get":{"description":"Returns a user based on a single ID, if the user does not have access to the pet","operationId":"find pet by id","parameters":[{"description":"ID of pet to fetch","in":"path","name":"id","required":true,"schema":{"format":"int64","type":"integer"}}],"responses":{"200":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Pet"}}},"description":"pet response"},"default":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/Error"}}},"description":"unexpected error"}}}}},"servers":[{"url":"http://petstore.swagger.io/api"}]},
+    dom_id: '#swagger-ui',
+        deepLinking: true,
+        validatorUrl: null,
+        displayOperationId: true,
+        showCommonExtensions: true,
+        supportedSubmitMethods: [],
+        presets: [
+      SwaggerUIBundle.presets.apis
+    ],
+        plugins: [
+    ],
+        layout: "BaseLayout"
+  });
+    window.ui = ui
+  }
+</script>
+
+</div>
+	<div class="">
+<hr>
+<div class="u-coral-pullRight">
+  <coral-icon icon="GitHub" title="GitHub"></coral-icon> Last modified February 28, 2020: <a class="coral-Link" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/commit/4d4d03d2f0e99eb6e7f1eb4887a3bde2fd6b0f14">add support for rendering APIs in OpenAPI specification (#8) (4d4d03d)</a>
+</div>
+</div>
+</div>
+
+
+        </main>
+        <div class="u-coral-margin"><br/></div>
+      </div>
+      <div style="grid-column: 11/12;">
+        
+          
+<div class="u-coral-margin">
+
+
+
+
+
+
+<coral-anchorlist style="max-width:90%">
+
+<a is="coral-anchorlist-item" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/edit/master/content/content/docs/openapi/petstore.md" icon="edit" target="_blank">Edit this page</a>
+</coral-anchorlist>
+
+
+
+
+  
+    
+      <h3 class="coral-Heading--3">Table of contents</h3>
+      
+      
+      <nav id="TableOfContents"></nav>
+    
+  
+
+</div>
+
+        
+      </div>
+    </div>
+  </coral-shell-content>
+</coral-shell>
+</body>
+</html>
