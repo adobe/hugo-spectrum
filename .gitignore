@@ -1,3 +1,4 @@
 resources/_gen/
 site-pages
 .idea
+exampleSite/build/

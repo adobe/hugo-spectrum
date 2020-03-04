@@ -1,21 +1,13 @@
 #!/usr/bin/env sh
 #
+# Copyright 2020 Adobe
+# All Rights Reserved.
 #
-#    ADOBE CONFIDENTIAL
-#    ___________________
-#
-#    Copyright 2020 Adobe Systems Incorporated
-#    All Rights Reserved.
-#
-#    NOTICE:  All information contained herein is, and remains
-#    the property of Adobe Systems Incorporated and its suppliers,
-#    if any.  The intellectual and technical concepts contained
-#    herein are proprietary to Adobe Systems Incorporated and its
-#    suppliers and are protected by all applicable intellectual property
-#    laws, including trade secret and copyright laws.
-#    Dissemination of this information or reproduction of this material
-#    is strictly forbidden unless prior written permission is obtained
-#    from Adobe Systems Incorporated.
+# NOTICE: Adobe permits you to use, modify, and distribute this file in
+# accordance with the terms of the Adobe license agreement accompanying
+# it. If you have received this file from a source other than Adobe,
+# then your use, modification, or distribution of it requires the prior
+# written permission of Adobe.
 #
 
 set -e
@@ -28,13 +20,7 @@ git clone --single-branch --branch gh-pages git@git.corp.adobe.com:reef/hugo-spe
 # Remove previous version - will be regenerated
 rm -rf site-pages/*
 
-
-docker run --rm \
--v "`pwd`":/src \
--v "`pwd`/site-pages":/target \
-klakegg/hugo:0.64.1-ext \
---source="/src/exampleSite" \
---destination="/target" --ignoreCache
+hugo -v --source="$PWD/exampleSite" --destination="$PWD/site-pages" --ignoreCache
 
 cd site-pages
 git add . -f --all
@@ -47,4 +33,5 @@ else
   git push origin gh-pages
 fi
 
+cd ..
 rm -rf site-pages

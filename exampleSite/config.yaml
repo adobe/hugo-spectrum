@@ -1,20 +1,12 @@
 #
+# Copyright 2020 Adobe
+# All Rights Reserved.
 #
-#    ADOBE CONFIDENTIAL
-#    ___________________
-#
-#    Copyright 2020 Adobe Systems Incorporated
-#    All Rights Reserved.
-#
-#    NOTICE:  All information contained herein is, and remains
-#    the property of Adobe Systems Incorporated and its suppliers,
-#    if any.  The intellectual and technical concepts contained
-#    herein are proprietary to Adobe Systems Incorporated and its
-#    suppliers and are protected by all applicable intellectual property
-#    laws, including trade secret and copyright laws.
-#    Dissemination of this information or reproduction of this material
-#    is strictly forbidden unless prior written permission is obtained
-#    from Adobe Systems Incorporated.
+# NOTICE: Adobe permits you to use, modify, and distribute this file in
+# accordance with the terms of the Adobe license agreement accompanying
+# it. If you have received this file from a source other than Adobe,
+# then your use, modification, or distribution of it requires the prior
+# written permission of Adobe.
 #
 
 baseURL: "https://git.corp.adobe.com/pages/reef/hugo-spectrum"
@@ -23,13 +15,13 @@ params:
   ui:
     sidebar_menu_compact: true
   fuseSearch: true
-  github_repo: "https://git.corp.adobe.com/pages/reef/hugo-spectrum"
+  github_repo: "https://git.corp.adobe.com/reef/hugo-spectrum"
   github_subdir: "content"
 outputs:
   home:
     - json
     - html
-theme: "hugo-spectrum"
+theme: "git.corp.adobe.com/reef/hugo-spectrum"
 enableGitInfo: true
 canonifyURLs: true
 metaDataFormat: "yaml"
