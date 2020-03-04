@@ -9,7 +9,7 @@
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
-<title>Arch Page 1 | Adobe Spectrum Hugo Demo</title>
+<title>Programming | Adobe Spectrum Hugo Demo</title>
 
 <link rel="stylesheet" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/css/coral.min.css">
 <link rel="stylesheet" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/css/spectrum-css-grid.css">
@@ -47,7 +47,7 @@
 
 <link rel="shortcut icon" type="image/x-icon" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/favicons/favicon.ico">
 
-  <title>Arch Page 1 | Adobe Spectrum Hugo Demo</title>
+  <title>Programming | Adobe Spectrum Hugo Demo</title>
 </head>
 <body class="coral--lightest">
 <coral-shell>
@@ -237,7 +237,7 @@
     
     
     
-        <a is="coral-sidenav-item"  selected href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/architecture/demo/">Arch Page 1</a>
+        <a is="coral-sidenav-item"  href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/architecture/demo/">Arch Page 1</a>
     
     
     
@@ -343,7 +343,7 @@
     
     
     
-        <a is="coral-sidenav-item"  href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/highlighting/programming/">Programming</a>
+        <a is="coral-sidenav-item"  selected href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/highlighting/programming/">Programming</a>
     
     
     
@@ -371,7 +371,7 @@
 
 <div>
 	
-	<h1 class="coral-Heading--1">Arch Page 1</h1>
+	<h1 class="coral-Heading--1">Programming</h1>
 	
 	
 
@@ -380,12 +380,7 @@
     
     
     
-    <coral-tag><a class="coral-Link" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/tags/docs/">docs</a></coral-tag>
-    
-    
-    
-    
-    <coral-tag><a class="coral-Link" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/tags/howto/">howto</a></coral-tag>
+    <coral-tag><a class="coral-Link" href="https://git.corp.adobe.com/pages/reef/hugo-spectrum/tags/highlight/">highlight</a></coral-tag>
     
     
   </coral-taglist>
@@ -395,14 +390,87 @@
 	
 	
 	
-	<div><h1 id="heading-1">Heading 1</h1>
-<h2 id="heading-2">Heading 2</h2>
-<h3 id="heading-3">Heading 3</h3>
+	<div><h2 id="kotlin-java">Kotlin, Java</h2>
+
+<coral-tabview>
+  <coral-tablist><coral-tab>Kotlin example</coral-tab><coral-tab>Java example</coral-tab></coral-tablist>
+  <coral-panelstack class="coral-Well u-coral-margin">
+<coral-panel><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt">
+<span style="color:#000;font-weight:bold">fun</span> <span style="color:#900;font-weight:bold">main</span>() {
+  println(<span style="color:#d14">&#34;Hello world!&#34;</span>)
+}
+</code></pre></div></coral-panel>
+
+
+<coral-panel><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+<span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">static</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">main</span><span style="color:#000;font-weight:bold">(</span>String<span style="color:#000;font-weight:bold">[]</span> args<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+  System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;Hello world&#34;</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div></coral-panel>
+
+</coral-panelstack>
+</coral-tabview>
+
+<h2 id="go-python">Go, Python</h2>
+
+<coral-tabview>
+  <coral-tablist><coral-tab>Go example</coral-tab><coral-tab>Python example</coral-tab></coral-tablist>
+  <coral-panelstack class="coral-Well u-coral-margin">
+<coral-panel><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+<span style="color:#000;font-weight:bold">func</span> <span style="color:#900;font-weight:bold">main</span>() {
+    fmt.<span style="color:#900;font-weight:bold">Println</span>(<span style="color:#d14">&#34;hello world&#34;</span>)
+}
+</code></pre></div></coral-panel>
+
+
+<coral-panel><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py3" data-lang="py3">
+<span style="color:#0086b3">print</span>(<span style="color:#d14">&#39;Hello, world!&#39;</span>)
+</code></pre></div></coral-panel>
+
+</coral-panelstack>
+</coral-tabview>
+
+<h2 id="c-c-c">C, C#, C++</h2>
+
+<coral-tabview>
+  <coral-tablist><coral-tab>C</coral-tab><coral-tab>C#</coral-tab><coral-tab>C&#43;&#43;</coral-tab></coral-tablist>
+  <coral-panelstack class="coral-Well u-coral-margin">
+<coral-panel><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">
+<span style="color:#999;font-weight:bold;font-style:italic">#include</span> <span style="color:#999;font-weight:bold;font-style:italic">&lt;stdio.h&gt;</span><span style="color:#999;font-weight:bold;font-style:italic">
+</span><span style="color:#999;font-weight:bold;font-style:italic"></span><span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">main</span>()
+{
+   printf(<span style="color:#d14">&#34;Hello World&#34;</span>);
+   <span style="color:#000;font-weight:bold">return</span> <span style="color:#099">0</span>;
+}
+</code></pre></div></coral-panel>
+
+
+<coral-panel><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">
+<span style="color:#000;font-weight:bold">static</span> <span style="color:#000;font-weight:bold">void</span> Main(<span style="color:#458;font-weight:bold">string</span>[] args) 
+{
+  Console.WriteLine(<span style="color:#d14">&#34;Hello, world!&#34;</span>);
+}
+</code></pre></div></coral-panel>
+
+
+<coral-panel><div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">
+ 
+<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">main</span>()
+{
+  std<span style="color:#000;font-weight:bold">::</span>cout <span style="color:#000;font-weight:bold">&lt;&lt;</span> <span style="color:#d14">&#34;Hello World!&#34;</span> <span style="color:#000;font-weight:bold">&lt;&lt;</span> std<span style="color:#000;font-weight:bold">::</span>endl;
+  <span style="color:#000;font-weight:bold">return</span> <span style="color:#099">0</span>;
+}
+</code></pre></div></coral-panel>
+
+
+</coral-panelstack>
+</coral-tabview>
+
 </div>
 	<div class="">
 <hr>
 <div class="u-coral-pullRight">
-  <coral-icon icon="GitHub" title="GitHub"></coral-icon> Last modified February 18, 2020: <a class="coral-Link" href="https://git.corp.adobe.com/reef/hugo-spectrum/commit/7eedf72176b491095a2c5d3c64a0e2621925fada">Added sample website (7eedf72)</a>
+  <coral-icon icon="GitHub" title="GitHub"></coral-icon> Last modified March 3, 2020: <a class="coral-Link" href="https://git.corp.adobe.com/reef/hugo-spectrum/commit/11e266b1d681aa1843314a20120a96fdb2436241">Code highlight (#10) (11e266b)</a>
 </div>
 </div>
 </div>
@@ -423,7 +491,7 @@
 
 <coral-anchorlist style="max-width:90%">
 
-<a is="coral-anchorlist-item" href="https://git.corp.adobe.com/reef/hugo-spectrum/edit/master/content/content/docs/architecture/demo.md" icon="edit" target="_blank">Edit this page</a>
+<a is="coral-anchorlist-item" href="https://git.corp.adobe.com/reef/hugo-spectrum/edit/master/content/content/docs/highlighting/programming.md" icon="edit" target="_blank">Edit this page</a>
 </coral-anchorlist>
 
 
@@ -436,13 +504,11 @@
       
       <nav id="TableOfContents">
   <ul>
-    <li><a class='coral-Link' href="#heading-1">Heading 1</a>
+    <li>
       <ul>
-        <li><a class='coral-Link' href="#heading-2">Heading 2</a>
-          <ul>
-            <li><a class='coral-Link' href="#heading-3">Heading 3</a></li>
-          </ul>
-        </li>
+        <li><a class='coral-Link' href="#kotlin-java">Kotlin, Java</a></li>
+        <li><a class='coral-Link' href="#go-python">Go, Python</a></li>
+        <li><a class='coral-Link' href="#c-c-c">C, C#, C++</a></li>
       </ul>
     </li>
   </ul>

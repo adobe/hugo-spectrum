@@ -73,6 +73,11 @@
   </url>
   
   <url>
+    <loc>https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/highlighting/</loc>
+    <lastmod>2020-03-03T20:00:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://git.corp.adobe.com/pages/reef/hugo-spectrum/tags/arch/</loc>
     <lastmod>2020-02-18T15:42:41+02:00</lastmod>
   </url>
@@ -94,6 +99,11 @@
   <url>
     <loc>https://git.corp.adobe.com/pages/reef/hugo-spectrum/</loc>
     <lastmod>2020-02-18T15:42:41+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/highlighting/json-yaml/</loc>
+    <lastmod>2020-03-03T20:00:00-05:00</lastmod>
   </url>
   
   <url>
@@ -124,6 +134,11 @@
   <url>
     <loc>https://git.corp.adobe.com/pages/reef/hugo-spectrum/tags/faq/</loc>
     <lastmod>2020-02-18T15:42:41+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://git.corp.adobe.com/pages/reef/hugo-spectrum/tags/highlight/</loc>
+    <lastmod>2020-03-03T20:00:00-05:00</lastmod>
   </url>
   
   <url>
@@ -169,6 +184,11 @@
   <url>
     <loc>https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/openapi/petstore/</loc>
     <lastmod>2020-02-28T17:12:44-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://git.corp.adobe.com/pages/reef/hugo-spectrum/docs/highlighting/programming/</loc>
+    <lastmod>2020-03-03T20:00:00-05:00</lastmod>
   </url>
   
   <url>
