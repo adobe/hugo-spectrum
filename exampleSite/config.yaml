@@ -9,19 +9,19 @@
 # written permission of Adobe.
 #
 
-baseURL: "https://git.corp.adobe.com/pages/reef/hugo-spectrum"
+baseURL: "https://opensource.adobe.com/hugo-spectrum"
 title: Adobe Spectrum Hugo Theme
 params:
   ui:
     sidebar_menu_compact: true
   fuseSearch: true
-  github_repo: "https://git.corp.adobe.com/reef/hugo-spectrum"
-  github_subdir: "content"
+  github_repo: "https://github.com/adobe/hugo-spectrum"
+  github_subdir: "exampleSite"
 outputs:
   home:
     - json
     - html
-theme: "git.corp.adobe.com/reef/hugo-spectrum"
+theme: "github.com/adobe/hugo-spectrum"
 enableGitInfo: true
 canonifyURLs: true
 metaDataFormat: "yaml"

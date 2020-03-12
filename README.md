@@ -18,7 +18,7 @@ Hugo theme using Adobe [coral-spectrum](https://opensource.adobe.com/coral-spect
 
 See [exampleSite](exampleSite/) for a sample docs website.
 
-A live demo is available at: https://git.corp.adobe.com/pages/reef/hugo-spectrum
+A live demo is available at: [https://opensource.adobe.com/hugo-spectrum/](https://opensource.adobe.com/hugo-spectrum/)
 
 
 # Maintainers Notice
@@ -94,19 +94,8 @@ git commit
 ```
 
 ## Update `exampleSite` demo site
-When updating hugo theme in this repository make sure you:
 
-1. Update the `exampleSite` theme version:
-    ```sh
-    cd exampleSite
-    git submodule update --remote --merge
-    git commit themes/hugo-spectrum -m "Updated theme in exampleSite"
-    git push
-    ```
-
-2. Generate and publish `exampleSite` in `gh-pages` branch
-
-    Run [publish-to-gh-pages.sh](publish-to-gh-pages.sh)
+Run [publish-to-gh-pages.sh](publish-to-gh-pages.sh)
 
 # Acknowledgments
 [Docsy](https://github.com/google/docsy) inspired layout for this theme.
