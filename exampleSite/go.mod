@@ -1,5 +1,5 @@
-module git.corp.adobe.com/reef/hugo-spectrum.git
+module github.com/adobe/hugo-spectrum.git
 
 go 1.13
 
-require git.corp.adobe.com/reef/hugo-spectrum v0.0.0-20200304010000-11e266b1d681 // indirect
+require github.com/adobe/hugo-spectrum v0.0.0-20200311210358-4f6e139556da // indirect
