@@ -14,6 +14,7 @@ title: Adobe Spectrum Hugo Theme
 params:
   ui:
     sidebar_menu_compact: true
+    navbar_disable: false
   fuseSearch: true
   github_repo: "https://github.com/adobe/hugo-spectrum"
   github_subdir: "exampleSite"
