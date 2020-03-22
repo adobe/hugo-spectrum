@@ -36,7 +36,7 @@ written permission of Adobe.
     
     {{ range $pages }}
     {{ if .IsPage }}
-    {{ $active := eq . $p }}
+    {{ $active := eq .Path $p.Path }}
         <a is="coral-sidenav-item" {{ if $active }} selected{{ end }} href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
     {{ else }}
     {{ template "section-tree-nav-section" (dict "page" $p "section" .) }}

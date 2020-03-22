@@ -1,5 +1,5 @@
-module github.com/adobe/hugo-spectrum.git
+module sample-site
 
 go 1.13
 
-require github.com/adobe/hugo-spectrum v0.0.0-20200311210358-4f6e139556da // indirect
+require github.com/adobe/hugo-spectrum v0.0.0-20200312195633-f46ada606c0a // indirect

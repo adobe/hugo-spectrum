@@ -12,6 +12,24 @@
      */-->
 Sample docs website using `hugo-spectrum` theme
 
+# Run locally
+
+```sh
+docker run --rm -i -t -p 1313:1313 --rm \
+     -v "`pwd`/..":/src \
+     -v `pwd`/..:/src/exampleSite/themes/hugo-spectrum \
+     amuraru/hugo:0.67.1 \
+     server -v \
+     --source /src/exampleSite \
+     --watch \
+     --buildDrafts \
+     --disableFastRender \
+     --noHTTPCache \
+     --enableGitInfo=false \
+     --cleanDestinationDir \
+     --forceSyncStatic \
+     --path-warnings
+```
 # Update theme to the latest version
 
 `hugo-spectrum` theme is added as hugo modules in [themes](themes) directory.

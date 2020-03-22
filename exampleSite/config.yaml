@@ -57,7 +57,7 @@ markup:
     endLevel: 3
     ordered: false
     startLevel: 1
-module:
-  mounts:
-  - source: content
-    target: content
+
+modules:
+  imports:
+  - path: "github.com/adobe/hugo-spectrum"
