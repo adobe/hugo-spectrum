@@ -12,7 +12,7 @@ written permission of Adobe.
 */}}
 <div class="u-coral-margin">
 {{ partial "page-meta-links.html" . }}
-{{ if not .Params.notoc }}
+{{ if and (not .Params.notoc) (gt (len .TableOfContents) 32)  }}
   {{ with .TableOfContents }}
     {{ if ge (len .) 2 }}
       <h3 class="coral-Heading--3">Table of contents</h3>
