@@ -1,0 +1,19 @@
+{{ define "leftPanel" }}&nbsp;{{ end }}
+{{ define "rightPanel" }}&nbsp;{{ end }}
+{{ define "main" }}
+
+
+<div style="text-align:center; font-size: 19px">
+    <h1 class="coral-Heading--1">{{.Title}}</h1>
+    <h2 class="coral-Heading--2">{{ .Params.subtitle }}</h2>
+    {{.Content}}
+</div>
+
+<div class="grid">
+    {{ range .Site.Sections }}
+    <div>
+    {{ .Render "summary"}}
+    </div>
+    {{ end }}
+</div>
+{{ end }}
