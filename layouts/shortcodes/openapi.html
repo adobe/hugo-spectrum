@@ -12,7 +12,7 @@ written permission of Adobe.
 Usage: `openapi apiFile="name of file here"`
 
 */}}
-{{- $spec := index .Site.Data (.Get "apiFile") -}}
+{{- $spec := index .Site.Data (split (.Get "apiFile") "/") -}}
 <div id="swagger-ui"></div>
 <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/swagger-ui.css">
 <style>.information-container, .scheme-container { display: none !important; }</style>
