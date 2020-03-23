@@ -17,9 +17,11 @@ written permission of Adobe.
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
 </head>
 <body class="coral--lightest">
+{{ if not .Site.Params.ui.navbar_disable }}
 <coral-shell>
   {{ partial "navbar.html" . }}
   <coral-shell-content>
+{{ end }}
     <div class="spectrum-grid fixed-grid-columns">
       <div style="grid-column: 1/2;">
         {{ block "leftPanel" . }}
@@ -41,7 +43,9 @@ written permission of Adobe.
         {{ end }}
       </div>
     </div>
+{{ if not .Params.nonavbar }}
   </coral-shell-content>
 </coral-shell>
+{{ end }}
 </body>
 </html>
