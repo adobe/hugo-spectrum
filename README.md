@@ -23,6 +23,28 @@ A live demo is available at: [https://opensource.adobe.com/hugo-spectrum/](https
 
 # Maintainers Notice
 
+## Test `exampleSite` using local theme
+
+Run the site using the local theme, i.e. `--theme hugo-spectrum`
+which is mapped to local theme folder and not github remote module.
+
+```sh
+docker run --rm -i -t -p 1313:1313 --rm \
+     -v "`pwd`":/src \
+     -v `pwd`:/src/exampleSite/themes/hugo-spectrum \
+     amuraru/hugo:0.67.1 \
+     server -v \
+     --source /src/exampleSite \
+     --theme hugo-spectrum \
+     --watch \
+     --buildDrafts \
+     --disableFastRender \
+     --noHTTPCache \
+     --enableGitInfo=false \
+     --cleanDestinationDir \
+     --path-warnings
+```
+
 ## Update `coral-spectrum` version
 
 This theme is using [adobe/coral-spectrum](https://github.com/adobe/coral-spectrum) Web Components.
