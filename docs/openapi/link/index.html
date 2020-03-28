@@ -50,6 +50,7 @@
   <title>Link Example | Adobe Spectrum Hugo Demo</title>
 </head>
 <body class="coral--lightest">
+
 <coral-shell>
   
 <coral-shell-header>
@@ -114,11 +115,11 @@
 </coral-shell-header>
 
   <coral-shell-content>
+
     <div class="spectrum-grid fixed-grid-columns">
       <div style="grid-column: 1/2;">
         
           
-
 
 
 
@@ -367,7 +368,6 @@
 
 
 
-
         
       </div>
       <div style="grid-column: 2/11;">
@@ -412,7 +412,7 @@
   window.onload = function() {
     
     const ui = SwaggerUIBundle({
-      spec:  null ,
+      spec: {"components":{"links":{"PullRequestMerge":{"operationId":"mergePullRequest","parameters":{"pid":"$response.body#/id","slug":"$response.body#/repository/slug","username":"$response.body#/author/username"}},"RepositoryPullRequests":{"operationId":"getPullRequestsByRepository","parameters":{"slug":"$response.body#/slug","username":"$response.body#/owner/username"}},"UserRepositories":{"operationId":"getRepositoriesByOwner","parameters":{"username":"$response.body#/username"}},"UserRepository":{"operationId":"getRepository","parameters":{"slug":"$response.body#/slug","username":"$response.body#/owner/username"}}},"schemas":{"pullrequest":{"properties":{"author":{"$ref":"#/components/schemas/user"},"id":{"type":"integer"},"repository":{"$ref":"#/components/schemas/repository"},"title":{"type":"string"}},"type":"object"},"repository":{"properties":{"owner":{"$ref":"#/components/schemas/user"},"slug":{"type":"string"}},"type":"object"},"user":{"properties":{"username":{"type":"string"},"uuid":{"type":"string"}},"type":"object"}}},"info":{"title":"Link Example","version":"1.0.0"},"openapi":"3.0.0","paths":{"/2.0/repositories/{username}":{"get":{"operationId":"getRepositoriesByOwner","parameters":[{"in":"path","name":"username","required":true,"schema":{"type":"string"}}],"responses":{"200":{"content":{"application/json":{"schema":{"items":{"$ref":"#/components/schemas/repository"},"type":"array"}}},"description":"repositories owned by the supplied user","links":{"userRepository":{"$ref":"#/components/links/UserRepository"}}}}}},"/2.0/repositories/{username}/{slug}":{"get":{"operationId":"getRepository","parameters":[{"in":"path","name":"username","required":true,"schema":{"type":"string"}},{"in":"path","name":"slug","required":true,"schema":{"type":"string"}}],"responses":{"200":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/repository"}}},"description":"The repository","links":{"repositoryPullRequests":{"$ref":"#/components/links/RepositoryPullRequests"}}}}}},"/2.0/repositories/{username}/{slug}/pullrequests":{"get":{"operationId":"getPullRequestsByRepository","parameters":[{"in":"path","name":"username","required":true,"schema":{"type":"string"}},{"in":"path","name":"slug","required":true,"schema":{"type":"string"}},{"in":"query","name":"state","schema":{"enum":["open","merged","declined"],"type":"string"}}],"responses":{"200":{"content":{"application/json":{"schema":{"items":{"$ref":"#/components/schemas/pullrequest"},"type":"array"}}},"description":"an array of pull request objects"}}}},"/2.0/repositories/{username}/{slug}/pullrequests/{pid}":{"get":{"operationId":"getPullRequestsById","parameters":[{"in":"path","name":"username","required":true,"schema":{"type":"string"}},{"in":"path","name":"slug","required":true,"schema":{"type":"string"}},{"in":"path","name":"pid","required":true,"schema":{"type":"string"}}],"responses":{"200":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/pullrequest"}}},"description":"a pull request object","links":{"pullRequestMerge":{"$ref":"#/components/links/PullRequestMerge"}}}}}},"/2.0/repositories/{username}/{slug}/pullrequests/{pid}/merge":{"post":{"operationId":"mergePullRequest","parameters":[{"in":"path","name":"username","required":true,"schema":{"type":"string"}},{"in":"path","name":"slug","required":true,"schema":{"type":"string"}},{"in":"path","name":"pid","required":true,"schema":{"type":"string"}}],"responses":{"204":{"description":"the PR was successfully merged"}}}},"/2.0/users/{username}":{"get":{"operationId":"getUserByName","parameters":[{"in":"path","name":"username","required":true,"schema":{"type":"string"}}],"responses":{"200":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/user"}}},"description":"The User","links":{"userRepositories":{"$ref":"#/components/links/UserRepositories"}}}}}}}},
     dom_id: '#swagger-ui',
         deepLinking: true,
         validatorUrl: null,
@@ -434,7 +434,7 @@
 	<div class="">
 <hr>
 <div class="u-coral-pullRight">
-  <coral-icon icon="GitHub" title="GitHub"></coral-icon> Last modified March 23, 2020: <a class="coral-Link" href="https://github.com/adobe/hugo-spectrum/commit/71be9c817f2ee13fa1f8c124808d4b95b3dcb86b">Add support for loading api file from data subfolder (#8) (71be9c8)</a>
+  <coral-icon icon="GitHub" title="GitHub"></coral-icon> Last modified March 23, 2020: <a class="coral-Link" href="https://github.com/adobe/hugo-spectrum/commit/34efc26810ec0d54fe728a1ac3bfbff0565f9b35">Add support for loading api file from data subfolder (#8) (34efc26)</a>
 </div>
 </div>
 </div>
@@ -461,21 +461,14 @@
 
 
 
-  
-    
-      <h3 class="coral-Heading--3">Table of contents</h3>
-      
-      
-      <nav id="TableOfContents"></nav>
-    
-  
-
 </div>
 
         
       </div>
     </div>
+
   </coral-shell-content>
 </coral-shell>
+
 </body>
 </html>

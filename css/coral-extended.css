@@ -52,3 +52,13 @@ fixed-grid-columns {
     --columns: 12;
     grid-column-start: 1;
 }
+
+.grid {
+    display: grid;
+    grid-gap: 130px;
+    grid-template-columns: repeat(auto-fit, minmax(386px, 1fr));
+}
+
+.grid>* {
+    height: 200px;
+}
