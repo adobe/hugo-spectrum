@@ -1,0 +1,12 @@
+<div class="flex align-center justify-between">      
+    <label for="menu-control">
+    <img src="{{ "resources/menu.svg" | relURL }}" class="book-icon" alt="Menu" />
+    </label>
+
+    <strong>{{ partial "title" . }}</strong>
+
+    <label for="toc-control">
+    <img src="{{ "resources/toc.svg" | relURL }}" class="book-icon" alt="Table of Contents" />
+    </label>
+</div>
+<input type="checkbox" class="hidden" id="toc-control" />

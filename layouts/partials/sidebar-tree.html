@@ -10,10 +10,11 @@ then your use, modification, or distribution of it requires the prior
 written permission of Adobe.
 
 */}}
-{{ if not .Site.Params.ui.sidebar_search_disable }}
-{{ partial "search-input.html" . }}
-{{ end }}
+
 <nav is="coral-sidenav" variant="multilevel" style="width:240px;">
+  {{ if not .Site.Params.ui.sidebar_search_disable }}
+    {{ partial "search-input.html" . }}
+  {{ end }}
   {{ template "section-tree-nav-section" (dict "page" . "section" .FirstSection)  }}
 </nav>
 

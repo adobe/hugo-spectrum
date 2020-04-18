@@ -11,11 +11,11 @@ written permission of Adobe.
 
 */}}
 <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/coral.min.css">
-<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/spectrum-css-grid.css">
 <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/codeblocks.css">
 <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/coral-extended.css">
 <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/markdeep.css">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/layout.css">
+
 {{ range .Site.Params.custom_css -}}
     <link rel="stylesheet" href="{{ . | absURL }}">
 {{- end }}
-

@@ -67,23 +67,6 @@ git commit
 ```
 See also https://opensource.adobe.com/coral-spectrum/dist/documentation/manual/manual.html#consuming for full details.
 
-## Update `spectrum-css-grid` version
-This theme is using [Spectrum CSS Grid](https://opensource.adobe.com/spectrum-css-grid/). 
-To upgrade `spectrum-css-grid` follow these steps:
-
-```sh
-set -e
-#get the package tarball url
-wget `npm view @adobe/spectrum-css-grid dist.tarball`
-tar xzvf spectrum-css-grid-*.tgz
-cp package/dist/spectrum-css-grid.css static/css/spectrum-css-grid.css
-rm -rf spectrum-css-grid-*.tgz package
-
-# commit to git
-git add .
-git commit
-```
-
 ## Update `mermaid` version
 This theme has support for [Mermaid](https://mermaid-js.github.io/mermaid/) diagrams. 
 To upgrade `mermaid` follow these steps:

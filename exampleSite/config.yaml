@@ -52,7 +52,7 @@ markup:
     lineNos: false
     lineNumbersInTable: true
     noClasses: true
-    style: "github"
+    style: "friendly"
     tabWidth: 4
   tableOfContents:
     endLevel: 3
@@ -61,4 +61,4 @@ markup:
 
 modules:
   imports:
-  - path: "github.com/adobe/hugo-spectrum"
+  - path: "github.com/adobe/hugo-spectrum/v1"
