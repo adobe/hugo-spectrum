@@ -18,11 +18,31 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id ipsum sed enim
 
 Integer placerat libero sit amet lorem egestas pulvinar. Proin maximus vestibulum ante, eget faucibus libero blandit ac. Maecenas imperdiet, turpis id euismod tempus, lectus purus consequat elit, ac dictum magna justo ullamcorper turpis. Ut dictum laoreet nibh, et malesuada tellus malesuada nec. Suspendisse nibh nisi, aliquet vel diam pretium, feugiat hendrerit risus. Proin sed sagittis nulla, vel feugiat dui. Cras mollis in sapien cursus egestas. Nullam vulputate ut arcu eget bibendum. Aliquam ligula mauris, placerat non mollis et, fringilla ac magna. Donec non est pellentesque, pellentesque dolor quis, tempor ipsum.
 
-## Alert
+## Hints
 
-{{< alert title="Note" variant="warning" >}}
+{{< alert title="Success" variant="success" >}}
 This is an alert box using Adobe Spectrum style.
 {{< /alert >}}
+
+{{< alert title="Info" variant="info" >}}
+This is an alert box using Adobe Spectrum style.
+{{< /alert >}}
+
+{{< alert title="Help" variant="help" >}}
+This is an alert box using Adobe Spectrum style.
+{{< /alert >}}
+
+
+{{< alert title="Warning" variant="warning" >}}
+This is an alert box using Adobe Spectrum style.
+{{< /alert >}}
+
+
+{{< alert title="Error" variant="error" >}}
+This is an alert box using Adobe Spectrum style.
+{{< /alert >}}
+
+
 
 
 ## Table

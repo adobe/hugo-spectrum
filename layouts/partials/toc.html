@@ -10,16 +10,16 @@ then your use, modification, or distribution of it requires the prior
 written permission of Adobe.
 
 */}}
-<div class="u-coral-margin">
-{{ partial "page-meta-links.html" . }}
+<div id="content">
 {{ if and (not .Params.notoc) (gt (len .TableOfContents) 32)  }}
   {{ with .TableOfContents }}
     {{ if ge (len .) 2 }}
-      <h3 class="coral-Heading--3">Table of contents</h3>
       {{ $tocContent := replace . "a href" "a class='coral-Link' href" }}
       
       {{ $tocContent | safeHTML }}
     {{ end }}
   {{ end }}
 {{ end }}
+
+{{ partial "page-meta-links.html" . }}
 </div>

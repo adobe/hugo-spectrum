@@ -18,34 +18,53 @@ written permission of Adobe.
 </head>
 <body class="coral--lightest">
 {{ if not .Site.Params.ui.navbar_disable }}
+<header>
 <coral-shell>
   {{ partial "navbar.html" . }}
-  <coral-shell-content>
-{{ end }}
-    <div class="spectrum-grid fixed-grid-columns">
-      <div style="grid-column: 1/2;">
-        {{ block "leftPanel" . }}
-          {{ partial "sidebar-tree.html" . }}
-        {{ end }}
-      </div>
-      <div style="grid-column: 2/11;">
-        <main role="main">
-          {{ block "main" . }}
-            {{ if not .Site.Params.ui.breadcrumb_disable }}{{ partial "breadcrumb.html" . }}{{ end }}
-            {{ .Render "content" }}
-          {{ end }}
-        </main>
-        <div class="u-coral-margin"><br/></div>
-      </div>
-      <div style="grid-column: 11/12;">
-        {{ block "rightPanel" . }}
-          {{ partial "toc.html" . }}
-        {{ end }}
-      </div>
-    </div>
-{{ if not .Params.nonavbar }}
-  </coral-shell-content>
 </coral-shell>
+</header>
 {{ end }}
+
+<input type="checkbox" class="hidden" id="menu-control" />
+<main class="container flex">
+  <!-- Left menu Content -->
+  <aside class="page-menu">
+    {{ template "leftPanel" . }}
+  </aside>
+  <div class="page-content">
+    <div class="page-header">
+      <!-- Mobile layout header -->
+      {{ template "mobileHeader" . }}
+      <aside class="hidden clearfix">
+        {{ template "rightPanel" . }}
+      </aside>
+    </div>
+    <!-- Page Content -->
+    <article>
+      {{ template "main" . }}
+    </article>
+    <label for="menu-control" class="hidden page-menu-overlay"></label>
+  </div>
+  <aside class="page-toc">
+    {{ template "rightPanel" . }} <!-- Table of Contents -->
+  </aside>
+</main>
 </body>
 </html>
+
+{{ define "leftPanel" }}
+  {{ partial "sidebar-tree.html" . }}
+{{ end }}
+
+{{ define "main" }}
+  {{ if not .Site.Params.ui.breadcrumb_disable }}{{ partial "breadcrumb.html" . }}{{ end }}
+  {{ .Render "content" }}
+{{ end }}
+
+{{ define "rightPanel" }}
+  {{ partial "toc.html" . }}
+{{ end }}
+
+{{ define "mobileHeader" }}
+  {{ partial "mobile-header.html" . }}
+{{ end }}

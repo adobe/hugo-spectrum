@@ -1,12 +1,10 @@
 ---
-title: User Guide Page 2
+title: Sample Page
 weight: 2
 tags:
   - docs
   - howto
-  - page2
 ---
-
 
 # Heading 1
 
