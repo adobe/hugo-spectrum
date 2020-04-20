@@ -17,6 +17,6 @@ written permission of Adobe.
 {{ end }}
 {{ with .Params.description }}<div class="coral-Well">{{ . | markdownify }}</div>{{ end }}
 {{ $content := replace .Content "<a href" "<a class='coral-Link' href" }}
-{{ $content := replace $content "[](TOC)" "" }}
+{{ $content := replaceRE "(?sm).+\\[\\]\\(TOC\\).+\\[\\]\\(TOC\\)" "" $content }}
 <div id="content" class="padding-top: 150px">{{ $content | safeHTML }}</div>
 <div class="">{{ partial "page-meta-lastmod.html" . }}</div>
