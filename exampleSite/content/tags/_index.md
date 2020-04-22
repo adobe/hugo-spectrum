@@ -6,3 +6,5 @@ menu:
     name: "Tags"
     weight: 40
 ---
+
+An index of all content keywords.
