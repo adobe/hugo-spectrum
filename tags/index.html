@@ -12,10 +12,10 @@
 <title>Tags | Adobe Spectrum Hugo Demo</title>
 
 <link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/coral.min.css">
-<link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/spectrum-css-grid.css">
 <link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/codeblocks.css">
 <link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/coral-extended.css">
 <link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/markdeep.css">
+<link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/layout.css">
 
 
 
@@ -51,6 +51,7 @@
 </head>
 <body class="coral--lightest">
 
+<header>
 <coral-shell>
   
 <coral-shell-header>
@@ -103,30 +104,55 @@
 		<coral-shell-menubar>
 			
 			
+			
 
-				
-
-<coral-search></coral-search>
-
+<coral-search placeholder="Search" variant="quiet"></coral-search>
 
 
 		</coral-shell-menubar>
 	</coral-shell-header-actions>
 </coral-shell-header>
 
-  <coral-shell-content>
+</coral-shell>
+</header>
 
-    <div class="spectrum-grid fixed-grid-columns">
-      <div style="grid-column: 1/2;">
+
+<input type="checkbox" class="hidden" id="menu-control" />
+<main class="container flex">
+  
+  <aside class="page-menu">
+    &nbsp;
+  </aside>
+  <div class="page-content">
+    <div class="page-header">
+      
+      
+  <div class="flex align-center justify-between">      
+    <label for="menu-control">
+    <img src="https://opensource.adobe.com/hugo-spectrum/resources/menu.svg" class="book-icon" alt="Menu" />
+    </label>
+
+    <strong>Tags</strong>
+
+    <label for="toc-control">
+    <img src="https://opensource.adobe.com/hugo-spectrum/resources/toc.svg" class="book-icon" alt="Table of Contents" />
+    </label>
+</div>
+<input type="checkbox" class="hidden" id="toc-control" />
+
+
+      <aside class="hidden clearfix">
         &nbsp;
-      </div>
-      <div style="grid-column: 2/11;">
-        <main role="main">
-          
+      </aside>
+    </div>
+    
+    <article>
+      
 <div class="">
   <h1 class="coral-Heading--1"><coral-icon icon="tags" size="S"></coral-icon> Tags</h1>
   
-  
+  <p>An index of all content keywords.</p>
+
   
   
     
@@ -180,6 +206,12 @@
     
       
         <h3 class="coral-Heading--3">
+          <a class="coral-Link" href="https://opensource.adobe.com/hugo-spectrum/tags/hugo/">hugo (1)</a>
+        </h3>
+      
+    
+      
+        <h3 class="coral-Heading--3">
           <a class="coral-Link" href="https://opensource.adobe.com/hugo-spectrum/tags/markdeep/">markdeep (1)</a>
         </h3>
       
@@ -198,13 +230,13 @@
     
       
         <h3 class="coral-Heading--3">
-          <a class="coral-Link" href="https://opensource.adobe.com/hugo-spectrum/tags/page1/">page1 (2)</a>
+          <a class="coral-Link" href="https://opensource.adobe.com/hugo-spectrum/tags/page1/">page1 (1)</a>
         </h3>
       
     
       
         <h3 class="coral-Heading--3">
-          <a class="coral-Link" href="https://opensource.adobe.com/hugo-spectrum/tags/page2/">page2 (2)</a>
+          <a class="coral-Link" href="https://opensource.adobe.com/hugo-spectrum/tags/page2/">page2 (1)</a>
         </h3>
       
     
@@ -231,21 +263,25 @@
   <div class="">
 <hr>
 <div class="u-coral-pullRight">
-  <coral-icon icon="GitHub" title="GitHub"></coral-icon> Last modified February 18, 2020: <a class="coral-Link" href="https://github.com/adobe/hugo-spectrum/commit/7eedf72176b491095a2c5d3c64a0e2621925fada">Added sample website (7eedf72)</a>
+  <coral-icon icon="GitHub" title="GitHub"></coral-icon> Last modified April 22, 2020: <a class="coral-Link" href="https://github.com/adobe/hugo-spectrum/commit/b3bde9ff7f497864a4116c959a329dfb93b8e5c2">Use theme version v1.1.0 in exampleSite (b3bde9f)</a>
 </div>
 </div>
 </div>
 
-        </main>
-        <div class="u-coral-margin"><br/></div>
-      </div>
-      <div style="grid-column: 11/12;">
-        &nbsp;
-      </div>
-    </div>
-
-  </coral-shell-content>
-</coral-shell>
-
+    </article>
+    <label for="menu-control" class="hidden page-menu-overlay"></label>
+  </div>
+  <aside class="page-toc">
+    &nbsp; 
+  </aside>
+</main>
 </body>
 </html>
+
+
+
+
+
+
+
+

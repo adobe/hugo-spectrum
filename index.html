@@ -13,10 +13,10 @@
 <title>Adobe Spectrum Hugo Demo</title>
 
 <link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/coral.min.css">
-<link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/spectrum-css-grid.css">
 <link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/codeblocks.css">
 <link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/coral-extended.css">
 <link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/markdeep.css">
+<link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/layout.css">
 
 
 
@@ -52,6 +52,7 @@
 </head>
 <body class="coral--lightest">
 
+<header>
 <coral-shell>
   
 <coral-shell-header>
@@ -104,26 +105,50 @@
 		<coral-shell-menubar>
 			
 			
+			
 
-				
-
-<coral-search></coral-search>
-
+<coral-search placeholder="Search" variant="quiet"></coral-search>
 
 
 		</coral-shell-menubar>
 	</coral-shell-header-actions>
 </coral-shell-header>
 
-  <coral-shell-content>
+</coral-shell>
+</header>
 
-    <div class="spectrum-grid fixed-grid-columns">
-      <div style="grid-column: 1/2;">
+
+<input type="checkbox" class="hidden" id="menu-control" />
+<main class="container flex">
+  
+  <aside class="page-menu">
+    &nbsp;
+  </aside>
+  <div class="page-content">
+    <div class="page-header">
+      
+      
+  <div class="flex align-center justify-between">      
+    <label for="menu-control">
+    <img src="https://opensource.adobe.com/hugo-spectrum/resources/menu.svg" class="book-icon" alt="Menu" />
+    </label>
+
+    <strong>Adobe Coral Spectrum</strong>
+
+    <label for="toc-control">
+    <img src="https://opensource.adobe.com/hugo-spectrum/resources/toc.svg" class="book-icon" alt="Table of Contents" />
+    </label>
+</div>
+<input type="checkbox" class="hidden" id="toc-control" />
+
+
+      <aside class="hidden clearfix">
         &nbsp;
-      </div>
-      <div style="grid-column: 2/11;">
-        <main role="main">
-          
+      </aside>
+    </div>
+    
+    <article>
+      
 
 
 <div style="text-align:center; font-size: 19px">
@@ -133,6 +158,7 @@
 </div>
 
 <div class="grid">
+    
     
     <div>
     <span style="text-align: center;">
@@ -150,6 +176,8 @@ Nullam vitae leo vehicula, hendrerit velit non, venenatis massa.</p>
 
     </div>
     
+    
+    
     <div>
     <span style="text-align: center;">
     <h3 class="coral-Heading--2">
@@ -165,18 +193,39 @@ It helps users to get a better understanding on what we are trying to accomplish
 
     </div>
     
+    
+    
+    <div>
+    <span style="text-align: center;">
+    <h3 class="coral-Heading--2">
+        <a class="coral-Link" href="https://opensource.adobe.com/hugo-spectrum/tags/">Tags</a>
+    </h3>
+</span>
+
+<span style="text-align: center;">
+<p>An index of all content keywords.</p>
+
+</span>
+
+    </div>
+    
+    
 </div>
 
-        </main>
-        <div class="u-coral-margin"><br/></div>
-      </div>
-      <div style="grid-column: 11/12;">
-        &nbsp;
-      </div>
-    </div>
-
-  </coral-shell-content>
-</coral-shell>
-
+    </article>
+    <label for="menu-control" class="hidden page-menu-overlay"></label>
+  </div>
+  <aside class="page-toc">
+    &nbsp; 
+  </aside>
+</main>
 </body>
 </html>
+
+
+
+
+
+
+
+

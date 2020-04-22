@@ -12,10 +12,10 @@
 <title>user-guide | Adobe Spectrum Hugo Demo</title>
 
 <link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/coral.min.css">
-<link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/spectrum-css-grid.css">
 <link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/codeblocks.css">
 <link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/coral-extended.css">
 <link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/markdeep.css">
+<link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/layout.css">
 
 
 
@@ -51,6 +51,7 @@
 </head>
 <body class="coral--lightest">
 
+<header>
 <coral-shell>
   
 <coral-shell-header>
@@ -103,47 +104,75 @@
 		<coral-shell-menubar>
 			
 			
+			
 
-				
-
-<coral-search></coral-search>
-
+<coral-search placeholder="Search" variant="quiet"></coral-search>
 
 
 		</coral-shell-menubar>
 	</coral-shell-header-actions>
 </coral-shell-header>
 
-  <coral-shell-content>
+</coral-shell>
+</header>
 
-    <div class="spectrum-grid fixed-grid-columns">
-      <div style="grid-column: 1/2;">
+
+<input type="checkbox" class="hidden" id="menu-control" />
+<main class="container flex">
+  
+  <aside class="page-menu">
+    &nbsp;
+  </aside>
+  <div class="page-content">
+    <div class="page-header">
+      
+      
+  <div class="flex align-center justify-between">      
+    <label for="menu-control">
+    <img src="https://opensource.adobe.com/hugo-spectrum/resources/menu.svg" class="book-icon" alt="Menu" />
+    </label>
+
+    <strong>user-guide</strong>
+
+    <label for="toc-control">
+    <img src="https://opensource.adobe.com/hugo-spectrum/resources/toc.svg" class="book-icon" alt="Table of Contents" />
+    </label>
+</div>
+<input type="checkbox" class="hidden" id="toc-control" />
+
+
+      <aside class="hidden clearfix">
         &nbsp;
-      </div>
-      <div style="grid-column: 2/11;">
-        <main role="main">
-          
+      </aside>
+    </div>
+    
+    <article>
+      
 <div class="">
   <h1 class="coral-Heading--1"><coral-icon icon="tag" size="S"></coral-icon> user-guide</h1>
   <ul>
     
-      <li><a class="coral-Link" href="https://opensource.adobe.com/hugo-spectrum/docs/user-guide/" icon="edit">Documentation - User Guide</a></li>
+      <li><a class="coral-Link" href="https://opensource.adobe.com/hugo-spectrum/docs/user-guide/hugo/" icon="edit">User Guide - Hugo Intro</a></li>
     
-      <li><a class="coral-Link" href="https://opensource.adobe.com/hugo-spectrum/docs/user-guide/page1/" icon="edit">User Guide - User Guide Page 1</a></li>
+      <li><a class="coral-Link" href="https://opensource.adobe.com/hugo-spectrum/docs/user-guide/" icon="edit">Documentation - User Guide</a></li>
     
   </ul>
 </div>
 
-        </main>
-        <div class="u-coral-margin"><br/></div>
-      </div>
-      <div style="grid-column: 11/12;">
-        &nbsp;
-      </div>
-    </div>
-
-  </coral-shell-content>
-</coral-shell>
-
+    </article>
+    <label for="menu-control" class="hidden page-menu-overlay"></label>
+  </div>
+  <aside class="page-toc">
+    &nbsp; 
+  </aside>
+</main>
 </body>
 </html>
+
+
+
+
+
+
+
+
