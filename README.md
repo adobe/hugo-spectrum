@@ -32,7 +32,7 @@ which is mapped to local theme folder and not github remote module.
 docker run --rm -i -t -p 1313:1313 --rm \
      -v "`pwd`":/src \
      -v `pwd`:/src/exampleSite/themes/hugo-spectrum \
-     amuraru/hugo:0.67.1 \
+     amuraru/hugo:0.74.3 \
      server -v \
      --source /src/exampleSite \
      --theme hugo-spectrum \
