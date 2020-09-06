@@ -2,5 +2,3 @@ resources/_gen/
 site-pages
 .idea
 exampleSite/build/
-exampleSite/go.sum
-exampleSite/go.mod
