@@ -16,10 +16,9 @@ var fuseOptions = {
   includeMatches: true,
   threshold: 0.01,
   tokenize:true,
-  location: 0,
-  distance: 100,
   maxPatternLength: 32,
   minMatchCharLength: 1,
+  ignoreLocation: true,
   keys: [
     {name:"title",weight:0.8},
     {name:"parent",weight:0.6},
