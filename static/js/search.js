@@ -19,7 +19,7 @@ var fuseOptions = {
   maxPatternLength: 32,
   minMatchCharLength: 1,
   ignoreLocation: true,
-  useExtendedSearch: true,
+  useExtendedSearch: false,
   keys: [
     {name:"title",weight:0.8},
     {name:"parent",weight:0.6},
