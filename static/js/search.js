@@ -14,17 +14,17 @@ summaryInclude=60;
 var fuseOptions = {
   shouldSort: true,
   includeMatches: true,
-  threshold: 0.01,
+  threshold: 0.35,
   tokenize:true,
-  maxPatternLength: 32,
+  maxPatternLength: 128,
   minMatchCharLength: 1,
   ignoreLocation: true,
   useExtendedSearch: false,
   keys: [
     {name:"title",weight:0.8},
     {name:"parent",weight:0.6},
+    {name:"tags",weight:0.6},
     {name:"contents",weight:0.5},
-    {name:"tags",weight:0.3},
     {name:"categories",weight:0.3}
   ]
 };
