@@ -12,7 +12,7 @@ written permission of Adobe.
 */}}
 <coral-shell-header>
 	<coral-shell-header-home>
-		<a is="coral-shell-homeanchor" icon="AdobeLogo" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+		<a is="coral-shell-homeanchor" icon="{{ .Site.Params.Spectrum.coralShellHomeAnchorIconID | default "AdobeLogo"}}" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
 	</coral-shell-header-home>
 	<coral-shell-header-content>
 		<coral-shell-workspaces>
