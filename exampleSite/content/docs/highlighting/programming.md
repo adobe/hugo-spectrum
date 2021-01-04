@@ -7,15 +7,31 @@ tags:
 ## Kotlin, Java
 {{< multi-highlight >}}
 {{< highlight-item title="Kotlin example" syntax="kt" >}}
-fun main() {
-  println("Hello world!")
+fun main(args: Array<String>) {
+
+    val first = 1.5f
+    val second = 2.0f
+
+    val product = first * second
+
+    println("The product is: $product")
 }
 {{</ highlight-item >}}
 
 {{< highlight-item title="Java example" syntax="java" >}}
-public static void main(String[] args) {
-  System.out.println("Hello world");
+public class MultiplyTwoNumbers {
+
+    public static void main(String[] args) {
+
+        float first = 1.5f;
+        float second = 2.0f;
+
+        float product = first * second;
+
+        System.out.println("The product is: " + product);
+    }
 }
+
 {{</ highlight-item >}}
 {{</multi-highlight>}}
 
