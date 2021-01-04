@@ -1,5 +1,5 @@
 ---
-title: Sample Page
+title: Developer Guide Page 1
 weight: 1
 tags:
   - docs
@@ -133,6 +133,26 @@ func main() {
 }
 ```
 
-## Heading 2
+## Support for raw html
 
-### Heading 3
+Including raw html in your page can be done using `unsafe-html` short-code.
+
+Here is an example:
+
+```
+{{</* unsafe-html */>}}
+<coral-switch checked="">Checked</coral-switch>
+<coral-wait></coral-wait>
+<button is="coral-button" icon="add">Button</button>
+{{</*/ unsafe-html */>}}
+
+```
+
+
+{{< unsafe-html >}}
+<coral-switch checked="">Checked</coral-switch>
+<coral-wait></coral-wait>
+<button is="coral-button" icon="add">Button</button>
+{{</ unsafe-html >}}
+
+See more Coral exampeles at https://opensource.adobe.com/coral-spectrum/examples/#detail
