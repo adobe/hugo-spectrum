@@ -168,7 +168,7 @@
     
     
     
-        <a is="coral-sidenav-item"  href="https://opensource.adobe.com/hugo-spectrum/docs/developer-guide/page1/">Sample Page</a>
+        <a is="coral-sidenav-item"  href="https://opensource.adobe.com/hugo-spectrum/docs/developer-guide/page1/">Developer Guide Page 1</a>
     
     
     
@@ -465,16 +465,32 @@
   <coral-tablist><coral-tab>Kotlin example</coral-tab><coral-tab>Java example</coral-tab></coral-tablist>
   <coral-panelstack class="coral-Well u-coral-margin">
 <coral-panel><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kt" data-lang="kt">
-<span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span>() {
-  println(<span style="color:#4070a0">&#34;Hello world!&#34;</span>)
+<span style="color:#007020;font-weight:bold">fun</span> <span style="color:#06287e">main</span>(args: Array&lt;String&gt;) {
+
+    <span style="color:#007020;font-weight:bold">val</span> first = <span style="color:#40a070">1.5f</span>
+    <span style="color:#007020;font-weight:bold">val</span> second = <span style="color:#40a070">2.0f</span>
+
+    <span style="color:#007020;font-weight:bold">val</span> product = first * second
+
+    println(<span style="color:#4070a0">&#34;The product is: $product&#34;</span>)
 }
 </code></pre></div></coral-panel>
 
 
 <coral-panel><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
-<span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
-  System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;Hello world&#34;</span><span style="color:#666">);</span>
+<span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">MultiplyTwoNumbers</span> <span style="color:#666">{</span>
+
+    <span style="color:#007020;font-weight:bold">public</span> <span style="color:#007020;font-weight:bold">static</span> <span style="color:#902000">void</span> <span style="color:#06287e">main</span><span style="color:#666">(</span>String<span style="color:#666">[]</span> args<span style="color:#666">)</span> <span style="color:#666">{</span>
+
+        <span style="color:#902000">float</span> first <span style="color:#666">=</span> 1<span style="color:#666">.</span><span style="color:#4070a0">5f</span><span style="color:#666">;</span>
+        <span style="color:#902000">float</span> second <span style="color:#666">=</span> 2<span style="color:#666">.</span><span style="color:#4070a0">0f</span><span style="color:#666">;</span>
+
+        <span style="color:#902000">float</span> product <span style="color:#666">=</span> first <span style="color:#666">*</span> second<span style="color:#666">;</span>
+
+        System<span style="color:#666">.</span><span style="color:#4070a0">out</span><span style="color:#666">.</span><span style="color:#4070a0">println</span><span style="color:#666">(</span><span style="color:#4070a0">&#34;The product is: &#34;</span> <span style="color:#666">+</span> product<span style="color:#666">);</span>
+    <span style="color:#666">}</span>
 <span style="color:#666">}</span>
+
 </code></pre></div></coral-panel>
 
 </coral-panelstack>
@@ -539,7 +555,7 @@
 <div class="">
 <hr>
 <div class="u-coral-pullRight">
-  <coral-icon icon="GitHub" title="GitHub"></coral-icon> Last modified March 3, 2020: <a class="coral-Link" href="https://github.com/adobe/hugo-spectrum/commit/11e266b1d681aa1843314a20120a96fdb2436241">Code highlight (#10) (11e266b)</a>
+  <coral-icon icon="GitHub" title="GitHub"></coral-icon> Last modified January 4, 2021: <a class="coral-Link" href="https://github.com/adobe/hugo-spectrum/commit/408cfd4df6f2e1c0fa6ba9dbcd6e6fe25ceaa796">Reduce font size and line height in code blocks (408cfd4)</a>
 </div>
 </div>
 

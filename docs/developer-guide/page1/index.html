@@ -9,7 +9,7 @@
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
-<title>Sample Page | Adobe Spectrum Hugo Demo</title>
+<title>Developer Guide Page 1 | Adobe Spectrum Hugo Demo</title>
 
 <link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/coral.min.css">
 <link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/codeblocks.css">
@@ -47,7 +47,7 @@
 
 <link rel="shortcut icon" type="image/x-icon" href="https://opensource.adobe.com/hugo-spectrum/favicons/favicon.ico">
 
-  <title>Sample Page | Adobe Spectrum Hugo Demo</title>
+  <title>Developer Guide Page 1 | Adobe Spectrum Hugo Demo</title>
 </head>
 <body class="coral--lightest">
 
@@ -168,7 +168,7 @@
     
     
     
-        <a is="coral-sidenav-item"  selected href="https://opensource.adobe.com/hugo-spectrum/docs/developer-guide/page1/">Sample Page</a>
+        <a is="coral-sidenav-item"  selected href="https://opensource.adobe.com/hugo-spectrum/docs/developer-guide/page1/">Developer Guide Page 1</a>
     
     
     
@@ -383,7 +383,7 @@
     <img src="https://opensource.adobe.com/hugo-spectrum/resources/menu.svg" class="book-icon" alt="Menu" />
     </label>
 
-    <strong>Sample Page</strong>
+    <strong>Developer Guide Page 1</strong>
 
     <label for="toc-control">
     <img src="https://opensource.adobe.com/hugo-spectrum/resources/toc.svg" class="book-icon" alt="Table of Contents" />
@@ -409,11 +409,7 @@
         <li><a class='coral-Link' href="#hints">Hints</a></li>
         <li><a class='coral-Link' href="#table">Table</a></li>
         <li><a class='coral-Link' href="#code">Code</a></li>
-        <li><a class='coral-Link' href="#heading-2">Heading 2</a>
-          <ul>
-            <li><a class='coral-Link' href="#heading-3">Heading 3</a></li>
-          </ul>
-        </li>
+        <li><a class='coral-Link' href="#support-for-raw-html">Support for raw html</a></li>
       </ul>
     </li>
   </ul>
@@ -470,7 +466,7 @@
 
 <span>&nbsp;</span>
 
-<h1 id="page-title" class="coral-Heading--1">Sample Page</h1>
+<h1 id="page-title" class="coral-Heading--1">Developer Guide Page 1</h1>
 
 
 
@@ -667,13 +663,31 @@
     <span style="color:#06287e">runFarm</span>(<span style="color:#40a070">4</span>)
     fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;done&#34;</span>)
 }
-</code></pre></div><h2 id="heading-2">Heading 2</h2>
-<h3 id="heading-3">Heading 3</h3>
+</code></pre></div><h2 id="support-for-raw-html">Support for raw html</h2>
+<p>Including raw html in your page can be done using <code>unsafe-html</code> short-code.</p>
+<p>Here is an example:</p>
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">{{&lt; unsafe-html &gt;}}
+&lt;coral-switch checked=&#34;&#34;&gt;Checked&lt;/coral-switch&gt;
+&lt;coral-wait&gt;&lt;/coral-wait&gt;
+&lt;button is=&#34;coral-button&#34; icon=&#34;add&#34;&gt;Button&lt;/button&gt;
+{{&lt;/ unsafe-html &gt;}}
+
+</code></pre></div>
+
+
+
+<coral-switch checked="">Checked</coral-switch>
+<coral-wait></coral-wait>
+<button is="coral-button" icon="add">Button</button>
+
+
+
+<p>See more Coral exampeles at <a class='coral-Link' href="https://opensource.adobe.com/coral-spectrum/examples/#detail">https://opensource.adobe.com/coral-spectrum/examples/#detail</a></p>
 </div>
 <div class="">
 <hr>
 <div class="u-coral-pullRight">
-  <coral-icon icon="GitHub" title="GitHub"></coral-icon> Last modified April 19, 2020: <a class="coral-Link" href="https://github.com/adobe/hugo-spectrum/commit/172fb52cb64adaec2583e8ee3dc8c43f339962e4">Mobile friendly version of the theme (172fb52)</a>
+  <coral-icon icon="GitHub" title="GitHub"></coral-icon> Last modified January 4, 2021: <a class="coral-Link" href="https://github.com/adobe/hugo-spectrum/commit/fb30c2e4c3d33f79f631c6bcd0717a95675ed63e">feat: add Unsafe HTML shortcode (fb30c2e)</a>
 </div>
 </div>
 
@@ -698,11 +712,7 @@
         <li><a class='coral-Link' href="#hints">Hints</a></li>
         <li><a class='coral-Link' href="#table">Table</a></li>
         <li><a class='coral-Link' href="#code">Code</a></li>
-        <li><a class='coral-Link' href="#heading-2">Heading 2</a>
-          <ul>
-            <li><a class='coral-Link' href="#heading-3">Heading 3</a></li>
-          </ul>
-        </li>
+        <li><a class='coral-Link' href="#support-for-raw-html">Support for raw html</a></li>
       </ul>
     </li>
   </ul>
