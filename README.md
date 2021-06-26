@@ -12,7 +12,7 @@
      */-->
 # Adobe Coral Spectrum hugo theme
 
-Hugo theme using Adobe [coral-spectrum](https://opensource.adobe.com/coral-spectrum/dist/documentation/) Web Components following Spectrum design patterns.
+Hugo theme using Adobe [coral-spectrum](https://opensource.adobe.com/coral-spectrum/documentation/) Web Components following Spectrum design patterns.
 
 # Usage
 
