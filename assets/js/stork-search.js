@@ -11,7 +11,7 @@
  *
  */
 const initPromise = stork.initialize("{{ .Site.BaseURL }}/stork/stork.wasm");
-const downloadPromise = stork.downloadIndex("site-search-index", "{{ .Site.BaseURL }}/stork/site-index.st");
+const downloadPromise = stork.downloadIndex("site-search-index", "{{ .Site.BaseURL }}/stork/site-index.st", {forceOverwrite: true});
 
 var searchQuery = param("q");
 if(searchQuery){
