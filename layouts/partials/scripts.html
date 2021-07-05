@@ -20,6 +20,7 @@ written permission of Adobe.
 {{ $js := $js | minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
 {{ end }}
+
 <script src="{{ .Site.BaseURL }}/js/coral.min.js" data-coral-icons="{{ .Site.BaseURL }}/resources/"></script>
 
 <script src="{{ .Site.BaseURL }}/js/mermaid.min.js" ></script>
@@ -27,5 +28,3 @@ written permission of Adobe.
 
 <script>window.markdeepOptions = {mode: 'script'};</script>
 <script src="{{ .Site.BaseURL }}/js/markdeep.min.js"></script>
-
-{{ partial "hooks/body-end.html" . }}

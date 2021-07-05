@@ -18,10 +18,15 @@ params:
   fuseSearch: true
   github_repo: "https://github.com/adobe/hugo-spectrum"
   github_subdir: "exampleSite"
+  searchType: "stork"
+outputFormats:
+  toml:
+    mediaType: "application/toml"
 outputs:
   home:
     - json
     - html
+    - toml
 theme: "github.com/adobe/hugo-spectrum"
 enableGitInfo: true
 canonifyURLs: true

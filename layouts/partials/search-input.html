@@ -10,6 +10,6 @@ then your use, modification, or distribution of it requires the prior
 written permission of Adobe.
 
 */}}
-{{ with .Site.Params.fuseSearch }}
-<coral-search placeholder="Search" variant="quiet"></coral-search>
+{{ with .Site.Params.searchType }}
+<coral-search id="search-query" placeholder="Search" variant="quiet"></coral-search>
 {{ end }}

@@ -16,13 +16,22 @@ written permission of Adobe.
 <section>
 	<div>
 		<h2 class="coral-Heading--2">{{ .Title }}</h2>
-		{{ with .Site.Params.fuseSearch }}
 		<div id="search-results">
 			<hr>
 		</div>
+
+		{{ if eq .Site.Params.searchType "fuse" }}
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.min.js"></script>
+		<script type="text/javascript" src="{{ $.Site.BaseURL }}/js/fuse-search.js"></script>
+		{{ end }}
+
+		{{ if eq .Site.Params.searchType "stork" }}
+		<script type="text/javascript" src="{{ $.Site.BaseURL }}/js/stork.js"></script>
+		{{ $jsStorkSearch := resources.Get "js/stork-search.js" | resources.ExecuteAsTemplate "js/stork-search.js" .Site.Home }}
+		<script type="text/javascript" src="{{ $jsStorkSearch.Permalink }}"> </script>
+		{{ end }}
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
-		<script type="text/javascript" src="{{ $.Site.BaseURL }}/js/search.js"></script>
 		<script id="search-result-template" type="text/x-js-template">
 			<div id="summary-${key}">
 				<h3 class="coral-Heading--3"><a class="coral-Link" href="${link}">${ isset parent }${parent}/${ end }${title}</a></h3>
@@ -31,7 +40,6 @@ written permission of Adobe.
 				${ isset categories }<p><b>Categories:</b> ${categories}</p>${ end }
 			</div>
 		</script>
-		{{ end }}
 	</div>
 </section>
 {{ end }}
