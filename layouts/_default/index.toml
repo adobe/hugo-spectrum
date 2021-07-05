@@ -1,0 +1,14 @@
+[input]
+
+{{ range site.RegularPages }}
+[[input.files]]
+url = "{{ .Permalink }}"
+title = "{{ .Title }}"
+filetype="Markdown"
+contents = """{{ replace .RawContent "\\" "" }}"""
+{{ with .Params.tags }}
+tags = '{{ delimit . ", " }}'
+{{ end }}
+parent = "{{ .CurrentSection.Title }}"
+{{ end }}
+

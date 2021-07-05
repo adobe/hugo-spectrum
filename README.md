@@ -29,20 +29,7 @@ Run the site using the local theme, i.e. `--theme hugo-spectrum`
 which is mapped to local theme folder and not github remote module.
 
 ```sh
-docker run --rm -i -t -p 1313:1313 --rm \
-     -v "`pwd`":/src \
-     -v `pwd`:/src/exampleSite/themes/hugo-spectrum \
-     ghcr.io/amuraru/hugo:v0.84.1 \
-     server -v \
-     --source /src/exampleSite \
-     --theme hugo-spectrum \
-     --watch \
-     --buildDrafts \
-     --disableFastRender \
-     --noHTTPCache \
-     --enableGitInfo=false \
-     --cleanDestinationDir \
-     --path-warnings
+./docs-local.sh
 ```
 
 ## Update `coral-spectrum` version
@@ -98,6 +85,21 @@ git add .
 git commit
 ```
 
+## Update `stork` version
+This theme has support for [Stork](https://stork-search.net) search. 
+To upgrade `Stork` follow these steps:
+
+```sh
+set -e
+
+# update version and run
+./download-stork.sh 
+
+# commit to git
+git add .
+git commit
+```
+
 ## Update `exampleSite` demo site
 
 Run [publish-to-gh-pages.sh](publish-to-gh-pages.sh)
@@ -113,6 +115,8 @@ Theme built with:
 * [Fusejs](https://fusejs.io/) a lightweight fuzzy-search in JavaScript
 * [Swagger UI](https://swagger.io/tools/swagger-ui/) UI for visualizing APIs written in [OpenAPI Specification](http://spec.openapis.org/oas/v3.0.3)
 * [klakegg/hugo](https://github.com/klakegg/docker-hugo) minimal Docker images for Hugo with batteries included
+* [Stork](https://stork-search.net/) Impossibly fast web search, made for static sites
+* [mark.js](https://markjs.io/) JavaScript keyword highlighter
 
 # Contributing
 
