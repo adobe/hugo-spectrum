@@ -26,7 +26,6 @@ if(searchQuery){
     $('#search-results').append("<p>Error on search: " + error + "</p>");
   })
 
-  //executeSearch(searchQuery);
 } else {
   $('#search-results').append("<p>Please enter a word or phrase above</p>");
 }

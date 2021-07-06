@@ -1,6 +1,6 @@
 ---
 title: Developer Guide
-weight: 1
+weight: 2
 tags:
     - arch
     - developer-guide
