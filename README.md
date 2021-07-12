@@ -100,12 +100,30 @@ git add .
 git commit
 ```
 
+## Update `KaTeX` version
+This theme has support for [MathJax](https://www.mathjax.org/) math typesetting.
+To upgrade `MathJax` follow these steps:
+
+```sh
+set -e
+#get the package tarball url
+wget `npm view mathjax dist.tarball`
+tar xzvf mathjax-*.tgz
+cp package/es5/tex-svg-full.js static/js/mathjax-tex-svg-full.js
+rm -rf mathjax-*.tgz package
+
+# commit to git
+git add .
+git commit
+```
+
 ## Update `exampleSite` demo site
 
 Run [publish-to-gh-pages.sh](publish-to-gh-pages.sh)
 
 # Acknowledgments
 [Docsy](https://github.com/google/docsy) inspired layout for this theme.
+[Overleaf](https://www.overleaf.com/) examples for LaTeX
 
 Theme built with:
 * [Spectrum CSS](https://opensource.adobe.com/spectrum-css/) open-source implementation of Spectrum, Adobe’s design system.
@@ -117,6 +135,7 @@ Theme built with:
 * [klakegg/hugo](https://github.com/klakegg/docker-hugo) minimal Docker images for Hugo with batteries included
 * [Stork](https://stork-search.net/) Impossibly fast web search, made for static sites
 * [mark.js](https://markjs.io/) JavaScript keyword highlighter
+* [MathJax](https://www.mathjax.org/) Beautiful and accessible math in all browsers
 
 # Contributing
 
