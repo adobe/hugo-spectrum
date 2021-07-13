@@ -5,7 +5,7 @@
   
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.84.1" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -32,6 +32,7 @@
 
 <script src="https://opensource.adobe.com/hugo-spectrum/js/main.min.085b691cb67831f5a7109053acce2c03212abdbbfce0c12db577213ab8f7409d.js" integrity="sha256-CFtpHLZ4MfWnEJBTrM4sAyEqvbv84MEttXchOrj3QJ0=" crossorigin="anonymous"></script>
 
+
 <script src="https://opensource.adobe.com/hugo-spectrum/js/coral.min.js" data-coral-icons="https://opensource.adobe.com/hugo-spectrum/resources/"></script>
 
 <script src="https://opensource.adobe.com/hugo-spectrum/js/mermaid.min.js" ></script>
@@ -39,9 +40,38 @@
 
 <script>window.markdeepOptions = {mode: 'script'};</script>
 <script src="https://opensource.adobe.com/hugo-spectrum/js/markdeep.min.js"></script>
-
-
-
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [              
+        ['\\(', '\\)']
+      ],
+      displayMath: [             
+        ['$$', '$$'],
+        ['\\[', '\\]']
+      ],
+      processEscapes: true,      
+      processEnvironments: true, 
+      processRefs: true,         
+      digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,
+      
+      tags: 'none',              
+      tagSide: 'right',          
+      tagIndent: '0.8em',        
+      useLabelIds: true,         
+      maxMacros: 1000,           
+      maxBuffer: 5 * 1024,       
+      baseURL:                   
+          (document.getElementsByTagName('base').length === 0) ? '' : String(document.location).replace(/#.*$/, ''),
+      formatError:               
+          (jax, err) => jax.formatError(err)
+    },
+    svg: {
+      fontCache: 'global'
+    },
+  };
+</script>
+<script src="https://opensource.adobe.com/hugo-spectrum/js/mathjax-tex-svg-full.js"></script>
 
 
 
@@ -106,7 +136,7 @@
 			
 			
 
-<coral-search placeholder="Search" variant="quiet"></coral-search>
+<coral-search id="search-query" placeholder="Search" variant="quiet"></coral-search>
 
 
 		</coral-shell-menubar>
@@ -191,6 +221,12 @@
     
       
     
+      
+    
+      
+    
+      
+    
   <div class="">
 <hr>
 <div class="u-coral-pullRight">
@@ -206,6 +242,8 @@
     &nbsp; 
   </aside>
 </main>
+
+
 </body>
 </html>
 

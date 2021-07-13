@@ -1,0 +1,1363 @@
+[input]
+
+
+[[input.files]]
+url = "https://opensource.adobe.com/hugo-spectrum/docs/developer-guide/page1/"
+title = "Developer Guide Page 1"
+filetype="Markdown"
+contents = """
+
+# Heading 1
+
+
+## Text Content
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id ipsum sed enim euismod lobortis. Pellentesque facilisis efficitur eros vel feugiat. Donec vitae placerat neque, et venenatis felis. Mauris ultrices rhoncus ante non molestie. Donec fringilla gravida interdum. Pellentesque iaculis dolor a nisl iaculis, nec elementum sem efficitur. Nulla sed ante ac dolor egestas semper. Aliquam eget ligula et neque tristique blandit. Suspendisse sit amet eleifend felis.
+
+
+Integer placerat libero sit amet lorem egestas pulvinar. Proin maximus vestibulum ante, eget faucibus libero blandit ac. Maecenas imperdiet, turpis id euismod tempus, lectus purus consequat elit, ac dictum magna justo ullamcorper turpis. Ut dictum laoreet nibh, et malesuada tellus malesuada nec. Suspendisse nibh nisi, aliquet vel diam pretium, feugiat hendrerit risus. Proin sed sagittis nulla, vel feugiat dui. Cras mollis in sapien cursus egestas. Nullam vulputate ut arcu eget bibendum. Aliquam ligula mauris, placerat non mollis et, fringilla ac magna. Donec non est pellentesque, pellentesque dolor quis, tempor ipsum.
+
+## Hints
+
+{{&lt; alert title=&#34;Success&#34; variant=&#34;success&#34; &gt;}}
+This is an alert box using Adobe Spectrum style.
+{{&lt; /alert &gt;}}
+
+{{&lt; alert title=&#34;Info&#34; variant=&#34;info&#34; &gt;}}
+This is an alert box using Adobe Spectrum style.
+{{&lt; /alert &gt;}}
+
+{{&lt; alert title=&#34;Help&#34; variant=&#34;help&#34; &gt;}}
+This is an alert box using Adobe Spectrum style.
+{{&lt; /alert &gt;}}
+
+
+{{&lt; alert title=&#34;Warning&#34; variant=&#34;warning&#34; &gt;}}
+This is an alert box using Adobe Spectrum style.
+{{&lt; /alert &gt;}}
+
+
+{{&lt; alert title=&#34;Error&#34; variant=&#34;error&#34; &gt;}}
+This is an alert box using Adobe Spectrum style.
+{{&lt; /alert &gt;}}
+
+
+
+
+## Table
+
+{{&lt; table &gt;}}
+| Col1    | Col2  | Col3 |
+| ------- | ------| -----| 
+| 8       | 10    | 50   |
+| 8       | 10    | 500  |
+| 8       | 10    | 50   |
+| 8       | 10    | 500  |
+| 8       | 10    | 50   |
+| 8       | 10    | 500  |
+{{&lt; /table &gt;}}
+
+## Code
+
+```go
+package main
+
+import (
+    &#34;fmt&#34;
+    &#34;math/rand&#34;
+    &#34;time&#34;
+)
+
+type Moo struct {
+    Cow   int
+    Sound string
+    Tube  chan bool
+}
+
+// A cow will moo until it is being milked
+func cow(num int, mootube chan Moo) {
+    tube := make(chan bool)
+    for {
+        select {
+        case mootube &lt;- Moo{num, &#34;moo&#34;, tube}:
+            fmt.Println(&#34;Cow number&#34;, num, &#34;mooed through the mootube&#34;)
+            &lt;-tube
+            fmt.Println(&#34;Cow number&#34;, num, &#34;is being milked and stops mooing&#34;)
+            mootube &lt;- Moo{num, &#34;mooh&#34;, nil}
+            fmt.Println(&#34;Cow number&#34;, num, &#34;moos one last time in relief&#34;)
+            return
+        default:
+            fmt.Println(&#34;Cow number&#34;, num, &#34;mooed through the mootube and was ignored&#34;)
+            time.Sleep(time.Duration(rand.Int31n(1000)) * time.Millisecond)
+        }
+    }
+}
+
+// The farmer wants to turn on all the milktubes to stop the mooing
+func farmer(numcows int, mootube chan Moo, farmertube chan string) {
+    fmt.Println(&#34;Farmer starts listening to the mootube&#34;)
+    for unrelievedCows := numcows; unrelievedCows &gt; 0; {
+        moo := &lt;-mootube
+        if moo.Sound == &#34;mooh&#34; {
+            fmt.Println(&#34;Farmer heard a moo of relief from cow number&#34;, moo.Cow)
+            unrelievedCows--
+        } else {
+            fmt.Println(&#34;Farmer heard a&#34;, moo.Sound, &#34;from cow number&#34;, moo.Cow)
+            time.Sleep(2e9)
+            fmt.Println(&#34;Farmer starts the milking machine on cow number&#34;, moo.Cow)
+            moo.Tube &lt;- true
+        }
+    }
+    fmt.Println(&#34;Farmer doesn&#39;t hear a single moo anymore. All done!&#34;)
+    farmertube &lt;- &#34;yey!&#34;
+}
+
+// The farm starts out with mooing cows that wants to be milked
+func runFarm(numcows int) {
+    farmertube := make(chan string)
+    mootube := make(chan Moo)
+    for cownum := 0; cownum &lt; numcows; cownum&#43;&#43; {
+        go cow(cownum, mootube)
+    }
+    go farmer(numcows, mootube, farmertube)
+    farmerSaid := &lt;-farmertube
+    if farmerSaid == &#34;yey!&#34; {
+        fmt.Println(&#34;All cows are happy.&#34;)
+    }
+}
+
+func main() {
+    runFarm(4)
+    fmt.Println(&#34;done&#34;)
+}
+```
+
+## Support for raw html
+
+Including raw html in your page can be done using `unsafe-html` short-code.
+
+Here is an example:
+
+```
+{{&lt;/* unsafe-html */&gt;}}
+&lt;coral-switch checked=&#34;&#34;&gt;Checked&lt;/coral-switch&gt;
+&lt;coral-wait&gt;&lt;/coral-wait&gt;
+&lt;button is=&#34;coral-button&#34; icon=&#34;add&#34;&gt;Button&lt;/button&gt;
+{{&lt;/*/ unsafe-html */&gt;}}
+
+```
+
+
+{{&lt; unsafe-html &gt;}}
+&lt;coral-switch checked=&#34;&#34;&gt;Checked&lt;/coral-switch&gt;
+&lt;coral-wait&gt;&lt;/coral-wait&gt;
+&lt;button is=&#34;coral-button&#34; icon=&#34;add&#34;&gt;Button&lt;/button&gt;
+{{&lt;/ unsafe-html &gt;}}
+
+See more Coral exampeles at https://opensource.adobe.com/coral-spectrum/examples/#detail
+"""
+
+tags = 'docs, howto, page1'
+
+parent = "Developer Guide"
+
+[[input.files]]
+url = "https://opensource.adobe.com/hugo-spectrum/faq/faq1/"
+title = "FAQ Page 1"
+filetype="Markdown"
+contents = """
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+"""
+
+tags = 'docs, howto'
+
+parent = "FAQ"
+
+[[input.files]]
+url = "https://opensource.adobe.com/hugo-spectrum/faq/section1/faq1-1/"
+title = "FAQ Page 1.1"
+filetype="Markdown"
+contents = """
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+"""
+
+tags = 'faq'
+
+parent = "FAQ Section 1"
+
+[[input.files]]
+url = "https://opensource.adobe.com/hugo-spectrum/docs/user-guide/hugo/"
+title = "Hugo Intro"
+filetype="Markdown"
+contents = """
+Hugo uses the excellent [Go][] [html/template][gohtmltemplate] library for
+its template engine. It is an extremely lightweight engine that provides a very
+small amount of logic. In our experience that it is just the right amount of
+logic to be able to create a good static website. If you have used other
+template systems from different languages or frameworks you will find a lot of
+similarities in Go templates.
+
+This document is a brief primer on using Go templates. The [Go docs][gohtmltemplate]
+provide more details.
+
+# Introduction to Go Templates
+
+Go templates provide an extremely simple template language. It adheres to the
+belief that only the most basic of logic belongs in the template or view layer.
+One consequence of this simplicity is that Go templates parse very quickly.
+
+A unique characteristic of Go templates is they are content aware. Variables and
+content will be sanitized depending on the context of where they are used. More
+details can be found in the [Go docs][gohtmltemplate].
+
+# Basic Syntax
+
+Golang templates are HTML files with the addition of variables and
+functions.
+
+**Go variables and functions are accessible within {{ }}**
+
+Accessing a predefined variable &#34;foo&#34;:
+
+    {{ foo }}
+
+**Parameters are separated using spaces**
+
+Calling the add function with input of 1, 2:
+
+    {{ add 1 2 }}
+
+**Methods and fields are accessed via dot notation**
+
+Accessing the Page Parameter &#34;bar&#34;
+
+    {{ .Params.bar }}
+
+**Parentheses can be used to group items together**
+
+    {{ if or (isset .Params &#34;alt&#34;) (isset .Params &#34;caption&#34;) }} Caption {{ end }}
+
+
+# Variables
+
+Each Go template has a struct (object) made available to it. In hugo each
+template is passed either a page or a node struct depending on which type of
+page you are rendering. More details are available on the
+[variables](/layout/variables) page.
+
+A variable is accessed by referencing the variable name.
+
+    &lt;title&gt;{{ .Title }}&lt;/title&gt;
+
+Variables can also be defined and referenced.
+
+    {{ $address := &#34;123 Main St.&#34;}}
+    {{ $address }}
+
+
+# Functions
+
+Go template ship with a few functions which provide basic functionality. The Go
+template system also provides a mechanism for applications to extend the
+available functions with their own. [Hugo template
+functions](/layout/functions) provide some additional functionality we believe
+are useful for building websites. Functions are called by using their name
+followed by the required parameters separated by spaces. Template
+functions cannot be added without recompiling hugo.
+
+**Example:**
+
+    {{ add 1 2 }}
+
+# Includes
+
+When including another template you will pass to it the data it will be
+able to access. To pass along the current context please remember to
+include a trailing dot. The templates location will always be starting at
+the /layout/ directory within Hugo.
+
+**Example:**
+
+    {{ template &#34;chrome/header.html&#34; . }}
+
+
+# Logic
+
+Go templates provide the most basic iteration and conditional logic.
+
+## Iteration
+
+Just like in Go, the Go templates make heavy use of range to iterate over
+a map, array or slice. The following are different examples of how to use
+range.
+
+**Example 1: Using Context**
+
+    {{ range array }}
+        {{ . }}
+    {{ end }}
+
+**Example 2: Declaring value variable name**
+
+    {{range $element := array}}
+        {{ $element }}
+    {{ end }}
+
+**Example 2: Declaring key and value variable name**
+
+    {{range $index, $element := array}}
+        {{ $index }}
+        {{ $element }}
+    {{ end }}
+
+## Conditionals
+
+If, else, with, or, &amp; and provide the framework for handling conditional
+logic in Go Templates. Like range, each statement is closed with `end`.
+
+
+Go Templates treat the following values as false:
+
+* false
+* 0
+* any array, slice, map, or string of length zero
+
+**Example 1: If**
+
+    {{ if isset .Params &#34;title&#34; }}&lt;h4&gt;{{ index .Params &#34;title&#34; }}&lt;/h4&gt;{{ end }}
+
+**Example 2: If -&gt; Else**
+
+    {{ if isset .Params &#34;alt&#34; }}
+        {{ index .Params &#34;alt&#34; }}
+    {{else}}
+        {{ index .Params &#34;caption&#34; }}
+    {{ end }}
+
+**Example 3: And &amp; Or**
+
+    {{ if and (or (isset .Params &#34;title&#34;) (isset .Params &#34;caption&#34;)) (isset .Params &#34;attr&#34;)}}
+
+**Example 4: With**
+
+An alternative way of writing &#34;if&#34; and then referencing the same value
+is to use &#34;with&#34; instead. With rebinds the context `.` within its scope,
+and skips the block if the variable is absent.
+
+The first example above could be simplified as:
+
+    {{ with .Params.title }}&lt;h4&gt;{{ . }}&lt;/h4&gt;{{ end }}
+
+**Example 5: If -&gt; Else If**
+
+    {{ if isset .Params &#34;alt&#34; }}
+        {{ index .Params &#34;alt&#34; }}
+    {{ else if isset .Params &#34;caption&#34; }}
+        {{ index .Params &#34;caption&#34; }}
+    {{ end }}
+
+# Pipes
+
+One of the most powerful components of Go templates is the ability to
+stack actions one after another. This is done by using pipes. Borrowed
+from unix pipes, the concept is simple, each pipeline&#39;s output becomes the
+input of the following pipe.
+
+Because of the very simple syntax of Go templates, the pipe is essential
+to being able to chain together function calls. One limitation of the
+pipes is that they only can work with a single value and that value
+becomes the last parameter of the next pipeline.
+
+A few simple examples should help convey how to use the pipe.
+
+**Example 1 :**
+
+    {{ if eq 1 1 }} Same {{ end }}
+
+is the same as
+
+    {{ eq 1 1 | if }} Same {{ end }}
+
+It does look odd to place the if at the end, but it does provide a good
+illustration of how to use the pipes.
+
+**Example 2 :**
+
+    {{ index .Params &#34;disqus_url&#34; | html }}
+
+Access the page parameter called &#34;disqus_url&#34; and escape the HTML.
+
+**Example 3 :**
+
+    {{ if or (or (isset .Params &#34;title&#34;) (isset .Params &#34;caption&#34;)) (isset .Params &#34;attr&#34;)}}
+    Stuff Here
+    {{ end }}
+
+Could be rewritten as
+
+    {{  isset .Params &#34;caption&#34; | or isset .Params &#34;title&#34; | or isset .Params &#34;attr&#34; | if }}
+    Stuff Here
+    {{ end }}
+
+
+# Context (aka. the dot)
+
+The most easily overlooked concept to understand about Go templates is that {{ . }}
+always refers to the current context. In the top level of your template this
+will be the data set made available to it. Inside of a iteration it will have
+the value of the current item. When inside of a loop the context has changed. .
+will no longer refer to the data available to the entire page. If you need to
+access this from within the loop you will likely want to set it to a variable
+instead of depending on the context.
+
+**Example:**
+
+      {{ $title := .Site.Title }}
+      {{ range .Params.tags }}
+        &lt;li&gt; &lt;a href=&#34;{{ $baseurl }}/tags/{{ . | urlize }}&#34;&gt;{{ . }}&lt;/a&gt; - {{ $title }} &lt;/li&gt;
+      {{ end }}
+
+Notice how once we have entered the loop the value of {{ . }} has changed. We
+have defined a variable outside of the loop so we have access to it from within
+the loop.
+
+# Hugo Parameters
+
+Hugo provides the option of passing values to the template language
+through the site configuration (for sitewide values), or through the meta
+data of each specific piece of content. You can define any values of any
+type (supported by your front matter/config format) and use them however
+you want to inside of your templates.
+
+
+## Using Content (page) Parameters
+
+In each piece of content you can provide variables to be used by the
+templates. This happens in the [front matter](/content/front-matter).
+
+An example of this is used in this documentation site. Most of the pages
+benefit from having the table of contents provided. Sometimes the TOC just
+doesn&#39;t make a lot of sense. We&#39;ve defined a variable in our front matter
+of some pages to turn off the TOC from being displayed.
+
+Here is the example front matter:
+
+```
+---
+title: &#34;Permalinks&#34;
+date: &#34;2013-11-18&#34;
+aliases:
+  - &#34;/doc/permalinks/&#34;
+groups: [&#34;extras&#34;]
+groups_weight: 30
+notoc: true
+---
+```
+
+Here is the corresponding code inside of the template:
+
+      {{ if not .Params.notoc }}
+        &lt;div id=&#34;toc&#34; class=&#34;well col-md-4 col-sm-6&#34;&gt;
+        {{ .TableOfContents }}
+        &lt;/div&gt;
+      {{ end }}
+
+
+
+## Using Site (config) Parameters
+In your top-level configuration file (eg, `config.yaml`) you can define site
+parameters, which are values which will be available to you in chrome.
+
+For instance, you might declare:
+
+```yaml
+params:
+  CopyrightHTML: &#34;Copyright &amp;#xA9; 2013 John Doe. All Rights Reserved.&#34;
+  TwitterUser: &#34;spf13&#34;
+  SidebarRecentLimit: 5
+```
+
+Within a footer layout, you might then declare a `&lt;footer&gt;` which is only
+provided if the `CopyrightHTML` parameter is provided, and if it is given,
+you would declare it to be HTML-safe, so that the HTML entity is not escaped
+again.  This would let you easily update just your top-level config file each
+January 1st, instead of hunting through your templates.
+
+```
+{{if .Site.Params.CopyrightHTML}}&lt;footer&gt;
+&lt;div class=&#34;text-center&#34;&gt;{{.Site.Params.CopyrightHTML | safeHtml}}&lt;/div&gt;
+&lt;/footer&gt;{{end}}
+```
+
+An alternative way of writing the &#34;if&#34; and then referencing the same value
+is to use &#34;with&#34; instead. With rebinds the context `.` within its scope,
+and skips the block if the variable is absent:
+
+```
+{{with .Site.Params.TwitterUser}}&lt;span class=&#34;twitter&#34;&gt;
+&lt;a href=&#34;https://twitter.com/{{.}}&#34; rel=&#34;author&#34;&gt;
+&lt;img src=&#34;/images/twitter.png&#34; width=&#34;48&#34; height=&#34;48&#34; title=&#34;Twitter: {{.}}&#34;
+ alt=&#34;Twitter&#34;&gt;&lt;/a&gt;
+&lt;/span&gt;{{end}}
+```
+
+Finally, if you want to pull &#34;magic constants&#34; out of your layouts, you can do
+so, such as in this example:
+
+```
+&lt;nav class=&#34;recent&#34;&gt;
+  &lt;h1&gt;Recent Posts&lt;/h1&gt;
+  &lt;ul&gt;{{range first .Site.Params.SidebarRecentLimit .Site.Recent}}
+    &lt;li&gt;&lt;a href=&#34;{{.RelPermalink}}&#34;&gt;{{.Title}}&lt;/a&gt;&lt;/li&gt;
+  {{end}}&lt;/ul&gt;
+&lt;/nav&gt;
+```
+
+
+[go]: https://golang.org/
+[gohtmltemplate]: https://golang.org/pkg/html/template/
+"""
+
+tags = 'docs, user-guide, hugo, howto'
+
+parent = "User Guide"
+
+[[input.files]]
+url = "https://opensource.adobe.com/hugo-spectrum/docs/latex/math/"
+title = "Math"
+filetype="Markdown"
+contents = """Examples below are from [https://www.overleaf.com/learn](https://www.overleaf.com/learn)
+## Expressions
+
+The well known Pythagorean theorem (x^2 &#43; y^2 = z^2) was proved to be invalid for other exponents. 
+Meaning the next equation has no integer solutions:
+
+[ x^n &#43; y^n = z^n ]
+
+begin{equation}
+E=mc^2
+end{equation}
+
+**Greek letters** (alpha beta gamma rho sigma delta epsilon)
+
+**Binary operators** (times otimes oplus cup cap )
+
+**Relation operators**	(&lt; &gt; subset supset subseteq supseteq)
+
+**Others** ( int oint sum prod )
+
+## Subscripts and superscripts
+( a_1^2 &#43; a_2^2 = a_3^2 )
+
+( x^{2 alpha} - 1 = y_{ij} &#43; y_{ij}  )
+
+( sum_{i=1}^{infty} frac{1}{n^s}
+= prod_p frac{1}{1 - p^{-s}} )
+
+( sum_{i=1}^{infty} )
+
+( cup_{i=1}^n )
+
+( cap_{i=1}^n )
+
+## Brackets and Parentheses
+((x&#43;y) [x&#43;y] { x&#43;y } langle x &#43; y rangle |x&#43;y|  |x&#43;y| )
+
+(
+F = G left( frac{m_1 m_2}{r^2} right)
+)
+
+(
+left[  frac{ N } { left( frac{L}{p} right)  - (m&#43;n) }  right]
+)
+
+(
+begin{align*}
+y  = 1 &#43; &amp; left(  frac{1}{x} &#43; frac{1}{x^2} &#43; frac{1}{x^3} &#43; ldots right. 
+&amp;left. quad &#43; frac{1}{x^{n-1}} &#43; frac{1}{x^n} right)
+end{align*}
+)
+
+
+## Matrices
+(
+begin{matrix}
+1 &amp; 2 &amp; 3
+a &amp; b &amp; c
+end{matrix}
+)
+
+(
+begin{pmatrix}
+1 &amp; 2 &amp; 3
+a &amp; b &amp; c
+end{pmatrix}
+)
+
+(
+begin{bmatrix}
+1 &amp; 2 &amp; 3
+a &amp; b &amp; c
+end{bmatrix}
+)
+
+(
+begin{Bmatrix}
+1 &amp; 2 &amp; 3
+a &amp; b &amp; c
+end{Bmatrix}
+)
+
+(
+begin{vmatrix}
+1 &amp; 2 &amp; 3
+a &amp; b &amp; c
+end{vmatrix}
+)
+
+(
+begin{Vmatrix}
+1 &amp; 2 &amp; 3
+a &amp; b &amp; c
+end{Vmatrix}
+)
+
+## Fractions and Binomials
+( frac{1}{2} )
+
+( f(x)=frac{P(x)}{Q(x)}   textrm{and}
+  f(x)=textstylefrac{P(x)}{Q(x)} )
+
+(
+frac{1&#43;frac{a}{b}}{1&#43;frac{1}{1&#43;frac{1}{a}}}
+)
+
+(
+a_0&#43;cfrac{1}{a_1&#43;cfrac{1}{a_2&#43;cfrac{1}{a_3&#43;cdots}}}
+)
+
+(
+binom{n}{k} = frac{n!}{k!(n-k)!}
+)
+
+
+## Operators
+(
+sin(a &#43; b) = sin a cos b &#43; cos b sin a
+)
+
+(
+lim_{h to 0 } frac{f(x&#43;h)-f(x)}{h}
+)
+
+## Integrals, sums and limits
+(
+int_{a}^{b} x^2 ,dx
+)
+
+(
+iint_V mu(u,v) ,du,dv
+)
+
+(
+sum_{n=1}^{infty} 2^{-n} = 1
+)
+
+(
+prod_{i=a}^{b} f(i)
+)
+
+(
+lim_{xtoinfty} f(x)
+)
+
+(
+
+)
+
+&lt;p&gt;
+begin{align}
+dot{x} &amp;amp; = sigma(y-x) 
+dot{y} &amp;amp; = rho x - y - xz 
+dot{z} &amp;amp; = -beta z &#43; xy
+end{align}
+&lt;/p&gt;
+
+## The Cauchy-Schwarz Inequality
+&lt;p&gt;
+[
+left( sum_{k=1}^n a_k b_k right)^{!!2} leq
+ left( sum_{k=1}^n a_k^2 right) left( sum_{k=1}^n b_k^2 right)
+]
+&lt;/p&gt;
+
+## A Cross Product Formula
+
+&lt;p&gt;[
+  mathbf{V}_1 times mathbf{V}_2 =
+   begin{vmatrix}
+    mathbf{i} &amp;amp; mathbf{j} &amp;amp; mathbf{k} 
+    frac{partial X}{partial u} &amp;amp; frac{partial Y}{partial u} &amp;amp; 0 
+    frac{partial X}{partial v} &amp;amp; frac{partial Y}{partial v} &amp;amp; 0 
+   end{vmatrix}
+]&lt;/p&gt;
+
+## The probability of getting (k) heads when flipping (n) coins is:
+
+&lt;p&gt;[P(E) = {n choose k} p^k (1-p)^{ n-k} ]&lt;/p&gt;
+
+## An Identity of Ramanujan
+
+&lt;p&gt;[
+   frac{1}{(sqrt{phi sqrt{5}}-phi) e^{frac25 pi}} =
+     1&#43;frac{e^{-2pi}} {1&#43;frac{e^{-4pi}} {1&#43;frac{e^{-6pi}}
+      {1&#43;frac{e^{-8pi}} {1&#43;ldots} } } }
+]&lt;/p&gt;
+
+## A Rogers-Ramanujan Identity
+
+&lt;p&gt;[
+  1 &#43;  frac{q^2}{(1-q)}&#43;frac{q^6}{(1-q)(1-q^2)}&#43;cdots =
+    prod_{j=0}^{infty}frac{1}{(1-q^{5j&#43;2})(1-q^{5j&#43;3})},
+     quadquad text{for $|q| &amp;lt; 1$}.
+]&lt;/p&gt;
+
+## Maxwell&#39;s Equations
+
+&lt;p&gt;
+begin{align}
+  nabla times vec{mathbf{B}} -, frac1c, frac{partialvec{mathbf{E}}}{partial t} &amp;amp; = frac{4pi}{c}vec{mathbf{j}} 
+  nabla cdot vec{mathbf{E}} &amp;amp; = 4 pi rho 
+  nabla times vec{mathbf{E}}, &#43;, frac1c, frac{partialvec{mathbf{B}}}{partial t} &amp;amp; = vec{mathbf{0}} 
+  nabla cdot vec{mathbf{B}} &amp;amp; = 0
+end{align}
+&lt;/p&gt;
+
+## In-line Mathematics
+
+&lt;p&gt;Finally, while display equations look good for a page of samples, the
+ability to mix math and text in a paragraph is also important.  This
+expression (sqrt{3x-1}&#43;(1&#43;x)^2) is an example of an inline equation.  As
+you see, MathJax equations can be used this way as well, without unduly
+disturbing the spacing between lines.&lt;/p&gt;
+"""
+
+tags = 'math, latex'
+
+parent = "LaTeX"
+
+[[input.files]]
+url = "https://opensource.adobe.com/hugo-spectrum/docs/developer-guide/page2/"
+title = "Developer Guide Page 2"
+filetype="Markdown"
+contents = """
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+"""
+
+tags = 'docs, howto, page2'
+
+parent = "Developer Guide"
+
+[[input.files]]
+url = "https://opensource.adobe.com/hugo-spectrum/docs/latex/extensions/"
+title = "Extensions"
+filetype="Markdown"
+contents = """
+Full list of supported extensions [https://docs.mathjax.org/en/latest/input/tex/extensions/index.html](https://docs.mathjax.org/en/latest/input/tex/extensions/index.html)
+
+## Background colors
+
+(
+bbox[red]{x&#43;y}
+)
+
+## Bold symbols
+(boldsymbol {x &#43; y} )
+
+## Strikeout
+(cancel x bcancel x xcancel gamma )
+
+## Colors
+( {color{red} alpha} &#43; {color{blue} y} )"""
+
+tags = 'math, extensions'
+
+parent = "LaTeX"
+
+[[input.files]]
+url = "https://opensource.adobe.com/hugo-spectrum/faq/section1/faq1-2/"
+title = "FAQ Page 1.2"
+filetype="Markdown"
+contents = """
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+"""
+
+tags = 'faq'
+
+parent = "FAQ Section 1"
+
+[[input.files]]
+url = "https://opensource.adobe.com/hugo-spectrum/faq/faq2/"
+title = "FAQ Page 2"
+filetype="Markdown"
+contents = """
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+"""
+
+tags = 'docs, howto'
+
+parent = "FAQ"
+
+[[input.files]]
+url = "https://opensource.adobe.com/hugo-spectrum/docs/user-guide/sample/"
+title = "Sample Page"
+filetype="Markdown"
+contents = """
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+"""
+
+tags = 'docs, howto'
+
+parent = "User Guide"
+
+[[input.files]]
+url = "https://opensource.adobe.com/hugo-spectrum/docs/architecture/demo/"
+title = "Arch Page 1"
+filetype="Markdown"
+contents = """
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+"""
+
+tags = 'docs, howto'
+
+parent = "Architecture"
+
+[[input.files]]
+url = "https://opensource.adobe.com/hugo-spectrum/docs/highlighting/json-yaml/"
+title = "Data structures"
+filetype="Markdown"
+contents = """
+## JSON, XML
+{{&lt; multi-highlight &gt;}}
+{{&lt; highlight-item title=&#34;JSON&#34; syntax=&#34;json&#34; &gt;}}
+{ &#34;name&#34;: &#34;Alex&#34;, items: 23}
+{{&lt;/ highlight-item &gt;}}
+
+{{&lt; highlight-item title=&#34;XML&#34; syntax=&#34;xml&#34; &gt;}}
+&lt;node&gt;
+&lt;name&gt;Alex&lt;/name&gt;
+&lt;items&gt;3&lt;/items&gt;
+&lt;/node&gt;
+{{&lt;/ highlight-item &gt;}}
+{{&lt;/multi-highlight&gt;}}
+
+## YAML, Toml
+{{&lt; multi-highlight &gt;}}
+{{&lt; highlight-item title=&#34;Yaml&#34; syntax=&#34;yaml&#34; &gt;}}
+build:
+  useResourceCacheWhen: fallback
+{{&lt;/ highlight-item &gt;}}
+
+{{&lt; highlight-item title=&#34;Toml&#34; syntax=&#34;toml&#34; &gt;}}
+[build]
+  useResourceCacheWhen = &#34;fallback&#34;
+{{&lt;/ highlight-item &gt;}}
+{{&lt;/multi-highlight&gt;}}
+
+"""
+
+tags = 'highlight'
+
+parent = "Highlighting"
+
+[[input.files]]
+url = "https://opensource.adobe.com/hugo-spectrum/docs/openapi/link/"
+title = "Link Example"
+filetype="Markdown"
+contents = """Link Example displayed using Swagger UI.
+{{&lt; alert &gt;}}
+Data file is load from **data/apis** folder
+{{&lt;/ alert &gt;}}
+
+{{&lt; openapi apiFile=&#34;apis/link&#34; &gt;}}
+"""
+
+tags = 'openapi'
+
+parent = "Open API"
+
+[[input.files]]
+url = "https://opensource.adobe.com/hugo-spectrum/docs/diagrams/markdeep/"
+title = "Markdeep examples"
+filetype="Markdown"
+contents = """
+## Lines with decorations
+{{&lt; markdeep-diagram &gt;}}
+                ________                            o        *          *   .--------------.   
+   *---&#43;---.   |        |     o   o      |         ^                  /   |  .----------.  |  
+       |    |   &#39;--*   -&#43;-    |   |      v        /                  /    | |  &lt;------.  | |  
+       |     &#39;-----&gt;      .---(---&#39;  ---&gt;*&lt;---   /      .&#43;-&gt;*&lt;--o----&#39;     | |          | | |  
+   &lt;--&#39;  ^  ^             |   |                 |      | |  ^             |  &#39;--------&#39;  | |  
+          /        *-----&#39;   o     |&lt;-----&gt;|   &#39;-----&#39;  |__|     v         &#39;------------&#39;  |  
+          /                                                               *---------------&#39;   
+ ◌------○    ◍------●                                                                          
+{{&lt;/ markdeep-diagram &gt;}}
+
+## Overlaps and Intersections
+
+{{&lt; markdeep-diagram &gt;}}
+                                                                                               
+           .-.           .-.           .-.           .-.           .-.           .-.           
+          |   |         |   |         |   |         |   |         |   |         |   |          
+       .---------.   .--&#43;---&#43;--.   .--&#43;---&#43;--.   .--|   |--.   .--&#43;   &#43;--.   .------|--.       
+      |           | |           | |   |   |   | |   |   |   | |           | |   |   |   |      
+       &#39;---------&#39;   &#39;--&#43;---&#43;--&#39;   &#39;--&#43;---&#43;--&#39;   &#39;--|   |--&#39;   &#39;--&#43;   &#43;--&#39;   &#39;--|------&#39;       
+          |   |         |   |         |   |         |   |         |   |         |   |          
+           &#39;-&#39;           &#39;-&#39;           &#39;-&#39;           &#39;-&#39;           &#39;-&#39;           &#39;-&#39;           
+{{&lt;/ markdeep-diagram &gt;}}
+
+## Flow chart
+
+{{&lt; markdeep-diagram &gt;}}
+
+                                      . 
+   .---------.                       /                                                        
+  |   START   |                     /           .-&#43;-------&#43;-.      ___________                
+   &#39;----&#43;----&#39;    .-------.    A   /        B   | |COMPLEX| |     /                 .-.      
+        |        |   END   |&lt;-----&#43;CHOICE &#43;-----&gt;| |       | &#43;---&gt;&#43; PREPARATION &#43;---&gt;| X |     
+        v         &#39;-------&#39;             /       | |PROCESS| |     ___________/      &#39;-&#39;      
+    .---------.                        /        &#39;-&#43;---&#43;---&#43;-&#39;                                 
+   /  INPUT  /                        /                                                       
+  &#39;-----&#43;---&#39;                         &#39;                                                        
+        |                             ^                                                        
+        v                             |                                                        
+  .-----------.                 .-----&#43;-----.        .-.                                       
+  |  PROCESS  &#43;----------------&gt;|  PROCESS  |&lt;------&#43; X |                                      
+  &#39;-----------&#39;                 &#39;-----------&#39;        &#39;-&#39;                                    
+                                    
+{{&lt;/ markdeep-diagram &gt;}}
+
+## Simple plot diagram
+
+{{&lt; markdeep-diagram &gt;}}
+
+        ▲
+    Uin ┊   .------------------------
+        ┊   |                        
+        ┊   |                        
+        *---&#39;┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄▶
+              
+     Udc▲                          
+ Udc_OK ┊      .---------------------
+        ┊     /  :                   
+        ┊    /   :                   
+        *---&#39;┄┄┄┄:┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄▶
+                 :&lt;-----&gt;:           
+        ▲          500ms :           
+        ┊                :           
+Cpu.Qon ┊┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄.-----------
+        ┊                |  Inactive 
+        ┊    Active      |  
+        *----------------&#39;┄┄┄┄┄┄┄┄┄┄┄▶
+        
+
+{{&lt;/ markdeep-diagram &gt;}}
+
+## Line ends
+
+{{&lt; markdeep-diagram &gt;}}
+                                                                                               
+   o--o    *--o     /  /   *  o  o o o o   * * * *   o o o o   * * * *      o o o o   * * * *  
+   o--*    *--*    v  v   ^  ^   | | | |   | | | |                 / / / /   / / / /   
+   o--&gt;    *--&gt;   *  o   /  /    o * v &#39;   o * v &#39;     o * v    o * v   o * v /   o * v /    
+   o---    *---                                                                                
+                                 ^ ^ ^ ^   . . . .   ^ ^ ^ ^            ^ ^ ^ ^   / / / /  
+   |  |   *  o       *  o      | | | |   | | | |                 / / / /   / / / /   
+   v  v   ^  ^   v  v   ^  ^     o * v &#39;   o * v &#39;     o * v    o * v   o * v /   o * v /    
+   *  o   |  |    *  o                                                                       
+                                                                                               
+   &lt;--o   &lt;--*   &lt;--&gt;   &lt;---      ---o   ---*   ---&gt;   ----      *&lt;--   o&lt;--   --&gt;o   --&gt;*     
+                                                                                               
+{{&lt;/ markdeep-diagram &gt;}}
+
+## Small Grids
+
+{{&lt; markdeep-diagram &gt;}}
+       ___     ___      .---&#43;---&#43;---&#43;---&#43;---.     .---&#43;---&#43;---&#43;---.  .---.   .---.             
+   ___/   ___/        |   |   |   |   |   |    /  /  /  /  /   |   &#43;---&#43;   |             
+  /   ___/   ___/     &#43;---&#43;---&#43;---&#43;---&#43;---&#43;   &#43;---&#43;---&#43;---&#43;---&#43;    &#43;---&#43;   &#43;---&#43;             
+  ___/ b ___/        |   |   | b |   |   |     / a/ b/  /    |   &#43;---&#43;   |             
+  / a ___/   ___/     &#43;---&#43;---&#43;---&#43;---&#43;---&#43;     &#43;---&#43;---&#43;---&#43;---&#43;  &#43;---&#43; b &#43;---&#43;             
+  ___/   ___/        |   | a |   |   |   |    /  /  /  /  /   | a &#43;---&#43;   |             
+      ___/   ___/     &#39;---&#43;---&#43;---&#43;---&#43;---&#39;   &#39;---&#43;---&#43;---&#43;---&#39;    &#39;---&#39;   &#39;---&#39;             
+                                                                                               
+{{&lt;/ markdeep-diagram &gt;}}
+
+## Graphics Diagram
+
+{{&lt; markdeep-diagram &gt;}}
+                                                                             .                 
+    0       3                          P *              Eye /         ^     /                  
+     *-------*      &#43;y                                    &#43;)             /  Reflection       
+  1 /|    2 /|       ^                                                 v                    
+   *-------* |       |                v0           v3           --------*--------             
+   | |4    | |7      | ◄╮               *---------*                                          
+   | *-----|-*     ⤹ &#43;-----&gt; &#43;x        /      v X             .-.&lt;--------        o          
+   |/      |/       / ⤴               /        o             | / | Refraction    /          
+   *-------*       v                 /                        &#43;-&#39;               /            
+  5       6      &#43;z              v1 *------------------* v2    |                o-----o        
+                                                               v                               
+
+{{&lt;/ markdeep-diagram &gt;}}
+"""
+
+tags = 'diagram, markdeep'
+
+parent = "Diagrams"
+
+[[input.files]]
+url = "https://opensource.adobe.com/hugo-spectrum/docs/diagrams/mermaid/"
+title = "Mermaid examples"
+filetype="Markdown"
+contents = """
+# Graph
+```
+graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    A--&gt;D;
+```
+
+{{&lt; mermaid &gt;}}
+graph TD;
+    A--&gt;B;
+    A--&gt;C;
+    A--&gt;D;
+{{&lt;/ mermaid &gt;}}
+
+```
+graph LR
+    A[Hard edge] --&gt;|Link text| B(Round edge)
+    B --&gt; C{Decision}
+    C --&gt;|One| D[Result one]
+    C --&gt;|Two| E[Result two]
+```
+
+{{&lt; mermaid &gt;}}
+graph LR
+    A[Hard edge] --&gt;|Link text| B(Round edge)
+    B --&gt; C{Decision}
+    C --&gt;|One| D[Result one]
+    C --&gt;|Two| E[Result two]
+{{&lt;/ mermaid &gt;}}
+
+# Sequence diagram
+```
+sequenceDiagram
+    autonumber
+    Alice-&gt;&gt;John: Hello John, how are you?
+    loop Healthcheck
+        John-&gt;&gt;John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts!
+    John--&gt;&gt;Alice: Great!
+    John-&gt;&gt;Bob: How about you?
+    Bob--&gt;&gt;John: Jolly good!
+```
+
+{{&lt; mermaid &gt;}}
+sequenceDiagram
+    autonumber
+    Alice-&gt;&gt;John: Hello John, how are you?
+    loop Healthcheck
+        John-&gt;&gt;John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts!
+    John--&gt;&gt;Alice: Great!
+    John-&gt;&gt;Bob: How about you?
+    Bob--&gt;&gt;John: Jolly good!
+{{&lt;/ mermaid &gt;}}
+
+# Class diagram
+```
+classDiagram
+    Customer &#34;1&#34; --&gt; &#34;*&#34; Ticket
+    Student &#34;1&#34; --&gt; &#34;1..*&#34; Course
+    Galaxy --&gt; &#34;many&#34; Star : Contains
+```
+
+{{&lt; mermaid &gt;}}
+classDiagram
+    Customer &#34;1&#34; --&gt; &#34;*&#34; Ticket
+    Student &#34;1&#34; --&gt; &#34;1..*&#34; Course
+    Galaxy --&gt; &#34;many&#34; Star : Contains
+{{&lt;/ mermaid &gt;}}
+
+# State diagram
+```
+stateDiagram
+        [*] --&gt; Active
+
+        state Active {
+            [*] --&gt; NumLockOff
+            NumLockOff --&gt; NumLockOn : EvNumLockPressed
+            NumLockOn --&gt; NumLockOff : EvNumLockPressed
+            --
+            [*] --&gt; CapsLockOff
+            CapsLockOff --&gt; CapsLockOn : EvCapsLockPressed
+            CapsLockOn --&gt; CapsLockOff : EvCapsLockPressed
+            --
+            [*] --&gt; ScrollLockOff
+            ScrollLockOff --&gt; ScrollLockOn : EvCapsLockPressed
+            ScrollLockOn --&gt; ScrollLockOff : EvCapsLockPressed
+        }
+```
+
+{{&lt; mermaid &gt;}}
+stateDiagram
+        [*] --&gt; Active
+
+        state Active {
+            [*] --&gt; NumLockOff
+            NumLockOff --&gt; NumLockOn : EvNumLockPressed
+            NumLockOn --&gt; NumLockOff : EvNumLockPressed
+            --
+            [*] --&gt; CapsLockOff
+            CapsLockOff --&gt; CapsLockOn : EvCapsLockPressed
+            CapsLockOn --&gt; CapsLockOff : EvCapsLockPressed
+            --
+            [*] --&gt; ScrollLockOff
+            ScrollLockOff --&gt; ScrollLockOn : EvCapsLockPressed
+            ScrollLockOn --&gt; ScrollLockOff : EvCapsLockPressed
+        }
+{{&lt;/mermaid &gt;}}
+
+# Gantt diagram
+```
+gantt
+       dateFormat  YYYY-MM-DD
+       title Adding GANTT diagram functionality to mermaid
+
+       section A section
+       Completed task            :done,    des1, 2014-01-06,2014-01-08
+       Active task               :active,  des2, 2014-01-09, 3d
+       Future task               :         des3, after des2, 5d
+       Future task2              :         des4, after des3, 5d
+
+       section Critical tasks
+       Completed task in the critical line :crit, done, 2014-01-06,24h
+       Implement parser and jison          :crit, done, after des1, 2d
+       Create tests for parser             :crit, active, 3d
+       Future task in critical line        :crit, 5d
+       Create tests for renderer           :2d
+       Add to mermaid                      :1d
+
+       section Documentation
+       Describe gantt syntax               :active, a1, after des1, 3d
+       Add gantt diagram to demo page      :after a1  , 20h
+       Add another diagram to demo page    :doc1, after a1  , 48h
+
+       section Last section
+       Describe gantt syntax               :after doc1, 3d
+       Add gantt diagram to demo page      :20h
+       Add another diagram to demo page    :48h
+```
+
+{{&lt; mermaid &gt;}}
+gantt
+       dateFormat  YYYY-MM-DD
+       title Adding GANTT diagram functionality to mermaid
+
+       section A section
+       Completed task            :done,    des1, 2014-01-06,2014-01-08
+       Active task               :active,  des2, 2014-01-09, 3d
+       Future task               :         des3, after des2, 5d
+       Future task2              :         des4, after des3, 5d
+
+       section Critical tasks
+       Completed task in the critical line :crit, done, 2014-01-06,24h
+       Implement parser and jison          :crit, done, after des1, 2d
+       Create tests for parser             :crit, active, 3d
+       Future task in critical line        :crit, 5d
+       Create tests for renderer           :2d
+       Add to mermaid                      :1d
+
+       section Documentation
+       Describe gantt syntax               :active, a1, after des1, 3d
+       Add gantt diagram to demo page      :after a1  , 20h
+       Add another diagram to demo page    :doc1, after a1  , 48h
+
+       section Last section
+       Describe gantt syntax               :after doc1, 3d
+       Add gantt diagram to demo page      :20h
+       Add another diagram to demo page    :48h
+{{&lt;/ mermaid &gt;}}
+
+# Pie diagram
+```
+pie
+    title Key elements in Product X
+    &#34;Calcium&#34; : 42.96
+    &#34;Potassium&#34; : 50.05
+    &#34;Magnesium&#34; : 10.01
+    &#34;Iron&#34; :  5
+```
+
+{{&lt; mermaid &gt;}}
+pie
+    title Key elements in Product X
+    &#34;Calcium&#34; : 42.96
+    &#34;Potassium&#34; : 50.05
+    &#34;Magnesium&#34; : 10.01
+    &#34;Iron&#34; :  5
+{{&lt;/ mermaid &gt;}}
+"""
+
+tags = 'diagram, mermaid'
+
+parent = "Diagrams"
+
+[[input.files]]
+url = "https://opensource.adobe.com/hugo-spectrum/docs/openapi/petstore/"
+title = "Petstore APIs"
+filetype="Markdown"
+contents = """
+Petstore API displayed using Swagger UI
+
+{{&lt; openapi apiFile=&#34;petstore&#34; &gt;}}
+"""
+
+tags = 'openapi'
+
+parent = "Open API"
+
+[[input.files]]
+url = "https://opensource.adobe.com/hugo-spectrum/docs/highlighting/programming/"
+title = "Programming"
+filetype="Markdown"
+contents = """
+## Kotlin, Java
+{{&lt; multi-highlight &gt;}}
+{{&lt; highlight-item title=&#34;Kotlin example&#34; syntax=&#34;kt&#34; &gt;}}
+fun main(args: Array&lt;String&gt;) {
+
+    val first = 1.5f
+    val second = 2.0f
+
+    val product = first * second
+
+    println(&#34;The product is: $product&#34;)
+}
+{{&lt;/ highlight-item &gt;}}
+
+{{&lt; highlight-item title=&#34;Java example&#34; syntax=&#34;java&#34; &gt;}}
+public class MultiplyTwoNumbers {
+
+    public static void main(String[] args) {
+
+        float first = 1.5f;
+        float second = 2.0f;
+
+        float product = first * second;
+
+        System.out.println(&#34;The product is: &#34; &#43; product);
+    }
+}
+
+{{&lt;/ highlight-item &gt;}}
+{{&lt;/multi-highlight&gt;}}
+
+## Go, Python
+{{&lt; multi-highlight &gt;}}
+{{&lt; highlight-item title=&#34;Go example&#34; syntax=&#34;go&#34; &gt;}}
+func main() {
+    fmt.Println(&#34;hello world&#34;)
+}
+{{&lt;/ highlight-item &gt;}}
+
+{{&lt; highlight-item title=&#34;Python example&#34; syntax=&#34;py3&#34; &gt;}}
+print(&#39;Hello, world!&#39;)
+{{&lt;/ highlight-item &gt;}}
+{{&lt;/multi-highlight&gt;}}
+
+## C, C#, C&#43;&#43;
+{{&lt; multi-highlight &gt;}}
+{{&lt; highlight-item title=&#34;C&#34; syntax=&#34;c&#34; &gt;}}
+#include &lt;stdio.h&gt;
+int main()
+{
+   printf(&#34;Hello World&#34;);
+   return 0;
+}
+{{&lt;/ highlight-item &gt;}}
+
+{{&lt; highlight-item title=&#34;C#&#34; syntax=&#34;c#&#34; &gt;}}
+static void Main(string[] args) 
+{
+  Console.WriteLine(&#34;Hello, world!&#34;);
+}
+{{&lt;/ highlight-item &gt;}}
+
+{{&lt; highlight-item title=&#34;C&#43;&#43;&#34; syntax=&#34;c&#43;&#43;&#34; &gt;}}
+ 
+int main()
+{
+  std::cout &lt;&lt; &#34;Hello World!&#34; &lt;&lt; std::endl;
+  return 0;
+}
+{{&lt;/ highlight-item &gt;}}
+
+{{&lt;/multi-highlight&gt;}}
+"""
+
+tags = 'highlight'
+
+parent = "Highlighting"
+
+[[input.files]]
+url = "https://opensource.adobe.com/hugo-spectrum/search/"
+title = "Search Results"
+filetype="Markdown"
+contents = """---
+title: &#34;Search Results&#34;
+layout: &#34;search&#34;
+---
+"""
+
+parent = "Adobe Coral Spectrum"
+
+

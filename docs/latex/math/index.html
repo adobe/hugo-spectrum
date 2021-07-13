@@ -1,0 +1,782 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.84.1" />
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+<title>Math | Adobe Spectrum Hugo Demo</title>
+
+<link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/coral.min.css">
+<link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/codeblocks.css">
+<link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/coral-extended.css">
+<link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/markdeep.css">
+<link rel="stylesheet" href="https://opensource.adobe.com/hugo-spectrum/css/layout.css">
+
+
+
+<script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+<script src="https://opensource.adobe.com/hugo-spectrum/js/main.min.085b691cb67831f5a7109053acce2c03212abdbbfce0c12db577213ab8f7409d.js" integrity="sha256-CFtpHLZ4MfWnEJBTrM4sAyEqvbv84MEttXchOrj3QJ0=" crossorigin="anonymous"></script>
+
+
+<script src="https://opensource.adobe.com/hugo-spectrum/js/coral.min.js" data-coral-icons="https://opensource.adobe.com/hugo-spectrum/resources/"></script>
+
+<script src="https://opensource.adobe.com/hugo-spectrum/js/mermaid.min.js" ></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+
+<script>window.markdeepOptions = {mode: 'script'};</script>
+<script src="https://opensource.adobe.com/hugo-spectrum/js/markdeep.min.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [              
+        ['\\(', '\\)']
+      ],
+      displayMath: [             
+        ['$$', '$$'],
+        ['\\[', '\\]']
+      ],
+      processEscapes: true,      
+      processEnvironments: true, 
+      processRefs: true,         
+      digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,
+      
+      tags: 'none',              
+      tagSide: 'right',          
+      tagIndent: '0.8em',        
+      useLabelIds: true,         
+      maxMacros: 1000,           
+      maxBuffer: 5 * 1024,       
+      baseURL:                   
+          (document.getElementsByTagName('base').length === 0) ? '' : String(document.location).replace(/#.*$/, ''),
+      formatError:               
+          (jax, err) => jax.formatError(err)
+    },
+    svg: {
+      fontCache: 'global'
+    },
+  };
+</script>
+<script src="https://opensource.adobe.com/hugo-spectrum/js/mathjax-tex-svg-full.js"></script>
+
+
+
+<link rel="shortcut icon" type="image/x-icon" href="https://opensource.adobe.com/hugo-spectrum/favicons/favicon.ico">
+
+  <title>Math | Adobe Spectrum Hugo Demo</title>
+</head>
+<body class="coral--lightest">
+
+<header>
+<coral-shell>
+  
+<coral-shell-header>
+	<coral-shell-header-home>
+		<a is="coral-shell-homeanchor" icon="AdobeLogo" href="https://opensource.adobe.com/hugo-spectrum/">Adobe Spectrum Hugo Demo</a>
+	</coral-shell-header-home>
+	<coral-shell-header-content>
+		<coral-shell-workspaces>
+			
+			
+
+			
+			
+			
+			
+			
+			
+			<a is="coral-shell-workspace"
+				 href="https://opensource.adobe.com/hugo-spectrum/docs/"
+				 
+				 selected="">Documentation</a>
+			
+
+			
+			
+			
+			
+			
+			
+			<a is="coral-shell-workspace"
+				 href="https://opensource.adobe.com/hugo-spectrum/faq/"
+				 
+				 >FAQ</a>
+			
+
+			
+			
+			
+			
+			
+			
+			<a is="coral-shell-workspace"
+				 href="https://opensource.adobe.com/hugo-spectrum/tags/"
+				 
+				 >Tags</a>
+			
+		</coral-shell-workspaces>
+	</coral-shell-header-content>
+	<coral-shell-header-actions>
+		<coral-shell-menubar>
+			
+			
+			
+
+<coral-search id="search-query" placeholder="Search" variant="quiet"></coral-search>
+
+
+		</coral-shell-menubar>
+	</coral-shell-header-actions>
+</coral-shell-header>
+
+</coral-shell>
+</header>
+
+
+<input type="checkbox" class="hidden" id="menu-control" />
+<main class="container flex">
+  
+  <aside class="page-menu">
+    
+  
+
+<nav is="coral-sidenav" variant="multilevel" style="width:240px;">
+  
+    
+
+<coral-search id="search-query" placeholder="Search" variant="quiet"></coral-search>
+
+
+  
+  
+
+
+
+
+
+
+    
+    
+
+    
+      
+    
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+    
+      
+        <a is="coral-sidenav-item"><b> User Guide</b></a>
+        <coral-sidenav-level>
+      
+    
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://opensource.adobe.com/hugo-spectrum/docs/user-guide/hugo/">Hugo Intro</a>
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://opensource.adobe.com/hugo-spectrum/docs/user-guide/sample/">Sample Page</a>
+    
+    
+    
+      
+    </coral-sidenav-level>
+      
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+    
+      
+        <a is="coral-sidenav-item"><b> Developer Guide</b></a>
+        <coral-sidenav-level>
+      
+    
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://opensource.adobe.com/hugo-spectrum/docs/developer-guide/page1/">Developer Guide Page 1</a>
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://opensource.adobe.com/hugo-spectrum/docs/developer-guide/page2/">Developer Guide Page 2</a>
+    
+    
+    
+      
+    </coral-sidenav-level>
+      
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+    
+      
+        <a is="coral-sidenav-item"><b> Architecture</b></a>
+        <coral-sidenav-level>
+      
+    
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://opensource.adobe.com/hugo-spectrum/docs/architecture/demo/">Arch Page 1</a>
+    
+    
+    
+      
+    </coral-sidenav-level>
+      
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+    
+      
+        <a is="coral-sidenav-item"><b> Diagrams</b></a>
+        <coral-sidenav-level>
+      
+    
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://opensource.adobe.com/hugo-spectrum/docs/diagrams/markdeep/">Markdeep examples</a>
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://opensource.adobe.com/hugo-spectrum/docs/diagrams/mermaid/">Mermaid examples</a>
+    
+    
+    
+      
+    </coral-sidenav-level>
+      
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+    
+      
+        <a is="coral-sidenav-item"><b> Open API</b></a>
+        <coral-sidenav-level>
+      
+    
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://opensource.adobe.com/hugo-spectrum/docs/openapi/link/">Link Example</a>
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://opensource.adobe.com/hugo-spectrum/docs/openapi/petstore/">Petstore APIs</a>
+    
+    
+    
+      
+    </coral-sidenav-level>
+      
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+    
+      
+        <a is="coral-sidenav-item"><b> Highlighting</b></a>
+        <coral-sidenav-level>
+      
+    
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://opensource.adobe.com/hugo-spectrum/docs/highlighting/json-yaml/">Data structures</a>
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://opensource.adobe.com/hugo-spectrum/docs/highlighting/programming/">Programming</a>
+    
+    
+    
+      
+    </coral-sidenav-level>
+      
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+    
+      
+        <a is="coral-sidenav-item"><b> LaTeX</b></a>
+        <coral-sidenav-level>
+      
+    
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  selected href="https://opensource.adobe.com/hugo-spectrum/docs/latex/math/">Math</a>
+    
+    
+    
+    
+        <a is="coral-sidenav-item"  href="https://opensource.adobe.com/hugo-spectrum/docs/latex/extensions/">Extensions</a>
+    
+    
+    
+      
+    </coral-sidenav-level>
+      
+    
+
+    
+    
+    
+      
+    
+
+</nav>
+
+
+
+
+  </aside>
+  <div class="page-content">
+    <div class="page-header">
+      
+      
+  <div class="flex align-center justify-between">      
+    <label for="menu-control">
+    <img src="https://opensource.adobe.com/hugo-spectrum/resources/menu.svg" class="book-icon" alt="Menu" />
+    </label>
+
+    <strong>Math</strong>
+
+    <label for="toc-control">
+    <img src="https://opensource.adobe.com/hugo-spectrum/resources/toc.svg" class="book-icon" alt="Table of Contents" />
+    </label>
+</div>
+<input type="checkbox" class="hidden" id="toc-control" />
+
+
+      <aside class="hidden clearfix">
+        
+  
+<div id="content">
+
+  
+    
+      
+      
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a class='coral-Link' href="#expressions">Expressions</a></li>
+        <li><a class='coral-Link' href="#subscripts-and-superscripts">Subscripts and superscripts</a></li>
+        <li><a class='coral-Link' href="#brackets-and-parentheses">Brackets and Parentheses</a></li>
+        <li><a class='coral-Link' href="#matrices">Matrices</a></li>
+        <li><a class='coral-Link' href="#fractions-and-binomials">Fractions and Binomials</a></li>
+        <li><a class='coral-Link' href="#operators">Operators</a></li>
+        <li><a class='coral-Link' href="#integrals-sums-and-limits">Integrals, sums and limits</a></li>
+        <li><a class='coral-Link' href="#the-cauchy-schwarz-inequality">The Cauchy-Schwarz Inequality</a></li>
+        <li><a class='coral-Link' href="#a-cross-product-formula">A Cross Product Formula</a></li>
+        <li><a class='coral-Link' href="#the-probability-of-getting-k-heads-when-flipping-n-coins-is">The probability of getting (k) heads when flipping (n) coins is:</a></li>
+        <li><a class='coral-Link' href="#an-identity-of-ramanujan">An Identity of Ramanujan</a></li>
+        <li><a class='coral-Link' href="#a-rogers-ramanujan-identity">A Rogers-Ramanujan Identity</a></li>
+        <li><a class='coral-Link' href="#maxwells-equations">Maxwell&rsquo;s Equations</a></li>
+        <li><a class='coral-Link' href="#in-line-mathematics">In-line Mathematics</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    
+  
+
+
+
+<div class="page-meta-links">
+
+
+
+
+
+
+<a style="padding-left: 0px" is="coral-anchorlist-item" href="https://github.com/adobe/hugo-spectrum/edit/master/exampleSite/content/docs/latex/math.md" icon="GitHub" target="_blank">Edit this page</a>
+
+
+</div>
+
+</div>
+
+
+      </aside>
+    </div>
+    
+    <article>
+      
+
+
+
+<div class="u-coral-pullRight">
+  <coral-taglist readonly="">
+    
+    
+    
+    <coral-tag><a class="coral-Link" href="https://opensource.adobe.com/hugo-spectrum/tags/math/">math</a></coral-tag>
+    
+    
+    
+    
+    <coral-tag><a class="coral-Link" href="https://opensource.adobe.com/hugo-spectrum/tags/latex/">latex</a></coral-tag>
+    
+    
+  </coral-taglist>
+</div>
+
+
+<span>&nbsp;</span>
+
+<h1 id="page-title" class="coral-Heading--1">Math</h1>
+
+
+
+
+<div id="content" class="padding-top: 150px"><p>Examples below are from <a class='coral-Link' href="https://www.overleaf.com/learn">https://www.overleaf.com/learn</a></p>
+<h2 id="expressions">Expressions</h2>
+<p>The well known Pythagorean theorem \(x^2 + y^2 = z^2\) was proved to be invalid for other exponents.
+Meaning the next equation has no integer solutions:</p>
+<p>\[ x^n + y^n = z^n \]</p>
+<p>\begin{equation}
+E=mc^2
+\end{equation}</p>
+<p><strong>Greek letters</strong> \(\alpha \beta \gamma \rho \sigma \delta \epsilon\)</p>
+<p><strong>Binary operators</strong> \(\times \otimes \oplus \cup \cap \)</p>
+<p><strong>Relation operators</strong>	\(&lt; &gt; \subset \supset \subseteq \supseteq\)</p>
+<p><strong>Others</strong> \( \int \oint \sum \prod \)</p>
+<h2 id="subscripts-and-superscripts">Subscripts and superscripts</h2>
+<p>\( a_1^2 + a_2^2 = a_3^2 \)</p>
+<p>\( x^{2 \alpha} - 1 = y_{ij} + y_{ij}  \)</p>
+<p>\( \sum_{i=1}^{\infty} \frac{1}{n^s}
+= \prod_p \frac{1}{1 - p^{-s}} \)</p>
+<p>\( \sum_{i=1}^{\infty} \)</p>
+<p>\( \cup_{i=1}^n \)</p>
+<p>\( \cap_{i=1}^n \)</p>
+<h2 id="brackets-and-parentheses">Brackets and Parentheses</h2>
+<p>\((x+y) [x+y] \{ x+y \} \langle x + y \rangle |x+y|  \|x+y\| \)</p>
+<p>\(
+F = G \left( \frac{m_1 m_2}{r^2} \right)
+\)</p>
+<p>\(
+\left[  \frac{ N } { \left( \frac{L}{p} \right)  - (m+n) }  \right]
+\)</p>
+<p>\(
+\begin{align*}
+y  = 1 + &amp; \left(  \frac{1}{x} + \frac{1}{x^2} + \frac{1}{x^3} + \ldots \right. \\<br>
+&amp;\left. \quad + \frac{1}{x^{n-1}} + \frac{1}{x^n} \right)
+\end{align*}
+\)</p>
+<h2 id="matrices">Matrices</h2>
+<p>\(
+\begin{matrix}
+1 &amp; 2 &amp; 3\\<br>
+a &amp; b &amp; c
+\end{matrix}
+\)</p>
+<p>\(
+\begin{pmatrix}
+1 &amp; 2 &amp; 3\\<br>
+a &amp; b &amp; c
+\end{pmatrix}
+\)</p>
+<p>\(
+\begin{bmatrix}
+1 &amp; 2 &amp; 3\\<br>
+a &amp; b &amp; c
+\end{bmatrix}
+\)</p>
+<p>\(
+\begin{Bmatrix}
+1 &amp; 2 &amp; 3\\<br>
+a &amp; b &amp; c
+\end{Bmatrix}
+\)</p>
+<p>\(
+\begin{vmatrix}
+1 &amp; 2 &amp; 3\\<br>
+a &amp; b &amp; c
+\end{vmatrix}
+\)</p>
+<p>\(
+\begin{Vmatrix}
+1 &amp; 2 &amp; 3\\<br>
+a &amp; b &amp; c
+\end{Vmatrix}
+\)</p>
+<h2 id="fractions-and-binomials">Fractions and Binomials</h2>
+<p>\( \frac{1}{2} \)</p>
+<p>\( f(x)=\frac{P(x)}{Q(x)} \ \ \textrm{and}
+\ \ f(x)=\textstyle\frac{P(x)}{Q(x)} \)</p>
+<p>\(
+\frac{1+\frac{a}{b}}{1+\frac{1}{1+\frac{1}{a}}}
+\)</p>
+<p>\(
+a_0+\cfrac{1}{a_1+\cfrac{1}{a_2+\cfrac{1}{a_3+\cdots}}}
+\)</p>
+<p>\(
+\binom{n}{k} = \frac{n!}{k!(n-k)!}
+\)</p>
+<h2 id="operators">Operators</h2>
+<p>\(
+\sin(a + b) = \sin a \cos b + \cos b \sin a
+\)</p>
+<p>\(
+\lim_{h \to 0 } \frac{f(x+h)-f(x)}{h}
+\)</p>
+<h2 id="integrals-sums-and-limits">Integrals, sums and limits</h2>
+<p>\(
+\int_{a}^{b} x^2 ,dx
+\)</p>
+<p>\(
+\iint_V \mu(u,v) ,du,dv
+\)</p>
+<p>\(
+\sum_{n=1}^{\infty} 2^{-n} = 1
+\)</p>
+<p>\(
+\prod_{i=a}^{b} f(i)
+\)</p>
+<p>\(
+\lim_{x\to\infty} f(x)
+\)</p>
+<p>\(</p>
+<p>\)</p>
+<p>
+\begin{align}
+\dot{x} &amp; = \sigma(y-x) \\
+\dot{y} &amp; = \rho x - y - xz \\
+\dot{z} &amp; = -\beta z + xy
+\end{align}
+</p>
+<h2 id="the-cauchy-schwarz-inequality">The Cauchy-Schwarz Inequality</h2>
+<p>
+\[
+\left( \sum_{k=1}^n a_k b_k \right)^{\!\!2} \leq
+ \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+\]
+</p>
+<h2 id="a-cross-product-formula">A Cross Product Formula</h2>
+<p>\[
+  \mathbf{V}_1 \times \mathbf{V}_2 =
+   \begin{vmatrix}
+    \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\
+    \frac{\partial X}{\partial u} &amp; \frac{\partial Y}{\partial u} &amp; 0 \\
+    \frac{\partial X}{\partial v} &amp; \frac{\partial Y}{\partial v} &amp; 0 \\
+   \end{vmatrix}
+\]</p>
+<h2 id="the-probability-of-getting-k-heads-when-flipping-n-coins-is">The probability of getting (k) heads when flipping (n) coins is:</h2>
+<p>\[P(E) = {n \choose k} p^k (1-p)^{ n-k} \]</p>
+<h2 id="an-identity-of-ramanujan">An Identity of Ramanujan</h2>
+<p>\[
+   \frac{1}{(\sqrt{\phi \sqrt{5}}-\phi) e^{\frac25 \pi}} =
+     1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+      {1+\frac{e^{-8\pi}} {1+\ldots} } } }
+\]</p>
+<h2 id="a-rogers-ramanujan-identity">A Rogers-Ramanujan Identity</h2>
+<p>\[
+  1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
+    \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+     \quad\quad \text{for $|q| &lt; 1$}.
+\]</p>
+<h2 id="maxwells-equations">Maxwell&rsquo;s Equations</h2>
+<p>
+\begin{align}
+  \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp; = \frac{4\pi}{c}\vec{\mathbf{j}} \\
+  \nabla \cdot \vec{\mathbf{E}} &amp; = 4 \pi \rho \\
+  \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp; = \vec{\mathbf{0}} \\
+  \nabla \cdot \vec{\mathbf{B}} &amp; = 0
+\end{align}
+</p>
+<h2 id="in-line-mathematics">In-line Mathematics</h2>
+<p>Finally, while display equations look good for a page of samples, the
+ability to mix math and text in a paragraph is also important.  This
+expression \(\sqrt{3x-1}+(1+x)^2\) is an example of an inline equation.  As
+you see, MathJax equations can be used this way as well, without unduly
+disturbing the spacing between lines.</p>
+</div>
+<div class="">
+<hr>
+<div class="u-coral-pullRight">
+  <coral-icon icon="GitHub" title="GitHub"></coral-icon> Last modified July 12, 2021: <a class="coral-Link" href="https://github.com/adobe/hugo-spectrum/commit/a02031f6768251a46f906c68e9af403f7c673493">add support for MathJax (#23) (a02031f)</a>
+</div>
+</div>
+
+
+    </article>
+    <label for="menu-control" class="hidden page-menu-overlay"></label>
+  </div>
+  <aside class="page-toc">
+    
+  
+<div id="content">
+
+  
+    
+      
+      
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a class='coral-Link' href="#expressions">Expressions</a></li>
+        <li><a class='coral-Link' href="#subscripts-and-superscripts">Subscripts and superscripts</a></li>
+        <li><a class='coral-Link' href="#brackets-and-parentheses">Brackets and Parentheses</a></li>
+        <li><a class='coral-Link' href="#matrices">Matrices</a></li>
+        <li><a class='coral-Link' href="#fractions-and-binomials">Fractions and Binomials</a></li>
+        <li><a class='coral-Link' href="#operators">Operators</a></li>
+        <li><a class='coral-Link' href="#integrals-sums-and-limits">Integrals, sums and limits</a></li>
+        <li><a class='coral-Link' href="#the-cauchy-schwarz-inequality">The Cauchy-Schwarz Inequality</a></li>
+        <li><a class='coral-Link' href="#a-cross-product-formula">A Cross Product Formula</a></li>
+        <li><a class='coral-Link' href="#the-probability-of-getting-k-heads-when-flipping-n-coins-is">The probability of getting (k) heads when flipping (n) coins is:</a></li>
+        <li><a class='coral-Link' href="#an-identity-of-ramanujan">An Identity of Ramanujan</a></li>
+        <li><a class='coral-Link' href="#a-rogers-ramanujan-identity">A Rogers-Ramanujan Identity</a></li>
+        <li><a class='coral-Link' href="#maxwells-equations">Maxwell&rsquo;s Equations</a></li>
+        <li><a class='coral-Link' href="#in-line-mathematics">In-line Mathematics</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    
+  
+
+
+
+<div class="page-meta-links">
+
+
+
+
+
+
+<a style="padding-left: 0px" is="coral-anchorlist-item" href="https://github.com/adobe/hugo-spectrum/edit/master/exampleSite/content/docs/latex/math.md" icon="GitHub" target="_blank">Edit this page</a>
+
+
+</div>
+
+</div>
+
+ 
+  </aside>
+</main>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
