@@ -12,7 +12,7 @@
 
 set -ex
 
-HUGO_DOCKER_IMAGE="ghcr.io/amuraru/hugo:v0.84.1"
+HUGO_DOCKER_IMAGE="ghcr.io/amuraru/hugo:v0.89.4"
 
 rm -rf site-pages/*
 
@@ -20,7 +20,7 @@ docker run --rm \
     -v "`pwd`":/src \
     -v "`pwd`":/src/exampleSite/themes/hugo-spectrum \
     -v "`pwd`/site-pages":/target \
-    ghcr.io/amuraru/hugo:v0.84.1 \
+    $HUGO_DOCKER_IMAGE \
     --source="/src/exampleSite" \
     --destination="/target" \
     --theme hugo-spectrum \
@@ -40,7 +40,7 @@ docker run --rm -i -t -p 1313:1313 \
      -v "`pwd`":/src \
      -v "`pwd`":/src/exampleSite/themes/hugo-spectrum \
      -v "`pwd`/site-pages":/target \
-     ghcr.io/amuraru/hugo:v0.84.1 \
+     $HUGO_DOCKER_IMAGE \
      server -v \
      --source /src/exampleSite \
      --destination="/target" \
