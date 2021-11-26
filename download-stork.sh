@@ -12,7 +12,7 @@
 
 set -ex
 
-STORK_VERSION="v1.2.1"
+STORK_VERSION="v1.3.0"
 mkdir -p static/stork
 
 wget https://github.com/jameslittle230/stork/releases/download/$STORK_VERSION/stork.js -O static/js/stork.js
