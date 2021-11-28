@@ -3,12 +3,11 @@
 {{ range site.RegularPages }}
 [[input.files]]
 url = "{{ .Permalink }}"
-title = "{{ .Title }}"
 filetype="Markdown"
-contents = """{{ replace .RawContent "\\" "" }}"""
+title = "{{ .CurrentSection.Title }}/{{ .Title }}"
+contents = """{{ with .Params.tags }}{{ delimit . ", " }}{{ end }} {{ replace .RawContent "\\" "" }}"""
 {{ with .Params.tags }}
 tags = '{{ delimit . ", " }}'
 {{ end }}
-parent = "{{ .CurrentSection.Title }}"
 {{ end }}
 
