@@ -5,7 +5,7 @@
 url = "{{ .Permalink }}"
 title = "{{ .Title }}"
 filetype="Markdown"
-contents = """{{ replace .RawContent "\\" "" }}"""
+contents = """{{ with .Params.tags }}{{ delimit . ", " }}{{ end }} {{ replace .RawContent "\\" "" }}"""
 {{ with .Params.tags }}
 tags = '{{ delimit . ", " }}'
 {{ end }}
