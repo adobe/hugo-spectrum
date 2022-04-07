@@ -5,7 +5,7 @@
 url = "https://opensource.adobe.com/hugo-spectrum/docs/developer-guide/page1/"
 title = "Developer Guide Page 1"
 filetype="Markdown"
-contents = """
+contents = """docs, howto, page1 
 
 # Heading 1
 
@@ -157,15 +157,11 @@ Here is an example:
 See more Coral exampeles at https://opensource.adobe.com/coral-spectrum/examples/#detail
 """
 
-tags = 'docs, howto, page1'
-
-parent = "Developer Guide"
-
 [[input.files]]
 url = "https://opensource.adobe.com/hugo-spectrum/faq/faq1/"
 title = "FAQ Page 1"
 filetype="Markdown"
-contents = """
+contents = """docs, howto 
 
 # Heading 1
 
@@ -173,16 +169,12 @@ contents = """
 
 ### Heading 3
 """
-
-tags = 'docs, howto'
-
-parent = "FAQ"
 
 [[input.files]]
 url = "https://opensource.adobe.com/hugo-spectrum/faq/section1/faq1-1/"
 title = "FAQ Page 1.1"
 filetype="Markdown"
-contents = """
+contents = """faq 
 
 # Heading 1
 
@@ -191,15 +183,11 @@ contents = """
 ### Heading 3
 """
 
-tags = 'faq'
-
-parent = "FAQ Section 1"
-
 [[input.files]]
 url = "https://opensource.adobe.com/hugo-spectrum/docs/user-guide/hugo/"
 title = "Hugo Intro"
 filetype="Markdown"
-contents = """
+contents = """docs, user-guide, hugo, howto 
 Hugo uses the excellent [Go][] [html/template][gohtmltemplate] library for
 its template engine. It is an extremely lightweight engine that provides a very
 small amount of logic. In our experience that it is just the right amount of
@@ -528,15 +516,11 @@ so, such as in this example:
 [gohtmltemplate]: https://golang.org/pkg/html/template/
 """
 
-tags = 'docs, user-guide, hugo, howto'
-
-parent = "User Guide"
-
 [[input.files]]
 url = "https://opensource.adobe.com/hugo-spectrum/docs/latex/math/"
 title = "Math"
 filetype="Markdown"
-contents = """Examples below are from [https://www.overleaf.com/learn](https://www.overleaf.com/learn)
+contents = """math, latex Examples below are from [https://www.overleaf.com/learn](https://www.overleaf.com/learn)
 ## Expressions
 
 The well known Pythagorean theorem (x^2 &#43; y^2 = z^2) was proved to be invalid for other exponents. 
@@ -752,15 +736,11 @@ you see, MathJax equations can be used this way as well, without unduly
 disturbing the spacing between lines.&lt;/p&gt;
 """
 
-tags = 'math, latex'
-
-parent = "LaTeX"
-
 [[input.files]]
 url = "https://opensource.adobe.com/hugo-spectrum/docs/developer-guide/page2/"
 title = "Developer Guide Page 2"
 filetype="Markdown"
-contents = """
+contents = """docs, howto, page2 
 
 # Heading 1
 
@@ -769,15 +749,11 @@ contents = """
 ### Heading 3
 """
 
-tags = 'docs, howto, page2'
-
-parent = "Developer Guide"
-
 [[input.files]]
 url = "https://opensource.adobe.com/hugo-spectrum/docs/latex/extensions/"
 title = "Extensions"
 filetype="Markdown"
-contents = """
+contents = """math, extensions 
 Full list of supported extensions [https://docs.mathjax.org/en/latest/input/tex/extensions/index.html](https://docs.mathjax.org/en/latest/input/tex/extensions/index.html)
 
 ## Background colors
@@ -795,15 +771,11 @@ bbox[red]{x&#43;y}
 ## Colors
 ( {color{red} alpha} &#43; {color{blue} y} )"""
 
-tags = 'math, extensions'
-
-parent = "LaTeX"
-
 [[input.files]]
 url = "https://opensource.adobe.com/hugo-spectrum/faq/section1/faq1-2/"
 title = "FAQ Page 1.2"
 filetype="Markdown"
-contents = """
+contents = """faq 
 
 # Heading 1
 
@@ -811,16 +783,12 @@ contents = """
 
 ### Heading 3
 """
-
-tags = 'faq'
-
-parent = "FAQ Section 1"
 
 [[input.files]]
 url = "https://opensource.adobe.com/hugo-spectrum/faq/faq2/"
 title = "FAQ Page 2"
 filetype="Markdown"
-contents = """
+contents = """docs, howto 
 
 # Heading 1
 
@@ -828,32 +796,24 @@ contents = """
 
 ### Heading 3
 """
-
-tags = 'docs, howto'
-
-parent = "FAQ"
 
 [[input.files]]
 url = "https://opensource.adobe.com/hugo-spectrum/docs/user-guide/sample/"
 title = "Sample Page"
 filetype="Markdown"
-contents = """
+contents = """docs, howto 
 # Heading 1
 
 ## Heading 2
 
 ### Heading 3
 """
-
-tags = 'docs, howto'
-
-parent = "User Guide"
 
 [[input.files]]
 url = "https://opensource.adobe.com/hugo-spectrum/docs/architecture/demo/"
 title = "Arch Page 1"
 filetype="Markdown"
-contents = """
+contents = """docs, howto 
 
 # Heading 1
 
@@ -862,15 +822,11 @@ contents = """
 ### Heading 3
 """
 
-tags = 'docs, howto'
-
-parent = "Architecture"
-
 [[input.files]]
 url = "https://opensource.adobe.com/hugo-spectrum/docs/highlighting/json-yaml/"
 title = "Data structures"
 filetype="Markdown"
-contents = """
+contents = """highlight 
 ## JSON, XML
 {{&lt; multi-highlight &gt;}}
 {{&lt; highlight-item title=&#34;JSON&#34; syntax=&#34;json&#34; &gt;}}
@@ -900,15 +856,11 @@ build:
 
 """
 
-tags = 'highlight'
-
-parent = "Highlighting"
-
 [[input.files]]
 url = "https://opensource.adobe.com/hugo-spectrum/docs/openapi/link/"
 title = "Link Example"
 filetype="Markdown"
-contents = """Link Example displayed using Swagger UI.
+contents = """openapi Link Example displayed using Swagger UI.
 {{&lt; alert &gt;}}
 Data file is load from **data/apis** folder
 {{&lt;/ alert &gt;}}
@@ -916,15 +868,11 @@ Data file is load from **data/apis** folder
 {{&lt; openapi apiFile=&#34;apis/link&#34; &gt;}}
 """
 
-tags = 'openapi'
-
-parent = "Open API"
-
 [[input.files]]
 url = "https://opensource.adobe.com/hugo-spectrum/docs/diagrams/markdeep/"
 title = "Markdeep examples"
 filetype="Markdown"
-contents = """
+contents = """diagram, markdeep 
 ## Lines with decorations
 {{&lt; markdeep-diagram &gt;}}
                 ________                            o        *          *   .--------------.   
@@ -1045,15 +993,11 @@ Cpu.Qon ┊┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄.-----------
 {{&lt;/ markdeep-diagram &gt;}}
 """
 
-tags = 'diagram, markdeep'
-
-parent = "Diagrams"
-
 [[input.files]]
 url = "https://opensource.adobe.com/hugo-spectrum/docs/diagrams/mermaid/"
 title = "Mermaid examples"
 filetype="Markdown"
-contents = """
+contents = """diagram, mermaid 
 # Graph
 ```
 graph TD;
@@ -1247,29 +1191,21 @@ pie
 {{&lt;/ mermaid &gt;}}
 """
 
-tags = 'diagram, mermaid'
-
-parent = "Diagrams"
-
 [[input.files]]
 url = "https://opensource.adobe.com/hugo-spectrum/docs/openapi/petstore/"
 title = "Petstore APIs"
 filetype="Markdown"
-contents = """
+contents = """openapi 
 Petstore API displayed using Swagger UI
 
 {{&lt; openapi apiFile=&#34;petstore&#34; &gt;}}
 """
 
-tags = 'openapi'
-
-parent = "Open API"
-
 [[input.files]]
 url = "https://opensource.adobe.com/hugo-spectrum/docs/highlighting/programming/"
 title = "Programming"
 filetype="Markdown"
-contents = """
+contents = """highlight 
 ## Kotlin, Java
 {{&lt; multi-highlight &gt;}}
 {{&lt; highlight-item title=&#34;Kotlin example&#34; syntax=&#34;kt&#34; &gt;}}
@@ -1344,20 +1280,14 @@ int main()
 {{&lt;/multi-highlight&gt;}}
 """
 
-tags = 'highlight'
-
-parent = "Highlighting"
-
 [[input.files]]
 url = "https://opensource.adobe.com/hugo-spectrum/search/"
 title = "Search Results"
 filetype="Markdown"
-contents = """---
+contents = """ ---
 title: &#34;Search Results&#34;
 layout: &#34;search&#34;
 ---
 """
-
-parent = "Adobe Coral Spectrum"
 
 
