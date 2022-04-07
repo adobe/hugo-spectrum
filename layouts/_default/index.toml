@@ -6,9 +6,5 @@ url = "{{ .Permalink }}"
 title = "{{ .Title }}"
 filetype="Markdown"
 contents = """{{ with .Params.tags }}{{ delimit . ", " }}{{ end }} {{ replace .RawContent "\\" "" }}"""
-{{ with .Params.tags }}
-tags = '{{ delimit . ", " }}'
-{{ end }}
-parent = "{{ .CurrentSection.Title }}"
 {{ end }}
 
