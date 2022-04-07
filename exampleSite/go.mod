@@ -1,5 +1,5 @@
-module sample-site
+module exampleSite
 
-go 1.16
+go 1.17
 
-require github.com/adobe/hugo-spectrum v1.4.0 // indirect
+require github.com/adobe/hugo-spectrum v1.5.0 // indirect
