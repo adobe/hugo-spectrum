@@ -52,7 +52,7 @@ rm -rf coral-spectrum-*.tgz package
 git add .
 git commit
 ```
-See also https://opensource.adobe.com/coral-spectrum/dist/documentation/manual/manual.html#consuming for full details.
+See also https://github.com/adobe/coral-spectrum/#using-coral-spectrum for full details.
 
 ## Update `mermaid` version
 This theme has support for [Mermaid](https://mermaid-js.github.io/mermaid/) diagrams. 
