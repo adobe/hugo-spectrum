@@ -27,7 +27,6 @@ docker run --rm \
     --baseURL "http://localhost:1313/hugo-spectrum" \
     --cleanDestinationDir \
     --forceSyncStatic \
-    --path-warnings \
     --ignoreCache
 
 docker run --rm \
@@ -50,5 +49,4 @@ docker run --rm -i -t -p 1313:1313 \
      --disableFastRender \
      --noHTTPCache \
      --enableGitInfo=false \
-     --path-warnings \
      --renderToDisk

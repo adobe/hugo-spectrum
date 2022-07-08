@@ -28,7 +28,6 @@ docker run --rm \
     --destination="/target" \
     --cleanDestinationDir \
     --forceSyncStatic \
-    --path-warnings \
     --ignoreCache
 
 docker run --rm \
