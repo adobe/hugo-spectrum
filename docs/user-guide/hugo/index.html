@@ -5,7 +5,7 @@
   
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.89.4" />
+<meta name="generator" content="Hugo 0.101.0" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -30,7 +30,7 @@
 
 
 
-<script src="https://opensource.adobe.com/hugo-spectrum/js/main.min.085b691cb67831f5a7109053acce2c03212abdbbfce0c12db577213ab8f7409d.js" integrity="sha256-CFtpHLZ4MfWnEJBTrM4sAyEqvbv84MEttXchOrj3QJ0=" crossorigin="anonymous"></script>
+<script src="https://opensource.adobe.com/hugo-spectrum/js/main.min.5990b09e23fd200d44b946a63556b8814f9dfe05c2f93feb0bdabb67c7548647.js" integrity="sha256-WZCwniP9IA1EuUamNVa4gU&#43;d/gXC&#43;T/rC9q7Z8dUhkc=" crossorigin="anonymous"></script>
 
 
 <script src="https://opensource.adobe.com/hugo-spectrum/js/coral.min.js" data-coral-icons="https://opensource.adobe.com/hugo-spectrum/resources/"></script>
@@ -738,16 +738,16 @@ benefit from having the table of contents provided. Sometimes the TOC just
 doesn&rsquo;t make a lot of sense. We&rsquo;ve defined a variable in our front matter
 of some pages to turn off the TOC from being displayed.</p>
 <p>Here is the example front matter:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">---
-title: &#34;Permalinks&#34;
-date: &#34;2013-11-18&#34;
-aliases:
-  - &#34;/doc/permalinks/&#34;
-groups: [&#34;extras&#34;]
-groups_weight: 30
-notoc: true
----
-</code></pre></div><p>Here is the corresponding code inside of the template:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: &#34;Permalinks&#34;
+</span></span><span style="display:flex;"><span>date: &#34;2013-11-18&#34;
+</span></span><span style="display:flex;"><span>aliases:
+</span></span><span style="display:flex;"><span>  - &#34;/doc/permalinks/&#34;
+</span></span><span style="display:flex;"><span>groups: [&#34;extras&#34;]
+</span></span><span style="display:flex;"><span>groups_weight: 30
+</span></span><span style="display:flex;"><span>notoc: true
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><p>Here is the corresponding code inside of the template:</p>
 <pre><code>  {{ if not .Params.notoc }}
     &lt;div id=&quot;toc&quot; class=&quot;well col-md-4 col-sm-6&quot;&gt;
     {{ .TableOfContents }}
@@ -758,35 +758,35 @@ notoc: true
 <p>In your top-level configuration file (eg, <code>config.yaml</code>) you can define site
 parameters, which are values which will be available to you in chrome.</p>
 <p>For instance, you might declare:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#062873;font-weight:bold">params</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#062873;font-weight:bold">CopyrightHTML</span>:<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Copyright &amp;#xA9; 2013 John Doe. All Rights Reserved.&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#062873;font-weight:bold">TwitterUser</span>:<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;spf13&#34;</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#062873;font-weight:bold">SidebarRecentLimit</span>:<span style="color:#bbb"> </span><span style="color:#40a070">5</span><span style="color:#bbb">
-</span></code></pre></div><p>Within a footer layout, you might then declare a <code>&lt;footer&gt;</code> which is only
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#062873;font-weight:bold">params</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#062873;font-weight:bold">CopyrightHTML</span>:<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Copyright &amp;#xA9; 2013 John Doe. All Rights Reserved.&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#062873;font-weight:bold">TwitterUser</span>:<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;spf13&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#062873;font-weight:bold">SidebarRecentLimit</span>:<span style="color:#bbb"> </span><span style="color:#40a070">5</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>Within a footer layout, you might then declare a <code>&lt;footer&gt;</code> which is only
 provided if the <code>CopyrightHTML</code> parameter is provided, and if it is given,
 you would declare it to be HTML-safe, so that the HTML entity is not escaped
 again.  This would let you easily update just your top-level config file each
 January 1st, instead of hunting through your templates.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">{{if .Site.Params.CopyrightHTML}}&lt;footer&gt;
-&lt;div class=&#34;text-center&#34;&gt;{{.Site.Params.CopyrightHTML | safeHtml}}&lt;/div&gt;
-&lt;/footer&gt;{{end}}
-</code></pre></div><p>An alternative way of writing the &ldquo;if&rdquo; and then referencing the same value
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>{{if .Site.Params.CopyrightHTML}}&lt;footer&gt;
+</span></span><span style="display:flex;"><span>&lt;div class=&#34;text-center&#34;&gt;{{.Site.Params.CopyrightHTML | safeHtml}}&lt;/div&gt;
+</span></span><span style="display:flex;"><span>&lt;/footer&gt;{{end}}
+</span></span></code></pre></div><p>An alternative way of writing the &ldquo;if&rdquo; and then referencing the same value
 is to use &ldquo;with&rdquo; instead. With rebinds the context <code>.</code> within its scope,
 and skips the block if the variable is absent:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">{{with .Site.Params.TwitterUser}}&lt;span class=&#34;twitter&#34;&gt;
-&lt;a href=&#34;https://twitter.com/{{.}}&#34; rel=&#34;author&#34;&gt;
-&lt;img src=&#34;/images/twitter.png&#34; width=&#34;48&#34; height=&#34;48&#34; title=&#34;Twitter: {{.}}&#34;
- alt=&#34;Twitter&#34;&gt;&lt;/a&gt;
-&lt;/span&gt;{{end}}
-</code></pre></div><p>Finally, if you want to pull &ldquo;magic constants&rdquo; out of your layouts, you can do
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>{{with .Site.Params.TwitterUser}}&lt;span class=&#34;twitter&#34;&gt;
+</span></span><span style="display:flex;"><span>&lt;a href=&#34;https://twitter.com/{{.}}&#34; rel=&#34;author&#34;&gt;
+</span></span><span style="display:flex;"><span>&lt;img src=&#34;/images/twitter.png&#34; width=&#34;48&#34; height=&#34;48&#34; title=&#34;Twitter: {{.}}&#34;
+</span></span><span style="display:flex;"><span> alt=&#34;Twitter&#34;&gt;&lt;/a&gt;
+</span></span><span style="display:flex;"><span>&lt;/span&gt;{{end}}
+</span></span></code></pre></div><p>Finally, if you want to pull &ldquo;magic constants&rdquo; out of your layouts, you can do
 so, such as in this example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&lt;nav class=&#34;recent&#34;&gt;
-  &lt;h1&gt;Recent Posts&lt;/h1&gt;
-  &lt;ul&gt;{{range first .Site.Params.SidebarRecentLimit .Site.Recent}}
-    &lt;li&gt;&lt;a href=&#34;{{.RelPermalink}}&#34;&gt;{{.Title}}&lt;/a&gt;&lt;/li&gt;
-  {{end}}&lt;/ul&gt;
-&lt;/nav&gt;
-</code></pre></div></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>&lt;nav class=&#34;recent&#34;&gt;
+</span></span><span style="display:flex;"><span>  &lt;h1&gt;Recent Posts&lt;/h1&gt;
+</span></span><span style="display:flex;"><span>  &lt;ul&gt;{{range first .Site.Params.SidebarRecentLimit .Site.Recent}}
+</span></span><span style="display:flex;"><span>    &lt;li&gt;&lt;a href=&#34;{{.RelPermalink}}&#34;&gt;{{.Title}}&lt;/a&gt;&lt;/li&gt;
+</span></span><span style="display:flex;"><span>  {{end}}&lt;/ul&gt;
+</span></span><span style="display:flex;"><span>&lt;/nav&gt;
+</span></span></code></pre></div></div>
 <div class="">
 <hr>
 <div class="u-coral-pullRight">

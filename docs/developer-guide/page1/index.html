@@ -5,7 +5,7 @@
   
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.89.4" />
+<meta name="generator" content="Hugo 0.101.0" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -30,7 +30,7 @@
 
 
 
-<script src="https://opensource.adobe.com/hugo-spectrum/js/main.min.085b691cb67831f5a7109053acce2c03212abdbbfce0c12db577213ab8f7409d.js" integrity="sha256-CFtpHLZ4MfWnEJBTrM4sAyEqvbv84MEttXchOrj3QJ0=" crossorigin="anonymous"></script>
+<script src="https://opensource.adobe.com/hugo-spectrum/js/main.min.5990b09e23fd200d44b946a63556b8814f9dfe05c2f93feb0bdabb67c7548647.js" integrity="sha256-WZCwniP9IA1EuUamNVa4gU&#43;d/gXC&#43;T/rC9q7Z8dUhkc=" crossorigin="anonymous"></script>
 
 
 <script src="https://opensource.adobe.com/hugo-spectrum/js/coral.min.js" data-coral-icons="https://opensource.adobe.com/hugo-spectrum/resources/"></script>
@@ -660,86 +660,85 @@
 
 
 <h2 id="code">Code</h2>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">package</span> main
-
-<span style="color:#007020;font-weight:bold">import</span> (
-    <span style="color:#4070a0">&#34;fmt&#34;</span>
-    <span style="color:#4070a0">&#34;math/rand&#34;</span>
-    <span style="color:#4070a0">&#34;time&#34;</span>
-)
-
-<span style="color:#007020;font-weight:bold">type</span> Moo <span style="color:#007020;font-weight:bold">struct</span> {
-    Cow   <span style="color:#902000">int</span>
-    Sound <span style="color:#902000">string</span>
-    Tube  <span style="color:#007020;font-weight:bold">chan</span> <span style="color:#902000">bool</span>
-}
-
-<span style="color:#60a0b0;font-style:italic">// A cow will moo until it is being milked
-</span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">cow</span>(num <span style="color:#902000">int</span>, mootube <span style="color:#007020;font-weight:bold">chan</span> Moo) {
-    tube <span style="color:#666">:=</span> <span style="color:#007020">make</span>(<span style="color:#007020;font-weight:bold">chan</span> <span style="color:#902000">bool</span>)
-    <span style="color:#007020;font-weight:bold">for</span> {
-        <span style="color:#007020;font-weight:bold">select</span> {
-        <span style="color:#007020;font-weight:bold">case</span> mootube <span style="color:#666">&lt;-</span> Moo{num, <span style="color:#4070a0">&#34;moo&#34;</span>, tube}:
-            fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Cow number&#34;</span>, num, <span style="color:#4070a0">&#34;mooed through the mootube&#34;</span>)
-            <span style="color:#666">&lt;-</span>tube
-            fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Cow number&#34;</span>, num, <span style="color:#4070a0">&#34;is being milked and stops mooing&#34;</span>)
-            mootube <span style="color:#666">&lt;-</span> Moo{num, <span style="color:#4070a0">&#34;mooh&#34;</span>, <span style="color:#007020;font-weight:bold">nil</span>}
-            fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Cow number&#34;</span>, num, <span style="color:#4070a0">&#34;moos one last time in relief&#34;</span>)
-            <span style="color:#007020;font-weight:bold">return</span>
-        <span style="color:#007020;font-weight:bold">default</span>:
-            fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Cow number&#34;</span>, num, <span style="color:#4070a0">&#34;mooed through the mootube and was ignored&#34;</span>)
-            time.<span style="color:#06287e">Sleep</span>(time.<span style="color:#06287e">Duration</span>(rand.<span style="color:#06287e">Int31n</span>(<span style="color:#40a070">1000</span>)) <span style="color:#666">*</span> time.Millisecond)
-        }
-    }
-}
-
-<span style="color:#60a0b0;font-style:italic">// The farmer wants to turn on all the milktubes to stop the mooing
-</span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">farmer</span>(numcows <span style="color:#902000">int</span>, mootube <span style="color:#007020;font-weight:bold">chan</span> Moo, farmertube <span style="color:#007020;font-weight:bold">chan</span> <span style="color:#902000">string</span>) {
-    fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Farmer starts listening to the mootube&#34;</span>)
-    <span style="color:#007020;font-weight:bold">for</span> unrelievedCows <span style="color:#666">:=</span> numcows; unrelievedCows &gt; <span style="color:#40a070">0</span>; {
-        moo <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>mootube
-        <span style="color:#007020;font-weight:bold">if</span> moo.Sound <span style="color:#666">==</span> <span style="color:#4070a0">&#34;mooh&#34;</span> {
-            fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Farmer heard a moo of relief from cow number&#34;</span>, moo.Cow)
-            unrelievedCows<span style="color:#666">--</span>
-        } <span style="color:#007020;font-weight:bold">else</span> {
-            fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Farmer heard a&#34;</span>, moo.Sound, <span style="color:#4070a0">&#34;from cow number&#34;</span>, moo.Cow)
-            time.<span style="color:#06287e">Sleep</span>(<span style="color:#40a070">2e9</span>)
-            fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Farmer starts the milking machine on cow number&#34;</span>, moo.Cow)
-            moo.Tube <span style="color:#666">&lt;-</span> <span style="color:#007020;font-weight:bold">true</span>
-        }
-    }
-    fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Farmer doesn&#39;t hear a single moo anymore. All done!&#34;</span>)
-    farmertube <span style="color:#666">&lt;-</span> <span style="color:#4070a0">&#34;yey!&#34;</span>
-}
-
-<span style="color:#60a0b0;font-style:italic">// The farm starts out with mooing cows that wants to be milked
-</span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">runFarm</span>(numcows <span style="color:#902000">int</span>) {
-    farmertube <span style="color:#666">:=</span> <span style="color:#007020">make</span>(<span style="color:#007020;font-weight:bold">chan</span> <span style="color:#902000">string</span>)
-    mootube <span style="color:#666">:=</span> <span style="color:#007020">make</span>(<span style="color:#007020;font-weight:bold">chan</span> Moo)
-    <span style="color:#007020;font-weight:bold">for</span> cownum <span style="color:#666">:=</span> <span style="color:#40a070">0</span>; cownum &lt; numcows; cownum<span style="color:#666">++</span> {
-        <span style="color:#007020;font-weight:bold">go</span> <span style="color:#06287e">cow</span>(cownum, mootube)
-    }
-    <span style="color:#007020;font-weight:bold">go</span> <span style="color:#06287e">farmer</span>(numcows, mootube, farmertube)
-    farmerSaid <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>farmertube
-    <span style="color:#007020;font-weight:bold">if</span> farmerSaid <span style="color:#666">==</span> <span style="color:#4070a0">&#34;yey!&#34;</span> {
-        fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;All cows are happy.&#34;</span>)
-    }
-}
-
-<span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
-    <span style="color:#06287e">runFarm</span>(<span style="color:#40a070">4</span>)
-    fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;done&#34;</span>)
-}
-</code></pre></div><h2 id="support-for-raw-html">Support for raw html</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#4070a0">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#4070a0">&#34;math/rand&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#4070a0">&#34;time&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">type</span> Moo <span style="color:#007020;font-weight:bold">struct</span> {
+</span></span><span style="display:flex;"><span>    Cow   <span style="color:#902000">int</span>
+</span></span><span style="display:flex;"><span>    Sound <span style="color:#902000">string</span>
+</span></span><span style="display:flex;"><span>    Tube  <span style="color:#007020;font-weight:bold">chan</span> <span style="color:#902000">bool</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// A cow will moo until it is being milked
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">cow</span>(num <span style="color:#902000">int</span>, mootube <span style="color:#007020;font-weight:bold">chan</span> Moo) {
+</span></span><span style="display:flex;"><span>    tube <span style="color:#666">:=</span> <span style="color:#007020">make</span>(<span style="color:#007020;font-weight:bold">chan</span> <span style="color:#902000">bool</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">for</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">select</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">case</span> mootube <span style="color:#666">&lt;-</span> Moo{num, <span style="color:#4070a0">&#34;moo&#34;</span>, tube}:
+</span></span><span style="display:flex;"><span>            fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Cow number&#34;</span>, num, <span style="color:#4070a0">&#34;mooed through the mootube&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#666">&lt;-</span>tube
+</span></span><span style="display:flex;"><span>            fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Cow number&#34;</span>, num, <span style="color:#4070a0">&#34;is being milked and stops mooing&#34;</span>)
+</span></span><span style="display:flex;"><span>            mootube <span style="color:#666">&lt;-</span> Moo{num, <span style="color:#4070a0">&#34;mooh&#34;</span>, <span style="color:#007020;font-weight:bold">nil</span>}
+</span></span><span style="display:flex;"><span>            fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Cow number&#34;</span>, num, <span style="color:#4070a0">&#34;moos one last time in relief&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">return</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">default</span>:
+</span></span><span style="display:flex;"><span>            fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Cow number&#34;</span>, num, <span style="color:#4070a0">&#34;mooed through the mootube and was ignored&#34;</span>)
+</span></span><span style="display:flex;"><span>            time.<span style="color:#06287e">Sleep</span>(time.<span style="color:#06287e">Duration</span>(rand.<span style="color:#06287e">Int31n</span>(<span style="color:#40a070">1000</span>)) <span style="color:#666">*</span> time.Millisecond)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// The farmer wants to turn on all the milktubes to stop the mooing
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">farmer</span>(numcows <span style="color:#902000">int</span>, mootube <span style="color:#007020;font-weight:bold">chan</span> Moo, farmertube <span style="color:#007020;font-weight:bold">chan</span> <span style="color:#902000">string</span>) {
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Farmer starts listening to the mootube&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">for</span> unrelievedCows <span style="color:#666">:=</span> numcows; unrelievedCows &gt; <span style="color:#40a070">0</span>; {
+</span></span><span style="display:flex;"><span>        moo <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>mootube
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">if</span> moo.Sound <span style="color:#666">==</span> <span style="color:#4070a0">&#34;mooh&#34;</span> {
+</span></span><span style="display:flex;"><span>            fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Farmer heard a moo of relief from cow number&#34;</span>, moo.Cow)
+</span></span><span style="display:flex;"><span>            unrelievedCows<span style="color:#666">--</span>
+</span></span><span style="display:flex;"><span>        } <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>            fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Farmer heard a&#34;</span>, moo.Sound, <span style="color:#4070a0">&#34;from cow number&#34;</span>, moo.Cow)
+</span></span><span style="display:flex;"><span>            time.<span style="color:#06287e">Sleep</span>(<span style="color:#40a070">2e9</span>)
+</span></span><span style="display:flex;"><span>            fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Farmer starts the milking machine on cow number&#34;</span>, moo.Cow)
+</span></span><span style="display:flex;"><span>            moo.Tube <span style="color:#666">&lt;-</span> <span style="color:#007020;font-weight:bold">true</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;Farmer doesn&#39;t hear a single moo anymore. All done!&#34;</span>)
+</span></span><span style="display:flex;"><span>    farmertube <span style="color:#666">&lt;-</span> <span style="color:#4070a0">&#34;yey!&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// The farm starts out with mooing cows that wants to be milked
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">runFarm</span>(numcows <span style="color:#902000">int</span>) {
+</span></span><span style="display:flex;"><span>    farmertube <span style="color:#666">:=</span> <span style="color:#007020">make</span>(<span style="color:#007020;font-weight:bold">chan</span> <span style="color:#902000">string</span>)
+</span></span><span style="display:flex;"><span>    mootube <span style="color:#666">:=</span> <span style="color:#007020">make</span>(<span style="color:#007020;font-weight:bold">chan</span> Moo)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">for</span> cownum <span style="color:#666">:=</span> <span style="color:#40a070">0</span>; cownum &lt; numcows; cownum<span style="color:#666">++</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">go</span> <span style="color:#06287e">cow</span>(cownum, mootube)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">go</span> <span style="color:#06287e">farmer</span>(numcows, mootube, farmertube)
+</span></span><span style="display:flex;"><span>    farmerSaid <span style="color:#666">:=</span> <span style="color:#666">&lt;-</span>farmertube
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> farmerSaid <span style="color:#666">==</span> <span style="color:#4070a0">&#34;yey!&#34;</span> {
+</span></span><span style="display:flex;"><span>        fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;All cows are happy.&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#06287e">runFarm</span>(<span style="color:#40a070">4</span>)
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#06287e">Println</span>(<span style="color:#4070a0">&#34;done&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="support-for-raw-html">Support for raw html</h2>
 <p>Including raw html in your page can be done using <code>unsafe-html</code> short-code.</p>
 <p>Here is an example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">{{&lt; unsafe-html &gt;}}
-&lt;coral-switch checked=&#34;&#34;&gt;Checked&lt;/coral-switch&gt;
-&lt;coral-wait&gt;&lt;/coral-wait&gt;
-&lt;button is=&#34;coral-button&#34; icon=&#34;add&#34;&gt;Button&lt;/button&gt;
-{{&lt;/ unsafe-html &gt;}}
-
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>{{&lt; unsafe-html &gt;}}
+</span></span><span style="display:flex;"><span>&lt;coral-switch checked=&#34;&#34;&gt;Checked&lt;/coral-switch&gt;
+</span></span><span style="display:flex;"><span>&lt;coral-wait&gt;&lt;/coral-wait&gt;
+</span></span><span style="display:flex;"><span>&lt;button is=&#34;coral-button&#34; icon=&#34;add&#34;&gt;Button&lt;/button&gt;
+</span></span><span style="display:flex;"><span>{{&lt;/ unsafe-html &gt;}}
+</span></span></code></pre></div>
 
 
 
