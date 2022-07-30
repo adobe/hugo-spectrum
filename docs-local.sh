@@ -32,7 +32,7 @@ docker run --rm \
 docker run --rm \
     -v "`pwd`/site-pages":/stork-input \
     -v "`pwd`/site-pages":/stork-output \
-    ghcr.io/alexander-falca/stork:v1.4.2 \
+    ghcr.io/alexander-falca/stork:v1.5.0 \
     build --input /stork-input/index.toml --output /stork-output/stork/site-index.st
 
 docker run --rm -i -t -p 1313:1313 \
