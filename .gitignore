@@ -2,3 +2,4 @@ resources/_gen/
 site-pages
 .idea
 exampleSite/build/
+exampleSite/.hugo_build.lock

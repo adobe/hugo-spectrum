@@ -12,7 +12,7 @@
 
 set -ex
 
-HUGO_DOCKER_IMAGE="ghcr.io/amuraru/hugo:v0.101.0"
+HUGO_DOCKER_IMAGE="ghcr.io/amuraru/hugo:v0.107.0"
 
 rm -rf site-pages/*
 

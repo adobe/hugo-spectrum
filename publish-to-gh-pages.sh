@@ -23,7 +23,7 @@ rm -rf site-pages/*
 docker run --rm \
     -v "`pwd`":/src \
     -v "`pwd`/site-pages":/target \
-    ghcr.io/amuraru/hugo:v0.101.0 \
+    ghcr.io/amuraru/hugo:v0.107.0 \
     --source="/src/exampleSite" \
     --destination="/target" \
     --cleanDestinationDir \
