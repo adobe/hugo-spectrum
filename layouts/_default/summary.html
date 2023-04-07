@@ -5,5 +5,11 @@
 </span>
 
 <span style="text-align: center;">
-{{ .Content }}
+    {{ .Summary }}
+    {{ if .Truncated }}
+      <!-- This <div> includes a read more link, but only if the summary is truncated... -->
+      <div>
+        <a href="{{ .RelPermalink }}">Read More…</a>
+      </div>
+    {{ end }}
 </span>
