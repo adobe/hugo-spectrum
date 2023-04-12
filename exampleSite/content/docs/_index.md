@@ -5,6 +5,7 @@ menu:
   main:
     name: "Documentation"
     weight: 1
+description: "Documentation about hugo-spectrum"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.  

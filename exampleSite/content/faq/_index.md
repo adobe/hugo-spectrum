@@ -5,6 +5,7 @@ menu:
   main:
     name: "FAQ"
     weight: 2
+description: "This section covers the frequently asked question on our project"
 ---
 
 This section covers the frequently asked question on our project.  
