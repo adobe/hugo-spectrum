@@ -12,9 +12,9 @@
 
 set -ex
 
-STORK_VERSION="v1.5.0"
+STORK_VERSION="v1.6.0"
 mkdir -p static/stork
 
 wget https://github.com/jameslittle230/stork/releases/download/$STORK_VERSION/stork.js -O static/js/stork.js
+wget https://github.com/jameslittle230/stork/releases/download/$STORK_VERSION/stork.js -O static/js/stork.js.map
 wget https://github.com/jameslittle230/stork/releases/download/$STORK_VERSION/stork.wasm -O static/stork/stork.wasm
-
