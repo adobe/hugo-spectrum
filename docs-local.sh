@@ -12,7 +12,7 @@
 
 set -ex
 
-HUGO_DOCKER_IMAGE="ghcr.io/amuraru/hugo:v0.107.0"
+HUGO_DOCKER_IMAGE="ghcr.io/amuraru/hugo:v0.111.3"
 
 rm -rf site-pages/*
 
@@ -32,7 +32,7 @@ docker run --rm \
 docker run --rm \
     -v "`pwd`/site-pages":/stork-input \
     -v "`pwd`/site-pages":/stork-output \
-    ghcr.io/alexander-falca/stork:v1.5.0 \
+    ghcr.io/alexander-falca/stork:v1.6.0 \
     build --input /stork-input/index.toml --output /stork-output/stork/site-index.st
 
 docker run --rm -i -t -p 1313:1313 \
