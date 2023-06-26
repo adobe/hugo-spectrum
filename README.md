@@ -136,6 +136,7 @@ Theme built with:
 * [Stork](https://stork-search.net/) Impossibly fast web search, made for static sites
 * [mark.js](https://markjs.io/) JavaScript keyword highlighter
 * [MathJax](https://www.mathjax.org/) Beautiful and accessible math in all browsers
+* [Zalando Tech Radar](https://github.com/zalando/tech-radar) JS library for generating tech radar visualisation. 
 
 # Contributing
 

@@ -1,0 +1,33 @@
+{{/*
+
+Copyright 2023 Adobe
+All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file in
+accordance with the terms of the Adobe license agreement accompanying
+it. If you have received this file from a source other than Adobe,
+then your use, modification, or distribution of it requires the prior
+written permission of Adobe.
+
+*/}}
+{{ partial "page-meta-tags.html" . }}
+<span>&nbsp;</span>
+{{ if not $.Params.hide_title }}
+<h1 id="page-title" class="coral-Heading--1">{{ .Title }}</h1>
+{{ end }}
+{{ if isset .Params "ring" }}
+{{ $ringConfig := index .Site.Params.techradar.rings .Params.ring }}
+<div class="container flex">
+  <div id="state" style="border-radius: 10px;background-color: {{ $ringConfig.color }}; color: white"><span class="u-coral-margin" style="font-weight: bold" > {{ $ringConfig.name }} </span></div>
+
+  <coral-tooltip id="tooltip" target="#state" variant="info" placement="bottom">
+    {{ $ringConfig.description }}
+  </coral-tooltip>
+
+</div>
+{{ end }}
+{{ with .Params.description }}<div class="coral-Well">{{ . | markdownify }}</div>{{ end }}
+{{ $content := replace .Content "<a href" "<a class='coral-Link' href" }}
+{{ $content := replaceRE "(?sm).+\\[\\]\\(TOC\\).+\\[\\]\\(TOC\\)" "" $content }}
+<div id="content" class="padding-top: 150px">{{ $content | safeHTML }}</div>
+<div class="">{{ partial "page-meta-lastmod.html" . }}</div>

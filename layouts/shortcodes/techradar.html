@@ -1,0 +1,66 @@
+{{/*
+
+Copyright 2023 Adobe
+All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file in
+accordance with the terms of the Adobe license agreement accompanying
+it. If you have received this file from a source other than Adobe,
+then your use, modification, or distribution of it requires the prior
+written permission of Adobe.
+
+*/}}
+<div style="width: 100%;height: 100%">
+  <svg id="radar" style="width:100%;height:100%;"></svg>
+</div>
+
+<script>
+  techradar_visualization({
+    svg_id: "radar",
+    width: 1920,
+    height: 1080,
+    colors: {
+      background: "#fff",
+      grid: '#dddde0',
+      inactive: "#ddd"
+    },
+  {{ with .Get "title"}}
+    title: "{{ . }}",
+    date: '{{ now.Format "January 2006"}}',
+  {{ end }}
+
+  quadrants: [
+  {{- range sort .Page.FirstSection.Sections "Params.quadrant" "asc" }}
+    { name: "{{- .Name }}", link: {{- .Permalink -}} },
+  {{ end }}
+
+  ],
+  rings: [
+    {{- range .Site.Params.techradar.rings }}
+    {name: "{{ .name }}", color: "{{ .color }}", description: "{{ .description }}"},
+    {{ end }}
+  ],
+  print_layout: true,
+  links_in_new_tabs: false,
+  {{ if and ( gt (len .Params) 0) (isset .Params "quadrant") }}
+  zoomed_quadrant: {{ .Get "quadrant" }},
+  {{ end }}
+
+  //ENTRIES
+  entries: [
+  {{- range $section := sort .Page.FirstSection.Sections "Params.quadrant" "asc" }}
+    {{- range $sectionPage := $section.RegularPagesRecursive }}
+    {
+      "quadrant": {{- $section.Params.quadrant -}},
+      "ring": {{- $sectionPage.Params.ring -}},
+      "label": "{{- $sectionPage.Title -}}",
+      "moved": {{- $sectionPage.Params.moved -}},
+      "active": {{- $sectionPage.Params.active -}},
+      "link": {{- $sectionPage.Permalink -}}
+    },
+    {{ end }}
+  {{ end }}
+  ],
+  //ENTRIES
+  });
+</script>
