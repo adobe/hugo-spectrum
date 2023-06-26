@@ -56,6 +56,9 @@
     <loc>https://opensource.adobe.com/hugo-spectrum/docs/latex/</loc>
     <lastmod>2021-07-12T10:15:40-04:00</lastmod>
   </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/docs/techradar/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
+  </url><url>
     <loc>https://opensource.adobe.com/hugo-spectrum/</loc>
     <lastmod>2020-03-23T20:23:15+02:00</lastmod>
   </url><url>
@@ -67,6 +70,9 @@
   </url><url>
     <loc>https://opensource.adobe.com/hugo-spectrum/tags/architecture/</loc>
     <lastmod>2020-02-18T15:42:41+02:00</lastmod>
+  </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/techradar/tools/argocd/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
   </url><url>
     <loc>https://opensource.adobe.com/hugo-spectrum/categories/</loc>
   </url><url>
@@ -94,6 +100,15 @@
     <loc>https://opensource.adobe.com/hugo-spectrum/faq/</loc>
     <lastmod>2023-06-08T12:41:04-05:00</lastmod>
   </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/techradar/frameworks/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
+  </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/techradar/tools/git/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
+  </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/techradar/tools/gradle/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
+  </url><url>
     <loc>https://opensource.adobe.com/hugo-spectrum/tags/highlight/</loc>
     <lastmod>2021-01-04T11:09:50+02:00</lastmod>
   </url><url>
@@ -103,11 +118,26 @@
     <loc>https://opensource.adobe.com/hugo-spectrum/tags/hugo/</loc>
     <lastmod>2020-04-19T02:16:33+03:00</lastmod>
   </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/techradar/lagnguages/jvm/java-10/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
+  </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/techradar/lagnguages/jvm/java-11/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
+  </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/techradar/lagnguages/jvm/java-17/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
+  </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/techradar/lagnguages/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
+  </url><url>
     <loc>https://opensource.adobe.com/hugo-spectrum/tags/latex/</loc>
     <lastmod>2021-07-12T10:15:40-04:00</lastmod>
   </url><url>
     <loc>https://opensource.adobe.com/hugo-spectrum/docs/openapi/link/</loc>
     <lastmod>2020-03-23T13:40:12-04:00</lastmod>
+  </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/techradar/techniques/llm/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
   </url><url>
     <loc>https://opensource.adobe.com/hugo-spectrum/tags/markdeep/</loc>
     <lastmod>2020-02-24T20:22:43-05:00</lastmod>
@@ -136,8 +166,20 @@
     <loc>https://opensource.adobe.com/hugo-spectrum/docs/openapi/petstore/</loc>
     <lastmod>2020-02-28T17:12:44-05:00</lastmod>
   </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/techradar/techniques/platform-teams/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
+  </url><url>
     <loc>https://opensource.adobe.com/hugo-spectrum/docs/highlighting/programming/</loc>
     <lastmod>2021-01-04T11:09:50+02:00</lastmod>
+  </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/techradar/lagnguages/python-2/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
+  </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/techradar/lagnguages/python-3/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
+  </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/techradar/frameworks/quarkus/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
   </url><url>
     <loc>https://opensource.adobe.com/hugo-spectrum/search/</loc>
     <lastmod>2020-02-18T15:42:41+02:00</lastmod>
@@ -145,11 +187,32 @@
     <loc>https://opensource.adobe.com/hugo-spectrum/tags/section1/</loc>
     <lastmod>2020-02-18T15:42:41+02:00</lastmod>
   </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/techradar/frameworks/springboot-2/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
+  </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/techradar/frameworks/springboot-3/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
+  </url><url>
     <loc>https://opensource.adobe.com/hugo-spectrum/tags/swagger/</loc>
     <lastmod>2020-02-28T17:12:44-05:00</lastmod>
   </url><url>
     <loc>https://opensource.adobe.com/hugo-spectrum/tags/</loc>
     <lastmod>2023-06-08T12:41:04-05:00</lastmod>
+  </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/techradar/techniques/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
+  </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/techradar/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
+  </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/tags/techradar/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
+  </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/techradar/tools/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
+  </url><url>
+    <loc>https://opensource.adobe.com/hugo-spectrum/docs/techradar/user-guide/</loc>
+    <lastmod>2023-06-26T08:28:09-04:00</lastmod>
   </url><url>
     <loc>https://opensource.adobe.com/hugo-spectrum/tags/user-guide/</loc>
     <lastmod>2020-04-19T02:16:33+03:00</lastmod>
