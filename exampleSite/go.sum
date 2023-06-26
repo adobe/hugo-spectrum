@@ -2,3 +2,5 @@ github.com/adobe/hugo-spectrum v1.5.1 h1:vZwiXHdaaW7nEtFI2xed5GvGswkZF01OFU4QV8H
 github.com/adobe/hugo-spectrum v1.5.1/go.mod h1:jUgwuF8/CILUKnE7rLrAHG1eWVKso0TpNY7ys82e0OY=
 github.com/adobe/hugo-spectrum v1.6.2 h1:wvZ43sd6Xe435kTX6JHOnuOr3B8BjXBwg1HgoJhVS8I=
 github.com/adobe/hugo-spectrum v1.6.2/go.mod h1:jUgwuF8/CILUKnE7rLrAHG1eWVKso0TpNY7ys82e0OY=
+github.com/adobe/hugo-spectrum v1.7.0 h1:zZhPzFxzKb+RuHC/2Cr1XMaqqc7YyFF2JObDQgrZs4Y=
+github.com/adobe/hugo-spectrum v1.7.0/go.mod h1:jUgwuF8/CILUKnE7rLrAHG1eWVKso0TpNY7ys82e0OY=
