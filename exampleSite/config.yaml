@@ -18,6 +18,20 @@ params:
   github_repo: "https://github.com/adobe/hugo-spectrum"
   github_subdir: "exampleSite"
   searchType: "stork"
+  techradar:
+    rings:
+      - name: "ADOPT"
+        color: "green"
+        description: "We feel strongly that the industry should be adopting these items. We use them when appropriate on our projects."
+      - name: "TRIAL"
+        color: "blue"
+        description: "Worth pursuing. It is important to understand how to build up this capability."
+      - name: "ASSESS"
+        color: "darkorange"
+        description: "Worth exploring with the goal of understanding how it will affect your enterprise."
+      - name: "HOLD"
+        color: "red"
+        description: "Proceed with caution"
 outputFormats:
   toml:
     mediaType: "application/toml"
